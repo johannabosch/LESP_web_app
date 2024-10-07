@@ -1,5 +1,10 @@
 # Plover IPM Web App
 
+## Lauch the app remotely
+This web-app was built using Next.js and hosted using Vercel.
+
+Visit the [plover-ipm vercel app](https://plover-ipm.vercel.app/)
+
 ## Launching the App Locally
 
 ### Prerequisites
@@ -23,4 +28,3 @@ Open your browser and go to [localhost:3000](http://localhost:3000) to view the 
 
 ## Acknowledgments
 
-This web-app was built using Next.js and hosted using Vercel.
