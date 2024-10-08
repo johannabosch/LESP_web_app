@@ -36,13 +36,13 @@ const Hero: React.FC = () => {
         <div className="flex justify-between">
 
           <Link href="/about_page" passHref>
-            <button className="btn btn-primary mx-10">
+            <button className="btn btn-ghost bg-white text-black border-black mx-10">
               Learn more about the project
             </button>
           </Link>
 
           <Link href="/plover_page" passHref>
-            <button className="btn btn-primary mx-10">
+            <button className="btn btn-ghost bg-white text-black border-black">
               View the plover model
             </button>
           </Link>
