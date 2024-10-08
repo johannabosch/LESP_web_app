@@ -1,6 +1,4 @@
 import React from 'react';
-import 'katex/dist/katex.min.css';
-import { InlineMath } from 'react-katex';
 
 const SurvivalModel: React.FC = () => {
   return (
@@ -20,8 +18,8 @@ const SurvivalModel: React.FC = () => {
             Here we explore the survival model, including important parameters such as survival rates across different age classes. It will outline key model components such as α and β values.
           </p>
 
-          <div className="text-2xl text-center font-semibold text-[#7257b0]">
-            <InlineMath math="y_i = \alpha + \beta x_i" />
+          <div className="text-2xl text-center font-semibold text-[#004aad]">
+            y<sub>i</sub> = α + β x<sub>i</sub>
           </div>
 
           <h3 className="text-2xl font-bold text-gray-700 mb-0">

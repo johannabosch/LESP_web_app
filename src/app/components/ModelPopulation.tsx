@@ -1,8 +1,5 @@
 // ModelPopulations.tsx
-
-import 'katex/dist/katex.min.css';
-import { InlineMath } from 'react-katex';
-
+import React from 'react';
 
 const PopulationModel: React.FC = () => {
   return (
@@ -25,8 +22,8 @@ const PopulationModel: React.FC = () => {
           This paragraph will contain some more information about the model and it's parameters. It will outline the parameters like Nstr and Str, maybe include some formulas.This paragraph will contain some more information about the model and it's parameters. It will outline the parameters like Nstr and Str, maybe include some formulas.
           </p>
 
-          <div className="text-2xl text-center font-semibold text-[#991e3f]">
-            <InlineMath math="ex//y_i = \alpha + \beta x_i" />
+          <div className="text-2xl text-center font-semibold text-[#004aad]">
+            y<sub>i</sub> = α + β x<sub>i</sub>
           </div>
 
           <h3 className="text-2xl font-bold text-gray-700 mb-0">
