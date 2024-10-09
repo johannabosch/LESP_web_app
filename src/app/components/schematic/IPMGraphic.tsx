@@ -3,11 +3,11 @@
 import React, { useState, useEffect } from 'react';
 
 // Importing individual components for each model
-import SurvivalModel from './ModelSurvival';
-import MortalityModel from './ModelMortality';
-import PopulationModel from './ModelPopulation';
-import ProductivityModel from './ModelReproductive';
-import ProcessModel from './ModelProcess';
+import SurvivalModel from '@/app/components/schematic/ModelSurvival';
+import MortalityModel from '@/app/components/schematic/ModelMortality';
+import PopulationModel from '@/app/components//schematic/ModelPopulation';
+import ProductivityModel from '@/app/components//schematic/ModelReproductive';
+import ProcessModel from '@/app/components/schematic/ModelProcess';
 
 const IPMGraphic: React.FC = () => {
   const [hoveredImage, setHoveredImage] = useState<number | null>(null);

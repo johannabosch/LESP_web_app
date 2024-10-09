@@ -10,16 +10,16 @@ import React, { useState } from 'react';
 import MetricsNav from './MetricsNav';
 
 // import South NS components
-import South_PopulationMetrics from './South_PopulationMetrics';
-import South_ProductivityMetrics from './South_ProductivityMetrics';
-import South_SurvivalMetrics from './South_SurvivalMetrics';
-import South_TransitionMetrics from './South_TransitionMetrics';
+import South_PopulationMetrics from '@/app/components/south/South_PopulationMetrics';
+import South_ProductivityMetrics from '@/app/components/south/South_ProductivityMetrics';
+import South_SurvivalMetrics from '@/app/components/south/South_SurvivalMetrics';
+import South_TransitionMetrics from '@/app/components/south/South_TransitionMetrics';
 
 // import Gulf of NS components
-import Gulf_PopulationMetrics from './Gulf_PopulationMetrics';
-import Gulf_ProductivityMetrics from './Gulf_ProductivityMetrics';
-import Gulf_SurvivalMetrics from './Gulf_SurvivalMetrics';
-import Gulf_TransitionMetrics from './Gulf_TransitionMetrics';
+import Gulf_PopulationMetrics from '@/app/components/gulf/Gulf_PopulationMetrics';
+import Gulf_ProductivityMetrics from '@/app/components/gulf/Gulf_ProductivityMetrics';
+import Gulf_SurvivalMetrics from '@/app/components/gulf/Gulf_SurvivalMetrics';
+import Gulf_TransitionMetrics from '@/app/components/gulf/Gulf_TransitionMetrics';
 
 const PloverMetrics: React.FC = () => {
   // State for which metric (tab) is currently selected

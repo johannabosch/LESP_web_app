@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
-import IPMGraphic from '@/app/components/IPMGraphic';
+import IPMGraphic from '@/app/components/schematic/IPMGraphic';
 import Hero from '@/app/components/Hero';
 
 export default function Homepage() {
