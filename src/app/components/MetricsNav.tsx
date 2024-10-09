@@ -50,15 +50,13 @@ const MetricsNav: React.FC<MetricsNavProps> = ({ selectedSites, setSelectedSites
             const tabColor = tabColors[metric]; // Get the color for each metric
 
             return (
-              <button
+                <button
                 key={metric}
-                className={`relative text-lg px-6 py-2 rounded-md font-semibold transition-all duration-300 transform focus:outline-none ${
-                  activeTab === metric ? 'scale-105 shadow-lg text-white' : 'bg-white'
-                }`}
-                style={{
-                  backgroundColor: activeTab === metric ? tabColor : 'white',
+                className={`relative text-md px-6 py-1 rounded-md font-semibold transition-all duration-300 transform 
+                  ${activeTab === metric ? 'scale-105 text-white shadow-xl' : 'bg-white'} hover:scale-105 hover:shadow-lg`}
+                style={{ backgroundColor: activeTab === metric ? tabColor : 'white',
                   color: activeTab === metric ? 'white' : tabColor,
-                  border: `2px solid ${tabColor}`,
+                  border: activeTab === metric ? `2px solid ${tabColor}` : `2px solid ${tabColor}`,
                 }}
                 onClick={() => setActiveTab(metric)} // set the active tab
               >
@@ -110,6 +108,8 @@ const MetricsNav: React.FC<MetricsNavProps> = ({ selectedSites, setSelectedSites
                   id={site}
                   checked={selectedSites.includes(site)}
                   onChange={() => handleSiteSelection(site)} // handle checkbox selection
+                  className={'w-5 h-5 m-2 '}
+                
                 />
                 <label htmlFor={site} className="text-lg">{site}</label>
               </li>

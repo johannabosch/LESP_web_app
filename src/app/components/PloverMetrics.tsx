@@ -40,7 +40,7 @@ const PloverMetrics: React.FC = () => {
       />
 
       {/* Content based on activeTab and selectedSites */}
-      <div className="plover-metrics-content mt-6 p-4 bg-base-100 rounded-box text-lg"
+      <div className="plover-metrics-content mt-6 p-4 bg-white rounded-box text-ls"
            style={{ height: '100%', overflow: 'auto' }}>
         {!selectedSites.length && !activeTab && (
           <p>Begin by selecting study sites, and then choose a metric you want to visualize.</p>
@@ -52,32 +52,33 @@ const PloverMetrics: React.FC = () => {
 
         {/* Render content based on the active tab and selected sites */}
         {activeTab === 'Population Size' && (
-          <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4">
             {selectedSites.includes("Southern Nova Scotia") && <South_PopulationMetrics selectedSite="Southern Nova Scotia" />}
             {selectedSites.includes("Gulf") && <Gulf_PopulationMetrics selectedSite="Gulf" />}
           </div>
-        )}
+          )}
 
-        {activeTab === 'Productivity' && (
+          {activeTab === 'Productivity' && (
           <div className="grid grid-cols-2 gap-4">
             {selectedSites.includes("Southern Nova Scotia") && <South_ProductivityMetrics selectedSite="Southern Nova Scotia" />}
             {selectedSites.includes("Gulf") && <Gulf_ProductivityMetrics selectedSite="Gulf" />}
           </div>
-        )}
+          )}
 
-        {activeTab === 'Survival' && (
+          {activeTab === 'Survival' && (
           <div className="grid grid-cols-2 gap-4">
             {selectedSites.includes("Southern Nova Scotia") && <South_SurvivalMetrics selectedSite="Southern Nova Scotia" />}
             {selectedSites.includes("Gulf") && <Gulf_SurvivalMetrics selectedSite="Gulf" />}
           </div>
-        )}
+          )}
 
-        {activeTab === 'Transition' && (
+          {activeTab === 'Transition' && (
           <div className="grid grid-cols-2 gap-4">
             {selectedSites.includes("Southern Nova Scotia") && <South_TransitionMetrics selectedSite="Southern Nova Scotia" />}
             {selectedSites.includes("Gulf") && <Gulf_TransitionMetrics selectedSite="Gulf" />}
           </div>
-        )}
+          )}
+
       </div>
     </div>
   );
