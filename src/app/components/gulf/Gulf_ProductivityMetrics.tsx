@@ -36,8 +36,6 @@ const Gulf_ProductivityMetrics: React.FC<Gulf_ProductivityMetricsProps> = ({ sel
         {selectedSite} of Nova Scotia
       </p>
 
-      {selectedSite === "Gulf" ? (
-        <>
           <div className="flex flex-wrap mt-4 gap-6">
             <div className="flex-grow">
               <h3 className="text-lg font-bold mb-2">Total Chicks Produced (C)</h3>
@@ -81,12 +79,6 @@ const Gulf_ProductivityMetrics: React.FC<Gulf_ProductivityMetricsProps> = ({ sel
           </div>
 
           <div className="my-10" style={{ height: '20px' }}></div>
-        </>
-      ) : (
-        <div className="mt-4 p-4 bg-gray-100 border border-gray-300 rounded" style={{ height: '100%' }}>
-          <p>Productivity metrics for the Gulf study site are not yet available. Please check back later.</p>
-        </div>
-      )}
     </div>
   );
 };

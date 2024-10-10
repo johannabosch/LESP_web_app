@@ -112,7 +112,7 @@ const MetricsNav: React.FC<MetricsNavProps> = ({ selectedSites, setSelectedSites
                 <ul>
                   {metrics.map((metric) => (
                     <li key={metric} className="mb-2 text-lg">
-                      <strong>{metric}:</strong> {metricInfo[metric]}
+                      <strong>{metric}:</strong> {metricInfo[metric as keyof typeof metricInfo]}
                     </li>
                   ))}
                 </ul>
