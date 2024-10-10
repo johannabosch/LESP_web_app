@@ -62,3 +62,18 @@ img, video {
   display: none;
 }
 
+/* rotation for reset button - metrics page */
+.rotate {
+  transition: transform 1s;
+  transform: rotate(360deg);
+}
+
+/* Disable focus outline for all focusable elements */
+*:focus {
+  outline: none;
+}
+
+/* Prevent text selection for all elements */
+* {
+  user-select: none;
+}

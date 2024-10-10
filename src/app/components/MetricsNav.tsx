@@ -1,23 +1,25 @@
-"use client"; // enables Next.js client-side rendering
+"use client";
 
 import React, { useState, useRef } from 'react';
 
-// define component props
+// Define component props
 interface MetricsNavProps {
   selectedSites: string[]; // active sites (multiple selection)
   setSelectedSites: (sites: string[]) => void; // set active sites (multiple selection)
   activeTab: string | null; // active metric
   setActiveTab: (tab: string | null) => void; // set active metric
+  resetSelection: () => void; // function to reset selection (added prop)
 }
 
-const MetricsNav: React.FC<MetricsNavProps> = ({ selectedSites, setSelectedSites, activeTab, setActiveTab }) => {
+const MetricsNav: React.FC<MetricsNavProps> = ({ selectedSites, setSelectedSites, activeTab, setActiveTab, resetSelection }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // state for controlling open/close
+  const [isRotating, setIsRotating] = useState(false); // state to track rotation
   const dropdownRef = useRef<HTMLDetailsElement>(null); // ref for accessing the dropdown's details element
 
-  // list of study sites
+  // List of study sites
   const studySites = ["Southern Nova Scotia", "Gulf"];
 
-  // list of metrics
+  // List of metrics
   const metrics = ["Population Size", "Productivity", "Survival", "Transition"];
 
   // Define color for each metric tab
@@ -28,7 +30,7 @@ const MetricsNav: React.FC<MetricsNavProps> = ({ selectedSites, setSelectedSites
     "Survival": "#7257b0",
   };
 
-  // function to handle checkbox changes
+  // Function to handle checkbox changes
   const handleSiteSelection = (site: string) => {
     if (selectedSites.includes(site)) {
       // Remove the site if it's already selected
@@ -37,6 +39,17 @@ const MetricsNav: React.FC<MetricsNavProps> = ({ selectedSites, setSelectedSites
       // Add the site if it's not selected
       setSelectedSites([...selectedSites, site]);
     }
+  };
+
+  // Function to handle reset button click and rotation
+  const handleResetClick = () => {
+    setIsRotating(true); // Start the rotation animation
+    resetSelection(); // Perform the reset action
+
+    // Stop the rotation after the animation ends
+    setTimeout(() => {
+      setIsRotating(false); // Reset the state after the animation duration
+    }, 500); // The same duration as the CSS transition
   };
 
   return (
@@ -50,7 +63,7 @@ const MetricsNav: React.FC<MetricsNavProps> = ({ selectedSites, setSelectedSites
             const tabColor = tabColors[metric]; // Get the color for each metric
 
             return (
-                <button
+              <button
                 key={metric}
                 className={`relative text-md px-6 py-1 rounded-md font-semibold transition-all duration-300 transform 
                   ${activeTab === metric ? 'scale-105 text-white shadow-xl' : 'bg-white'} hover:scale-105 hover:shadow-lg`}
@@ -75,47 +88,62 @@ const MetricsNav: React.FC<MetricsNavProps> = ({ selectedSites, setSelectedSites
               </button>
             );
           })}
+
+          {/* Reset Button positioned to the left with rotation effect */}
+          <div className= "bg-gray-600 px-3 py-[2px] rounded-lg">
+            <button
+            className={`text-lg text-white transition-transform duration-500 ${isRotating ? 'rotate' : ''}`}
+            onClick={handleResetClick}
+          >
+            ↺
+          </button>
+          </div>
         </div>
       </div>
 
-      {/* Dropdown menu for selecting study sites with checkboxes */}
-      <div className="dropdown-container relative flex items-center">
-        <details 
-          className="dropdown" 
-          ref={dropdownRef} 
-          onToggle={(e) => setIsDropdownOpen(e.currentTarget.open)} // control dropdown open state
-        >
-          <summary className="btn flex justify-between w-[400px] cursor-pointer select-none text-lg">
-            <span>Selected study sites</span>
-            
-            {/* Rotate the arrow icon */}
-            <svg 
-              className={`w-4 h-4 ml-2 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} 
-              xmlns="http://www.w3.org/2000/svg" 
-              viewBox="0 0 20 20" 
-              fill="currentColor"
-            >
-              <path fillRule="evenodd" d="M5.293 7.707a1 1 0 011.414 0L10 11.414l3.293-3.707a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-            </svg>
-          </summary>
+      <div className="flex justify-between items-center mb-4">
+        {/* Dropdown menu for selecting study sites with checkboxes */}
+        <div className="dropdown-container relative flex items-center">
+          <details
+            className="dropdown"
+            ref={dropdownRef}
+            onToggle={(e) => setIsDropdownOpen(e.currentTarget.open)} // control dropdown open state
+          >
+            <summary className="btn flex justify-between w-[400px] cursor-pointer select-none text-lg">
+              <span>Selected study sites</span>
 
-          {/* Dropdown list with checkboxes */}
-          <ul className="absolute text-lg bg-white border border-gray-300 rounded-lg shadow-lg w-full mt-2 p-2 z-10">
-            {studySites.map((site, index) => (
-              <li key={index} className="flex items-center space-x-2">
-                <input
-                  type="checkbox"
-                  id={site}
-                  checked={selectedSites.includes(site)}
-                  onChange={() => handleSiteSelection(site)} // handle checkbox selection
-                  className={'w-5 h-5 m-2 '}
-                
+              {/* Rotate the arrow icon */}
+              <svg
+                className={`w-4 h-4 ml-2 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M5.293 7.707a1 1 0 011.414 0L10 11.414l3.293-3.707a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clipRule="evenodd"
                 />
-                <label htmlFor={site} className="text-lg">{site}</label>
-              </li>
-            ))}
-          </ul>
-        </details>
+              </svg>
+            </summary>
+
+            {/* Dropdown list with checkboxes */}
+            <ul className="absolute text-lg bg-white border border-gray-300 rounded-lg shadow-lg w-full mt-2 p-2 z-10">
+              {studySites.map((site, index) => (
+                <li key={index} className="flex items-center space-x-2">
+                  <input
+                    type="checkbox"
+                    id={site}
+                    checked={selectedSites.includes(site)}
+                    onChange={() => handleSiteSelection(site)} // handle checkbox selection
+                    className={'w-5 h-5 m-2 '}
+                  />
+                  <label htmlFor={site} className="text-lg">{site}</label>
+                </li>
+              ))}
+            </ul>
+          </details>
+        </div>
       </div>
     </div>
   );
