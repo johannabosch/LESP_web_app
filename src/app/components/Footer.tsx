@@ -22,7 +22,7 @@ const Footer = () => {
 
   return (
     // Footer layout and styling
-    <footer className="bg-white pb-0 border-t-2 border-black text-center mt-10 mb-0">
+    <footer className="bg-white pb-0 shadow-[0_-4px_10px_-2px] shadow-xl shadow-[#EDF0F1] border-b-[1px] border-white text-center mt-10 mb-0">
       
       {/* Links to Documentation and Acknowledgments. */}
       <nav className="flex justify-center items-center mb-0">
