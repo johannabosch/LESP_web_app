@@ -1,6 +1,6 @@
-"use client";
+"use client"; // enables Next.js client-side rendering
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 // Define component props
 interface MetricsNavProps {
@@ -16,6 +16,23 @@ const MetricsNav: React.FC<MetricsNavProps> = ({ selectedSites, setSelectedSites
   const [isRotating, setIsRotating] = useState(false); // state to track rotation
   const dropdownRef = useRef<HTMLDetailsElement>(null); // ref for accessing the dropdown's details element
   const [showInfoPopup, setShowInfoPopup] = useState(false); // state to control info popup visibility
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      // Check if the click was outside the dropdown
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false); // Close the dropdown
+      }
+    };
+
+    // Add event listener for clicks on the document
+    document.addEventListener('mousedown', handleClickOutside);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   // List of study sites
   const studySites = ["Southern Nova Scotia", "Gulf"];
@@ -74,7 +91,7 @@ const MetricsNav: React.FC<MetricsNavProps> = ({ selectedSites, setSelectedSites
             return (
               <button
                 key={metric}
-                className={`relative text-md px-6 py-1 rounded-md font-semibold transition-all duration-300 transform 
+                className={`relative text-lg px-6 py-1 rounded-md font-semibold transition-all duration-300 transform 
                   ${activeTab === metric ? 'scale-105 text-white shadow-xl' : 'bg-white'} hover:scale-105 hover:shadow-lg`}
                 style={{ backgroundColor: activeTab === metric ? tabColor : 'white',
                   color: activeTab === metric ? 'white' : tabColor,
@@ -139,10 +156,11 @@ const MetricsNav: React.FC<MetricsNavProps> = ({ selectedSites, setSelectedSites
           <details
             className="dropdown"
             ref={dropdownRef}
+            open={isDropdownOpen} // Control open state
             onToggle={(e) => setIsDropdownOpen(e.currentTarget.open)} // control dropdown open state
           >
             <summary className="btn flex justify-between w-[400px] cursor-pointer select-none text-lg">
-              <span>Selected study sites</span>
+              <span>{selectedSites.length === 0 ? 'Select a study site' : 'Selected study sites'}</span>
 
               {/* Rotate the arrow icon */}
               <svg

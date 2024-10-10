@@ -10,6 +10,7 @@ interface South_PopulationMetricsProps {
 
 const South_PopulationMetrics: React.FC<South_PopulationMetricsProps> = ({ selectedSite }) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLParagraphElement>(null); // Reference for site-header
   const [containerWidth, setContainerWidth] = useState<number>(window.innerWidth);
   const [containerHeight, setContainerHeight] = useState<number>(window.innerHeight);
 
@@ -27,13 +28,16 @@ const South_PopulationMetrics: React.FC<South_PopulationMetricsProps> = ({ selec
     return () => window.removeEventListener('resize', updateContainerDimensions);
   }, []);
 
-  // Calculate maximum size for ResizableBox
-  const maxBoxWidth = Math.min(800, containerWidth - 50);
+  // Fixed width for the site-header
+  const fixedHeaderWidth = containerWidth;
+  const maxBoxWidth = Math.min(fixedHeaderWidth, fixedHeaderWidth);
   const maxBoxHeight = Math.min(600, containerHeight - 150);
 
   return (
     <div ref={containerRef} className="block font-bold" style={{ height: '100%', overflow: 'auto' }}>
-      <p className="bg-[#B4D6F7] rounded px-10 p-[4px] text-white text-2xl" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)' }}>
+      {/* Fixed width for the header */}
+      <p ref={headerRef} className="bg-[#B4D6F7] rounded text-center p-[4px] text-white text-2xl" 
+         style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)', width: `${fixedHeaderWidth}px` }}>
         {selectedSite}
       </p>
 
@@ -44,10 +48,10 @@ const South_PopulationMetrics: React.FC<South_PopulationMetricsProps> = ({ selec
             <div className="flex-grow">
               <h3 className="text-lg font-bold mb-2">First Stage Population Size (N<sub>1</sub>)</h3>
               <ResizableBox
-                width={595}
+                width={((containerWidth)/2)-10}
                 height={400}
                 minConstraints={[300, 200]}
-                maxConstraints={[maxBoxWidth, maxBoxHeight]}
+                maxConstraints={[maxBoxWidth, 700]}
                 resizeHandles={['se']}
                 className="border border-gray-300 p-2 rounded w-full"
               >
@@ -65,10 +69,10 @@ const South_PopulationMetrics: React.FC<South_PopulationMetricsProps> = ({ selec
             <div className="flex-grow">
               <h3 className="text-lg font-bold mb-2">Breeding Population Size (N<sub>2</sub>)</h3>
               <ResizableBox
-                width={595}
+                width={((containerWidth)/2)-10}
                 height={400}
                 minConstraints={[300, 200]}
-                maxConstraints={[maxBoxWidth, maxBoxHeight]}
+                maxConstraints={[maxBoxWidth, 700]}
                 resizeHandles={['se']}
                 className="border border-gray-300 p-2 rounded w-full"
               >
