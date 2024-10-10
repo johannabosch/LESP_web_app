@@ -42,7 +42,7 @@ const South_SurvivalMetrics: React.FC<South_SurvivalMetricsProps> = ({ selectedS
             <div className="flex-grow">
               <h3 className="text-lg font-bold mb-2">First Year Survival (S<sub>0</sub>)</h3>
               <ResizableBox
-                width={500}
+                width={595}
                 height={400}
                 minConstraints={[300, 200]}
                 maxConstraints={[maxBoxWidth, maxBoxHeight]}
@@ -62,7 +62,7 @@ const South_SurvivalMetrics: React.FC<South_SurvivalMetricsProps> = ({ selectedS
             <div className="flex-grow">
               <h3 className="text-lg font-bold mb-2">Adult Survival (S<sub>1</sub>)</h3>
               <ResizableBox
-                width={500}
+                width={595}
                 height={400}
                 minConstraints={[300, 200]}
                 maxConstraints={[maxBoxWidth, maxBoxHeight]}

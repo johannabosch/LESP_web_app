@@ -42,7 +42,7 @@ const South_ProductivityMetrics: React.FC<South_ProductivityMetricsProps> = ({ s
             <div className="flex-grow">
               <h3 className="text-lg font-bold mb-2">Total Chicks Produced (C)</h3>
               <ResizableBox
-                width={500}
+                width={595}
                 height={400}
                 minConstraints={[300, 200]}
                 maxConstraints={[maxBoxWidth, maxBoxHeight]}
@@ -62,7 +62,7 @@ const South_ProductivityMetrics: React.FC<South_ProductivityMetricsProps> = ({ s
             <div className="flex-grow">
               <h3 className="text-lg font-bold mb-2">Chicks Produced Per Pair (CP)</h3>
               <ResizableBox
-                width={500}
+                width={595}
                 height={400}
                 minConstraints={[300, 200]}
                 maxConstraints={[maxBoxWidth, maxBoxHeight]}

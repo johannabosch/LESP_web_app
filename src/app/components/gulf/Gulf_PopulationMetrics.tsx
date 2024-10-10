@@ -45,7 +45,7 @@ const Gulf_PopulationMetrics: React.FC<Gulf_PopulationMetricsProps> = ({ selecte
             <div className="flex-grow">
               <h3 className="text-lg font-bold mb-2">First Stage Population Size (N<sub>1</sub>)</h3>
               <ResizableBox
-                width={500}
+                width={595}
                 height={400}
                 minConstraints={[300, 200]}
                 maxConstraints={[maxBoxWidth, maxBoxHeight]}
@@ -66,7 +66,7 @@ const Gulf_PopulationMetrics: React.FC<Gulf_PopulationMetricsProps> = ({ selecte
             <div className="flex-grow">
               <h3 className="text-lg font-bold mb-2">Breeding Population Size (N<sub>2</sub>)</h3>
               <ResizableBox
-                width={500}
+                width={595}
                 height={400}
                 minConstraints={[300, 200]}
                 maxConstraints={[maxBoxWidth, maxBoxHeight]}

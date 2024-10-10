@@ -15,6 +15,7 @@ const MetricsNav: React.FC<MetricsNavProps> = ({ selectedSites, setSelectedSites
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // state for controlling open/close
   const [isRotating, setIsRotating] = useState(false); // state to track rotation
   const dropdownRef = useRef<HTMLDetailsElement>(null); // ref for accessing the dropdown's details element
+  const [showInfoPopup, setShowInfoPopup] = useState(false); // state to control info popup visibility
 
   // List of study sites
   const studySites = ["Southern Nova Scotia", "Gulf"];
@@ -28,6 +29,14 @@ const MetricsNav: React.FC<MetricsNavProps> = ({ selectedSites, setSelectedSites
     "Productivity": "#004aad",
     "Transition": "#60941a",
     "Survival": "#7257b0",
+  };
+
+  // Information about the population metrics
+  const metricInfo = {
+    "Population Size": "The total number of individuals within a population.",
+    "Productivity": "The rate at which new individuals are produced by the population.",
+    "Survival": "The rate of survival of individuals within the population.",
+    "Transition": "The rate at which individuals move between life stages or states."
   };
 
   // Function to handle checkbox changes
@@ -89,8 +98,31 @@ const MetricsNav: React.FC<MetricsNavProps> = ({ selectedSites, setSelectedSites
             );
           })}
 
+          {/* Info button */}
+          <div
+            className="relative flex items-center justify-center mb-5 right-1 cursor-pointer text-black"
+            onMouseEnter={() => setShowInfoPopup(true)}
+            onMouseLeave={() => setShowInfoPopup(false)}
+          >
+            <span className="text-sm font-bold rounded-full bg-white w-5 h-5 flex items-center justify-center border border-black">i</span>
+
+            {/* Popup with metric info */}
+            {showInfoPopup && (
+              <div className="absolute top-full left-0 mt-2 w-[550px] bg-white border border-gray-300 rounded-lg shadow-lg p-4 z-10">
+                <ul>
+                  {metrics.map((metric) => (
+                    <li key={metric} className="mb-2 text-lg">
+                      <strong>{metric}:</strong> {metricInfo[metric]}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+
+
           {/* Reset Button positioned to the left with rotation effect */}
-          <div className= "bg-gray-600 px-3 py-[2px] rounded-lg">
+          <div className= "bg-gray-400 px-3 py-[2px] rounded-lg hover:bg-gray-600">
             <button
             className={`text-lg text-white transition-transform duration-500 ${isRotating ? 'rotate' : ''}`}
             onClick={handleResetClick}

@@ -20,7 +20,6 @@ import Gulf_PopulationMetrics from '@/app/components/gulf/Gulf_PopulationMetrics
 import Gulf_ProductivityMetrics from '@/app/components/gulf/Gulf_ProductivityMetrics';
 import Gulf_SurvivalMetrics from '@/app/components/gulf/Gulf_SurvivalMetrics';
 import Gulf_TransitionMetrics from '@/app/components/gulf/Gulf_TransitionMetrics';
-// PloverMetrics.tsx
 
 const PloverMetrics: React.FC = () => {
   // State for which metric (tab) is currently selected
@@ -28,7 +27,7 @@ const PloverMetrics: React.FC = () => {
 
   // State for which study sites are selected
   const [selectedSites, setSelectedSites] = useState<string[]>([]); // Initially no sites selected
-  
+
   // Function to reset the selection
   const resetSelection = () => {
     setSelectedSites([]); // Reset selected study sites
@@ -36,7 +35,7 @@ const PloverMetrics: React.FC = () => {
   };
 
   return (
-    <div className="plover-metrics-container p-4">
+    <div id="plover-metrics-container" className="plover-metrics-container p-4">
       {/* Metrics Navigation Component */}
       <MetricsNav
         selectedSites={selectedSites}
@@ -56,41 +55,37 @@ const PloverMetrics: React.FC = () => {
           <p>Now select a metric above to view for your selected study sites.</p>
         )}
 
-        {activeTab && selectedSites.length === 0 &&  (
+        {activeTab && selectedSites.length === 0 && (
           <p>Now select a study site(s) to view the models.</p>
         )}
 
         {/* Render content based on the active tab and selected sites */}
-        {activeTab === 'Population Size' && (
-          <div className="grid grid-cols-2 gap-4">
-            {selectedSites.includes("Southern Nova Scotia") && <South_PopulationMetrics selectedSite="Southern Nova Scotia" />}
-            {selectedSites.includes("Gulf") && <Gulf_PopulationMetrics selectedSite="Gulf" />}
-          </div>
-        )}
+        <div className="space-y-6">
+          {/* Southern Nova Scotia Row */}
+          {selectedSites.includes("Southern Nova Scotia") && (
+            <div className="flex flex-wrap justify-center gap-4">
+              {activeTab === 'Population Size' && <South_PopulationMetrics selectedSite="Southern Nova Scotia" />}
+              {activeTab === 'Productivity' && <South_ProductivityMetrics selectedSite="Southern Nova Scotia" />}
+              {activeTab === 'Survival' && <South_SurvivalMetrics selectedSite="Southern Nova Scotia" />}
+              {activeTab === 'Transition' && <South_TransitionMetrics selectedSite="Southern Nova Scotia" />}
+            </div>
+          )}
 
-        {activeTab === 'Productivity' && (
-          <div className="grid grid-cols-2 gap-4">
-            {selectedSites.includes("Southern Nova Scotia") && <South_ProductivityMetrics selectedSite="Southern Nova Scotia" />}
-            {selectedSites.includes("Gulf") && <Gulf_ProductivityMetrics selectedSite="Gulf" />}
-          </div>
-        )}
-
-        {activeTab === 'Survival' && (
-          <div className="grid grid-cols-2 gap-4">
-            {selectedSites.includes("Southern Nova Scotia") && <South_SurvivalMetrics selectedSite="Southern Nova Scotia" />}
-            {selectedSites.includes("Gulf") && <Gulf_SurvivalMetrics selectedSite="Gulf" />}
-          </div>
-        )}
-
-        {activeTab === 'Transition' && (
-          <div className="grid grid-cols-2 gap-4">
-            {selectedSites.includes("Southern Nova Scotia") && <South_TransitionMetrics selectedSite="Southern Nova Scotia" />}
-            {selectedSites.includes("Gulf") && <Gulf_TransitionMetrics selectedSite="Gulf" />}
-          </div>
-        )}
+          {/* Gulf Row */}
+          {selectedSites.includes("Gulf") && (
+            <div className="flex flex-wrap justify-center gap-4">
+              {activeTab === 'Population Size' && <Gulf_PopulationMetrics selectedSite="Gulf" />}
+              {activeTab === 'Productivity' && <Gulf_ProductivityMetrics selectedSite="Gulf" />}
+              {activeTab === 'Survival' && <Gulf_SurvivalMetrics selectedSite="Gulf" />}
+              {activeTab === 'Transition' && <Gulf_TransitionMetrics selectedSite="Gulf" />}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
 };
 
 export default PloverMetrics;
+
+

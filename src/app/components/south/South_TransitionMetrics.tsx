@@ -42,7 +42,7 @@ const South_TransitionMetrics: React.FC<South_TransitionMetricsProps> = ({ selec
             <div className="flex-grow">
               <h3 className="text-lg font-bold mb-2">Chick to Breeder Transition (Ψ<sub>0</sub>)</h3>
               <ResizableBox
-                width={500}
+                width={595}
                 height={400}
                 minConstraints={[300, 200]}
                 maxConstraints={[maxBoxWidth, maxBoxHeight]}
@@ -62,7 +62,7 @@ const South_TransitionMetrics: React.FC<South_TransitionMetricsProps> = ({ selec
             <div className="flex-grow">
               <h3 className="text-lg font-bold mb-2">Non-Breeder to Breeder Transition (Ψ<sub>1</sub>)</h3>
               <ResizableBox
-                width={500}
+                width={595}
                 height={400}
                 minConstraints={[300, 200]}
                 maxConstraints={[maxBoxWidth, maxBoxHeight]}
