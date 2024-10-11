@@ -14,12 +14,10 @@ const Header = () => {
 
       {/* Logo links back to the homepage */}
       <div className="flex-1">
-        <Link href="/" className="btn btn-ghost">
-          <img 
-            src="/QR_code.png" 
-            alt="logo"
-            className="w-10 h-auto"
-          />
+        <Link href="/" className="btn btn-ghost text-2xl font-bold">
+          <p>
+          Piping Plover IPM
+          </p>
         </Link>
       </div>
 
