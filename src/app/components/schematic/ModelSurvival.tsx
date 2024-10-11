@@ -8,7 +8,7 @@ const SurvivalModel: React.FC = () => {
           <h2 className="card-title text-3xl text-[#7257b0]">Survival Model</h2>
           
           <p className="text-xl text-gray-700 mb-4">
-            This section introduces the survival rates of breeding plovers, focusing on the factors that impact their survival over time. It includes insights into survival probabilities and long-term health.
+            This section introduces the survival rates of breeding petrels, focusing on the factors that impact their survival over time. It includes insights into survival probabilities and long-term health.
           </p>
 
           <h3 className="text-2xl font-bold text-gray-700 mb-0">
@@ -48,7 +48,7 @@ const SurvivalModel: React.FC = () => {
                 <div className="flex flex-col items-center border-[5px] rounded mt-5">
                       <img
                         src="/images/PIPL/SidMaddock.jpg"
-                        alt="Piping plover wearing identification band labelled 3N (Photo by Sid Maddock)"
+                        alt="Piping petrel wearing identification band labelled 3N (Photo by Sid Maddock)"
                         className="w-[340px] h-auto"
                       />
                       

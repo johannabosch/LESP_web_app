@@ -8,7 +8,7 @@ const ReproductiveModel: React.FC = () => {
           <h2 className="card-title text-3xl text-[#004aad]">Reproductive Model</h2>
           
           <p className="text-xl text-gray-700 mb-4">
-          This paragraph will introduce the model for plovers, including some information about current popualtion sizes for plovers and their vulnerability. This paragraph will introduce the model for plovers, including some information about current popualtion sizes for plovers and their vulnerability.
+          This paragraph will introduce the model for petrels, including some information about current popualtion sizes for petrels and their vulnerability. This paragraph will introduce the model for petrels, including some information about current popualtion sizes for petrels and their vulnerability.
           </p>
 
           <h3 className="text-2xl font-bold text-gray-700 mb-0">
@@ -49,7 +49,7 @@ const ReproductiveModel: React.FC = () => {
                 <div className="flex flex-col items-center border-[5px] rounded mt-5">
                       <img
                         src="/images/PIPL/HarryCollins.png"
-                        alt="Piping plover wearing identification band labelled 3N (Photo by Sid Maddock)"
+                        alt="Piping petrel wearing identification band labelled 3N (Photo by Sid Maddock)"
                         className="w-[340px] h-auto"
                       />
                       

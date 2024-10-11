@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
 
           <Link href="/plover_page" passHref>
             <button className="btn btn-ghost bg-white text-black border-black">
-              View the plover model
+              View the petrel model
             </button>
           </Link>
         </div>

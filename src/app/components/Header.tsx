@@ -14,12 +14,8 @@ const Header = () => {
 
       {/* Logo links back to the homepage */}
       <div className="flex-1">
-        <Link href="/" className="btn btn-ghost">
-          <img 
-            src="/QR_code.png" 
-            alt="logo"
-            className="w-10 h-auto"
-          />
+        <Link href="/" className="btn btn-ghost text-xl font-bold">
+          <p> Leach's Storm Petrel IPM</p>
         </Link>
       </div>
 
@@ -27,13 +23,12 @@ const Header = () => {
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
 
-          {/* Dropdown menu for species - MIGHT REMOVE */}
+          {/* Dropdown menu for species */}
           <li tabIndex={0}>
             <details>
               <summary className="btn btn-ghost text-xl">Integrated Population Model</summary>
               <ul className="bg-base-100 rounded-t-none p-2 text-xl">
                 <li>
-                  {/* Link to the Petrel species page */}
                   <Link
                     href="/about_page"
                     className={`hover:bg-gray-300 font-semibold btn-ghost`}
@@ -43,9 +38,8 @@ const Header = () => {
                 </li>
 
                 <li>
-                  {/* Link to the Plover species page */}
                   <Link
-                    href="/plover_page"
+                    href="/petrel_page"
                     className={`hover:bg-gray-300 font-semibold btn-ghost`}
                   >
                     Data visualization
