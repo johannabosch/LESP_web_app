@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import IPMGraphic from '@/app/components/schematic/IPMGraphic';
+import IPM_matrix from '@/app/components/IPM_matrix';
+import IPM_lifecycle from '@/app/components/IPM_lifecycle';
 import Hero from '@/app/components/Hero';
 
 export default function Homepage() {
@@ -19,16 +21,44 @@ export default function Homepage() {
     <div className="container mx-auto px-4 py-8 flex flex-col h-full relative">
       {/* Header section */}
       <main className="flex-grow">
-        <div className="w-full">
+        <div className="">
           <Header />
         </div>
       </main>
 
       {/* Hero section */}
       <main className="flex-grow">
-        <div className="w-full mb-0">
+        <div className="mb-0">
           <Hero />
         </div>
+      </main>
+
+      {/* Project Info section */}
+
+      <main className="flex-grow">
+      <h1 className="text-4xl text-center font-bold mb-4 mt-[100px]">Lifecycle</h1>
+        <div className="relative w-full flex justify-center items-center mb-6">
+          <hr className="border-t-2 border-black w-3/4 mx-auto" />
+          <span className="absolute bg-white px-4 text-xl">
+            Hover over the equation to learn more.
+          </span>
+        </div>
+        <div className="mb-[100px]">
+          <IPM_lifecycle />
+        </div>
+      </main>
+
+      <main className="flex-grow">
+        <h1 className="text-4xl text-center font-bold mb-4 mt-0">Population Projection Matrix Equation</h1>
+        <div className="relative w-full flex justify-center items-center mb-6">
+          <hr className="border-t-2 border-black w-3/4 mx-auto" />
+          <span className="absolute bg-white px-4 text-xl">
+            Hover over the equation to learn more.
+          </span>
+        </div>
+          <div className="mb-[400px]">
+            <IPM_matrix />
+          </div>
       </main>
 
       {/* IPM Schematic */}

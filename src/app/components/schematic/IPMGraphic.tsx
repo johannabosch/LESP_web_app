@@ -14,36 +14,11 @@ const IPMGraphic: React.FC = () => {
   const [clickedImage, setClickedImage] = useState<number | null>(null);
 
   const imageGroups = [
-    {
-      src: "/images/PIPL/survival.svg",
-      left: "38%",
-      top: "47%",
-      info: "SURVIVAL OF BREEDERS",
-      component: <SurvivalModel />,
-    },
-    {
-      src: "/images/PIPL/population.svg",
-      left: "8%",
-      top: "66%",
-      info: "POPULATION ABUNDANCE",
-      component: <PopulationModel />,
-    },
-    {
-      src: "/images/PIPL/reproductive.svg",
-      left: "28%",
-      top: "5%",
-      info: "PRODUCTIVITY",
-      component: <ProductivityModel />,
-    },
-    {
-      src: "/images/PIPL/process.svg",
-      left: "23%",
-      top: "34%",
-      info: "POPULATION PROCESS MODEL",
-      component: <ProcessModel />,
-    },
+    {src: "/images/PIPL/survival.svg", left: "38%", top: "47%", info: "SURVIVAL OF BREEDERS", component: <SurvivalModel />,},
+    {src: "/images/PIPL/population.svg", left: "8%", top: "66%", info: "POPULATION ABUNDANCE", component: <PopulationModel />, },
+    {src: "/images/PIPL/reproductive.svg", left: "28%", top: "5%", info: "PRODUCTIVITY", component: <ProductivityModel />,},
+    {src: "/images/PIPL/process.svg", left: "23%", top: "34%", info: "POPULATION PROCESS MODEL", component: <ProcessModel />,},
   ];
-
 
   // Handle clicking on an image to show/hide the corresponding card
   const handleImageClick = (index: number) => {

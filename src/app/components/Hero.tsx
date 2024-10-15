@@ -1,55 +1,27 @@
 "use client"; // enables Next.js client-side rendering
 
 import React from 'react';
-import Link from 'next/link'; // enable links for internal navigation.
-
 
 const Hero: React.FC = () => {
   return (
-    // Hero section: large banner under header with background color and centered content.
     <div
-      className="hero h-[400px]"
-      style={{ backgroundColor: 'white' }}
+      className="relative h-[300px] bg-no-repeat bg-cover bg-center"
+      style={{
+        backgroundImage: `url('/images/PIPL/Wildpix645.svg')`,
+      }}
     >
-      {/* Opacity overlay */}
-      <div className="hero-overlay bg-opacity-0"></div>
-
-      {/* Centered text content*/}
-      <div className="hero-content text-neutral-content text-center flex flex-col justify-center items-center">
-        
+      {/* Overlay content */}
+      <div className="absolute inset-0 flex flex-col justify-center items-center text-neutral-content text-center z-10">
         {/* Main title */}
-        <h1 className="mt-0 text-4xl font-bold w-[40vw] mx-auto text-black">
-          Integrated Population Modelling (IPM)
-        </h1>
-        
-        {/* Subtitle */}
-        <h1 className="mt-0 text-2xl font-bold w-[30vw] mx-auto text-black">
-          of Seabird Colonies
+        <h1 className="mt-0 mb-[30px] text-4xl font-bold w-[30vw] mx-auto text-black">
+          Demographic modeling for Atlantic Piping Plover <i>(Charadrius melodus melodus)</i> in Eastern Canada
         </h1>
 
         {/* Placeholder text */}
-        <p className="mb-5 text-xl w-[60vw] mx-auto text-black">
-          [Placeholder text]
-        </p>
-
-        {/* Buttons with placeholder links */}
-        <div className="flex justify-between">
-
-          <Link href="/about_page" passHref>
-            <button className="btn btn-ghost bg-white text-black border-black mx-10">
-              Learn more about the project
-            </button>
-          </Link>
-
-          <Link href="/plover_page" passHref>
-            <button className="btn btn-ghost bg-white text-black border-black">
-              View the plover model
-            </button>
-          </Link>
+        <div className="flex justify-center text-center font-semibold mb-5 text-xl w-[35vw] mx-auto text-black bg-white bg-opacity-60 rounded-[10px] py-[10px] px-[20px]">
+          This web-app offers a glimpse into our Integrated Population Model (IPM) of the Atlantic Piping Plover, which incorporates all sources of monitoring data (abundance, productivity, and survival) into a comprehensive picture of population dynamics for the Piping Plover in regions of Eastern Canada.
         </div>
-
       </div>
-
     </div>
   );
 };
