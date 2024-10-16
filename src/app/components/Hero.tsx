@@ -5,21 +5,24 @@ import React from 'react';
 const Hero: React.FC = () => {
   return (
     <div
-      className="relative h-[300px] bg-no-repeat bg-cover bg-center"
-      style={{
+    className="relative h-[500px] bg-no-repeat bg-cover bg-right w-full"
+    style={{
         backgroundImage: `url('/images/PIPL/Wildpix645.svg')`,
       }}
     >
       {/* Overlay content */}
-      <div className="absolute inset-0 flex flex-col justify-center items-center text-neutral-content text-center z-10">
+      <div className="absolute inset-0 flex flex-col z-10 p-8 mt-[80px]">
         {/* Main title */}
-        <h1 className="mt-0 mb-[30px] text-4xl font-bold w-[30vw] mx-auto text-black">
-          Demographic modeling for Atlantic Piping Plover <i>(Charadrius melodus melodus)</i> in Eastern Canada
+        <h1 className="text-4xl font-bold text-black">
+          Demographic modeling for Atlantic Piping Plover 
+        </h1>
+        <h1 className="mb-[30px] text-4xl font-bold text-black">
+        <i>(Charadrius melodus melodus)</i> in Eastern Canada
         </h1>
 
         {/* Placeholder text */}
-        <div className="flex justify-center text-center font-semibold mb-5 text-xl w-[35vw] mx-auto text-black bg-white bg-opacity-60 rounded-[10px] py-[10px] px-[20px]">
-          This web-app offers a glimpse into our Integrated Population Model (IPM) of the Atlantic Piping Plover, which incorporates all sources of monitoring data (abundance, productivity, and survival) into a comprehensive picture of population dynamics for the Piping Plover in regions of Eastern Canada.
+        <div className="absolute top-[110px] transform w-[40vw] flex mb-5 text-lg text-black bg-white bg-opacity-60 rounded-[10px] py-[20px] px-[20px]">
+        <p> This web app offers an in-depth review of the Integrated Population Model (IPM) developed for the Atlantic Piping Plover in Eastern Canada. Researchers at Environment and Climate Change Canada have designed this model to integrate key monitoring data—abundance, productivity, and survival—into a cohesive framework that captures the population dynamics of this endangered species. Learn more about the history of Canada's vulnerable Piping Plover population below, or jump right in and <a href="/plover_page" className="text-blue-600 hover:underline">visualise the results of our model</a>. </p>
         </div>
       </div>
     </div>

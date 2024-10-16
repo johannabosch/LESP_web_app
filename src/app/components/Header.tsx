@@ -10,7 +10,7 @@ const Header = () => {
   const pathname = usePathname();
   return (
     // The header (or navbar) with a fixed black border color.
-    <header className="navbar bg-base-100 sticky mb-10 z-50 shadow-xl shadow-[#EDF0F1] border-b-[1px] border-white">
+      <header className="navbar bg-base-100 sticky top-0 z-50 shadow-lg shadow-[#EDF0F1] border-b-[1px] border-white w-full">
 
       {/* Logo links back to the homepage */}
       <div className="flex-1">
@@ -36,7 +36,7 @@ const Header = () => {
                     href="/about_page"
                     className={`hover:bg-gray-300 font-semibold btn-ghost`}
                   >
-                    Data overview
+                    Model overview
                   </Link>
                 </li>
 
