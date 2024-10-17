@@ -6,8 +6,8 @@ import React, { useState } from 'react';
 
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
-import IPM_lifecycle from '@/app/components/IPM_lifecycle';
-import IPM_matrix from '@/app/components/IPM_matrix';
+import IPM_lifecycle from '@/app/components/schematic/IPM_lifecycle';
+import IPM_matrix from '@/app/components/schematic/IPM_matrix';
 import IPMGraphic from '@/app/components/schematic/IPMGraphic';
 
 export default function About() {

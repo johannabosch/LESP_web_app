@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 
 import Header from '@/app/components/Header';
 import Hero from '@/app/components/Hero';
-import PIPL_info from '@/app/components/PIPL_info';
 import Timeline from '@/app/components/Timeline';
 import Footer from '@/app/components/Footer';
 
@@ -26,11 +25,7 @@ export default function Homepage() {
       </main>
 
 
-      {/* Species Info section */}
-
-      <main className="flex-grow">
-      <PIPL_info />
-      </main>
+      {/* PIPL timeline */}
 
       <main className="flex-grow">
       <Timeline />
