@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
         </h1>
 
         {/* Placeholder text */}
-        <div className="absolute top-[110px] transform w-[47vw] flex mb-5 text-lg text-black bg-white bg-opacity-60 rounded-[10px] py-[20px] px-[20px]">
+        <div className="absolute top-[110px] transform w-[50vw] flex mb-5 text-lg text-black bg-white bg-opacity-60 rounded-[10px] py-[20px] px-[20px]">
         <p> This web app offers an in-depth review of the Integrated Population Model (IPM) developed for the Atlantic Piping Plover in Eastern Canada. Researchers at Environment and Climate Change Canada have designed this model to integrate key monitoring data—abundance, productivity, and survival—into a cohesive framework that captures the population dynamics of this endangered species. Learn more about the history of Canada's vulnerable Piping Plover population below, or jump right in and <a href="/plover_page" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">visualise the results of our model</a>. </p>
         </div>
       </div>

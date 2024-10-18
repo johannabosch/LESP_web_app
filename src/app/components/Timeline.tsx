@@ -1,28 +1,71 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 const Timeline: React.FC = () => {
-  return (
-    <div className="flex px-4 mt-[10px]">
-      <div className=" absolute border bg-[] p-[20px] w-[400px] mx-[100px] right-0 shadow-lg ">
-        <p className="text-xl w-[315px] font-bold"> Learn more about the history of Atlantic Piping plover research in eastern Canada.</p>
-        <p className="absolute right-10 animate-bounce text-5xl mt-4 top-5">🡣</p>
-      </div>
-      
+  const [Results, setShowResults] = useState(false);
 
+  const toggleResults = () => {
+    setShowResults(!Results);
+  };
+
+  // Intersection Observer Hooks for each timeline item
+  const { ref: item1, inView: item1View } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+  const { ref: item2, inView: item2View } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+  const { ref: item3, inView: item3View } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+  const { ref: item4, inView: item4View } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+  const { ref: item5, inView: item5View } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+  const { ref: item6, inView: item6View } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+  const { ref: item7, inView: item7View } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+
+  return (
+    <div className="flex px-4 mt-[10px] justify-center">
+      <div className=" absolute border bg-white p-[20px] w-[450px] h-[90px] bg-blue shadow-lg mt-[40px] rounded-[10px] z-10">
+        
+      <img
+              className="absolute w-[70px] left-[10px] top-[10px] mt-[3px]" 
+              src="/images/timeline/plover_sketch.svg"
+              alt="annual census from 1994-2003"
+              />
+        <p className="absolute text-xl w-[315px] left-[95px] font-semibold"> Learn more about the history of Atlantic Piping plover research in eastern Canada.</p>
+        <p className="absolute left-[390px] animate-bounce text-5xl mt-4 top-5">🡣</p>
+      </div>
+    
       {/* Overall timeline structure. */}
-      <ul className="timeline timeline-snap-icon flex relative mx-auto h-auto timeline-vertical mt-[100px] mb-[150px]">
+      <ul className="timeline timeline-snap-icon timeline-vertical mt-[200px] mb-[150px] z-10">
+
 
         {/* Timeline Item 1 */}
-        <li>
+        <li ref={item1} className={`transition-transform duration-700 ${item1View ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}>
           <div className="timeline-middle">
           <time className="font-mono text-white font-bold text-2xl bg-black rounded-[10px] px-[10px]">1977</time>
           </div>
           <div className="timeline-start mb-10 text-end">
             <div className="text-3xl font-black mx-10" > EARLY RESEARCH IN EASTERN CANADA </div>
-            <p className="text-lg relative left-0 w-[395px] mx-10">
-            <a href="https://dalspace.library.dal.ca/handle/10222/82265" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">Cairns & Wake (1977)</a> studied the breeding biology and behaviour of <i>C. melodus</i> between 1975-1976 in Southern Nova Scotia, and found that individuals usually arrive in late April, and depart for their breeding grounds in July and August. They estimated that the population in Nova Scotia was between 60 - 75 pairs. 
+            <p className="text-lg relative left-0 w-[430px] mx-10">
+            <a href="https://dalspace.library.dal.ca/handle/10222/82265" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">Cairns & Wake (1977)</a> studied the breeding biology and behaviour of <i>C. melodus</i> between 1975-1976 in Southern Nova Scotia.They estimated that the population in Nova Scotia was between 60 - 75 pairs. 
             </p>
 
             <div className="relative bg-gray-100 py-[5px] rounded-[10px] w-[300px] mt-[30px] left-[100px] -mb-[250px]"
@@ -38,7 +81,7 @@ const Timeline: React.FC = () => {
         </li>
 
         {/* Timeline Item 2 */}
-        <li>
+        <li ref={item2} className={`transition-transform transition-delay-700 duration-700 ${item2View ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`} style={{ transitionDelay: item2View ? "0s" : "0s" }}>
           <hr/>
           <div className="timeline-middle">
           <time className="font-mono text-white font-bold text-2xl bg-black rounded-[10px] px-[10px]">1978</time>
@@ -47,7 +90,7 @@ const Timeline: React.FC = () => {
            <div className="timeline-end mb-10 text-start mb-[200px]">
             <div className="text-2xl font-black mx-10" > STATUS OF PIPING PLOVERS ACROSS CANADA</div>
             <p className="text-lg relative left-0 w-[440px] mx-10">
-            Piping plovers were first designated as <b> threatened </b> in 1973 by the National Audubon Society's Blue List for threatened species, and later listed as <b> endangered</b> as monitoring research progressed  <a href="https://www.jstor.org/stable/4513047" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">(Haig 1985)</a>. 
+            Piping plovers were first designated as <b> Threatened </b> in 1973 by the National Audubon Society's Blue List for threatened species, and later listed as <b> Endangered</b> as monitoring research progressed  <a href="https://www.jstor.org/stable/4513047" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">(Haig 1985)</a>. 
             </p>
 
           </div>
@@ -57,7 +100,7 @@ const Timeline: React.FC = () => {
 
 
         {/* Timeline Item 3 */}
-        <li>
+        <li ref={item3} className={`transition-transform duration-700 ${item3View ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}>
           <hr/>
           <div className="relative timeline-middle flex flex-col">
           <time className="font-mono text-white font-bold text-2xl bg-black rounded-[10px] px-[10px]">1991</time>
@@ -95,24 +138,32 @@ const Timeline: React.FC = () => {
 
         
         {/* Timeline Item 4 */}
-        <li>
+        <li ref={item4} className={`transition-transform duration-700 ${item4View ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}>
           <hr/>
            <div className="timeline-end text-start relative">
-           <img
-              className="absolute w-[300px] h-auto left-[300px] bottom-[80px]" 
+
+            <div className="relative bottom-[35px]" >
+              <div className=" relative text-4xl font-black mx-10 w-[400px] left-10" > PLOVERS A SPECIES AT RISK </div>
+              
+              <div className="relative w-[500px]">
+                <p className="text-xl relative left-10 mx-10 mt-[10px]">
+                  The Atlantic subspecies of Piping plovers (<i>C. melodus melodus</i>) was officially listed under the Species at Risk Act (SARA) in June 2003, two years after the Committee on the</p>
+                <p className="text-xl relative left-10 mx-10">
+                  Status of Endangered Wildlife (COSEWIC)  </p>
+                <p className="text-xl relative left-10 mx-10">
+                  listed the species (<i>C. melodus</i>) as </p>
+                  <p className="text-xl relative left-10 mx-10">
+                  <b> ENDANGERED. </b> 
+                </p>
+              </div>
+            </div>
+
+          
+          <img
+              className="absolute w-[300px] h-auto left-[300px] top-[55px]" 
               src="/images/PIPL/HarryCollins2.svg"
               alt="by Harry Collins from Getty Images"
               />
-            <div className="relative bottom-[35px]" >
-            <div className=" relative text-4xl font-black mx-10 w-[250px] left-10" > PLOVERS A SPECIES AT RISK </div>
-            <p className="text-xl relative left-10 w-[500px] mx-10 mt-[10px]">
-            The Atlantic subspecies of Piping </p>
-            <p className="text-xl relative left-10 w-[500px] mx-10 mt-[5px]">
-            plovers (<i>C. melodus melodus</i>) was </p>
-            <p className="text-xl relative left-10 w-[500px] mx-10 mt-[5px]">
-            officially listed under the Species at Risk Act (SARA) in June 2003, two years after the Committee on the Status of Endangered Wildlife (COSEWIC) listed the species (<i>C. melodus</i>) as <b> Endangered </b>. 
-            </p>
-          </div>
           </div>
 
           <hr />
@@ -120,15 +171,39 @@ const Timeline: React.FC = () => {
 
 
         {/* Timeline Item 5 */}
-        <li>
-          <div className="timeline-middle relative ">
+        <li ref={item5} className={`transition-transform duration-700 ${item5View ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}>
+          <div className="timeline-middle relative">
           <time className="relative bottom-[170px] font-mono text-white font-bold text-2xl bg-black rounded-[10px] px-[10px]">2006</time>
           </div>
-          <div className="timeline-start mb-10 text-end absolute bottom-[50px]">
+          <div className="relative timeline-start mb-10 text-end bottom-[170px]">
             <div className="text-2xl font-black mx-10" > INITIAL POPULATION SURVIVAL ESTIMATES </div>
-            <p className="text-lg relative left-0 w-[400px] mx-10">
-            <a href="https://www.ace-eco.org/vol1/iss3/art4/" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">Calvert et al. (2006)</a> built a matric projection model for two Piping plover population segments in <b>(1) the Gulf of the St. Lawrence</b> and <b>(2) Southern Nova Scotia </b> based on monitoring and mark-recapture data collected from 1998 to 2005.
+            <p className="text-lg absolute text-right right-[0px] w-[400px] mx-10">
+            <a href="https://www.ace-eco.org/vol1/iss3/art4/" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">Calvert et al. (2006)</a> built a matrix projection model for two Piping plover population segments in <b>(1) the Gulf of the St. Lawrence</b> and <b>(2) southern Nova Scotia </b> based on monitoring and mark-recapture data collected from 1998 to 2005.
             </p>
+
+            {/* Dropdown button */}
+            <button
+              onClick={toggleResults}
+              className="btn btn-ghost bg-gray-100 w-[400px] mt-10 ml-4 text-lg font-semibold mt-[100px] mx-10"
+            >
+              {Results ? 'Hide Results' : 'Show Results'} ▼
+            </button>
+
+            {/* Conditional rendering for the dropdown content */}
+            {Results && (
+              <div className="relative bg-gray-100 rounded-[10px] shadow-lg py-10 mt-4">
+                <img
+                  className="relative w-[600px] right-[10px] py-5" 
+                  src="/images/timeline/Calvert_et-al_2006.svg"
+                  alt="Calvert, A. M., et al. 2006. Population assessment of an endangered shorebird: the Piping Plover (Charadrius melodus melodus) in eastern Canada. Avian Conservation and Ecology - Écologie et conservation des oiseaux 1(3): 4."
+                />
+
+                <p className="text-lg relative w-[440px] left-10 mx-10 text-center">
+                  Annual population censuses suggested moderate growth in abundance between 1998–2003, but vital rate estimates indicated that this temporary growth may be replaced by declines in the long term, both in <b>southern Nova Scotia </b> (λd = 1.0043, λs = 0.9263) and in the <b> Gulf of St. Lawrence </b> (λd = 0.9651, λs = 0.8214) <a href="https://www.ace-eco.org/vol1/iss3/art4/" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">(Calvert et al. 2006)</a>.
+                </p>
+              </div>
+            )}
+
 
           </div>
           <hr />
@@ -138,9 +213,9 @@ const Timeline: React.FC = () => {
 
 
         {/* Timeline Item 6 */}
-        <li>
+        <li ref={item6} className={`transition-transform duration-700 ${item6View ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}>
           <hr/>
-          <div className="relative timeline-middle flex flex-col -top-[35px]">
+          <div className="relative timeline-middle flex flex-col -top-[40px]">
           <time className="font-mono text-white font-bold text-2xl bg-black rounded-[10px] px-[10px]">2014</time>
           <div className="relative w-[5px] h-[400px] border-[3px] border-black border-dashed top-[0px] left-[25px] "></div>
           <time className="font-mono absolute text-center text-white font-semibold text-lg bg-black rounded-[10px] px-[10px] top-[120px]">2017</time>
@@ -149,12 +224,34 @@ const Timeline: React.FC = () => {
           <time className="font-mono text-white font-bold text-2xl bg-black rounded-[10px] px-[10px] relative">2023</time>
           </div>
 
-          <div className="timeline-end mb-10 text-start absolute top-[0px]">
-            <div className="text-4xl relative font-black mx-10 mb-[10px] w-[500px]" > MONITORING EFFORTS CONTINUED</div>
-              <p className="text-lg relative w-[500px] mx-10">
+          <div className="timeline-end mb-10 text-start absolute top-[50px]">
+            <div className="text-4xl relative font-black mx-10 w-[500px]" > MONITORING EFFORTS CONTINUED</div>
+              <p className="text-xl relative w-[460px] mx-10 py-10">
               There was considerable banding effort in 2014, 2017 and 2018 and complemented with intensive band-resighting-efforts until 2023. Unlike the first study, this second banding program included not only resights in Canada during the summer breeding season, but also during fall, winter and spring on migration and over-wintering sites throughout coastal US and several sites in the Caribbean <a href="https://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=1692&context=usgsstaffpub" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">(Calvert et al. 2006, Figure 10)</a>. Over this period there were 651 individual plovers banded, of which 570 (88%) were reobserved in at least once.
               </p>
-              
+
+
+            <div className="relative bottom-[350px]">
+
+            <img
+              className="relative w-[240px] right-[320px] z-20" 
+              src="/images/timeline/PatLeary.svg"
+              alt="Piping Plover with tag (Talbot Island, FL), by Pat Leary"
+              />
+
+              <img
+              className="relative w-[280px] right-[540px] bottom-[150px] z-10" 
+              src="/images/timeline/beach_plot.svg"
+              alt="https://www.birdscanada.org/piping-plovers-face-a-range-of-challenges-from-hungry-predators-to-hoof-prints"
+              />
+
+              <img
+              className="relative w-[280px] right-[380px] bottom-[240px]" 
+              src="/images/timeline/beach_sign.svg"
+              alt="https://www.birdscanada.org/piping-plovers-face-a-range-of-challenges-from-hungry-predators-to-hoof-prints"
+              />
+            </div>
+
           </div>
 
           <div className="timeline-end mb-10 text-end absolute top-[0px]">
@@ -164,31 +261,34 @@ const Timeline: React.FC = () => {
         </li>
 
         {/* Timeline Item 7 */}
-        <li>
+        <li ref={item7} className={`transition-transform duration-700 ${item7View ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}>
           <div className="timeline-middle">
-          <time className="font-mono text-white font-bold text-2xl bg-black rounded-[10px] px-[10px] relative bottom-[10px]">2024</time>
+          <time className="font-mono text-white font-bold text-2xl bg-black rounded-[10px] px-[10px] relative bottom-[20px]">2024</time>
           </div>
-          <div className="timeline-start mb-10 text-end">
-            <div className="text-5xl font-black mx-10" > THE CURRENT PLOVER MODEL </div>
+          <div className="timeline-end text-start mt-[100px]">
+            <div className="text-5xl font-black mx-10 w-[600px] text-blue-400" > THE CURRENT PLOVER MODEL </div>
 
-            <p className="text-lg relative left-10 w-[500px] mx-10">
-            <a href="https://dalspace.library.dal.ca/handle/10222/82265" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">Cairns & Wake (1977)</a> </p>
+            <a href="" className="relative left-[460px] text-blue-900 text-lg transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">Calvert et al. (20__)</a>
 
-            <p className="text-lg relative left-10 w-[500px] mx-10 text-left mb-2">
+          <div className="relative w-[550px] mt-[10px]">
+            <p className="text-lg relative left-[30px] mb-[12px]">
             <b>(i)</b> update models of annual productivity and its links to population change, </p>
 
-            <p className="text-lg relative left-10 w-[500px] mx-10 text-left mb-2">
+            <p className="text-lg relative left-[30px] mb-[12px]">
             <b>(ii)</b> estimate seasonal and annual survival probabilities for young and adult birds based on a recent banding program (2014-2022) and compare these to previous (1998-2002) estimates published in Calvert et al. 2006, </p>
 
-            <p className="text-lg relative left-10 w-[500px] mx-10 text-left mb-2">
+            <p className="text-lg relative left-[30px] mb-[12px]">
             <b>(iii)</b> build and develop an Integrated Population Model that incorporates all sources of information (abundance, productivity and survival) into a comprehensive picture of population dynamics. </p>
-
+          </div>
 
           </div>
           <hr />
         </li>
 
       </ul>
+
+      <div className="flex absolute center h-[2300px] w-[4px] bg-gray-200 mt-20"> </div>
+
     </div>
   );
 };

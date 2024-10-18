@@ -88,7 +88,7 @@ export default function About() {
               onClick={toggleLegend}
               className="btn btn-ghost font-bold border-black"
             >
-              {showLegend ? 'Hide Legend' : 'Show Legend'} ▼
+              {showLegend ? 'Hide Legend' : 'Show Legend '} ▼
             </button>
           </div>
 
