@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useInView } from "react-intersection-observer";
+import Link from 'next/link'; 
 
 const Timeline: React.FC = () => {
   const [Results, setShowResults] = useState(false);
@@ -12,21 +13,29 @@ const Timeline: React.FC = () => {
 
   // Intersection Observer Hooks for each timeline item
   const { ref: item1, inView: item1View } = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
+    triggerOnce: true,               // trigger the observer once
+    threshold: [0.1],      // trigger at 10% visibility
+    rootMargin: '0px 0px -100px 0px',          // observe when the element is 50px from the viewport
   });
+  
   const { ref: item2, inView: item2View } = useInView({
     triggerOnce: true,
-    threshold: 0.2,
+    threshold: 0.5,
+    rootMargin: '200px 0px 0px 0px'
   });
+
   const { ref: item3, inView: item3View } = useInView({
     triggerOnce: true,
-    threshold: 0.2,
-  });
+    threshold: [0, 0.5, 1],
+    rootMargin: '50px 0px'
+
+    });
   const { ref: item4, inView: item4View } = useInView({
     triggerOnce: true,
-    threshold: 0.2,
-  });
+    threshold: [0, 0.5, 1],
+    rootMargin: '50px 0px'
+
+    });
   const { ref: item5, inView: item5View } = useInView({
     triggerOnce: true,
     threshold: 0.2,
@@ -58,7 +67,7 @@ const Timeline: React.FC = () => {
 
 
         {/* Timeline Item 1 */}
-        <li ref={item1} className={`transition-transform duration-700 ${item1View ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}>
+        <li ref={item1} className={`transition-transform duration-700 ${item1View ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[80px]"}`}>
           <div className="timeline-middle">
           <time className="font-mono text-white font-bold text-2xl bg-black rounded-[10px] px-[10px]">1977</time>
           </div>
@@ -81,7 +90,7 @@ const Timeline: React.FC = () => {
         </li>
 
         {/* Timeline Item 2 */}
-        <li ref={item2} className={`transition-transform transition-delay-700 duration-700 ${item2View ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`} style={{ transitionDelay: item2View ? "0s" : "0s" }}>
+        <li ref={item2} className={`transition-transform duration-700 ${item2View ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[200px]"}`} style={{ transitionDelay: item2View ? "0s" : "0s" }}>
           <hr/>
           <div className="timeline-middle">
           <time className="font-mono text-white font-bold text-2xl bg-black rounded-[10px] px-[10px]">1978</time>
@@ -100,7 +109,7 @@ const Timeline: React.FC = () => {
 
 
         {/* Timeline Item 3 */}
-        <li ref={item3} className={`transition-transform duration-700 ${item3View ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}>
+        <li ref={item3} className={`transition-transform duration-700 ${item3View ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[240px]"}`}>
           <hr/>
           <div className="relative timeline-middle flex flex-col">
           <time className="font-mono text-white font-bold text-2xl bg-black rounded-[10px] px-[10px]">1991</time>
@@ -138,29 +147,29 @@ const Timeline: React.FC = () => {
 
         
         {/* Timeline Item 4 */}
-        <li ref={item4} className={`transition-transform duration-700 ${item4View ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}>
+        <li ref={item4} className={`transition-transform duration-700 ${item4View ? "opacity-100 translate-y-20" : "opacity-0 translate-y-[150px]"}`}>
           <hr/>
            <div className="timeline-end text-start relative">
 
-            <div className="relative bottom-[35px]" >
-              <div className=" relative text-4xl font-black mx-10 w-[400px] left-10" > PLOVERS A SPECIES AT RISK </div>
-              
+            <div className="relative bottom-[90px]" >
+              <div className="relative text-4xl font-black mx-10 w-[400px] left-10" > PLOVERS A SPECIES AT RISK </div>
+
               <div className="relative w-[500px]">
                 <p className="text-xl relative left-10 mx-10 mt-[10px]">
                   The Atlantic subspecies of Piping plovers (<i>C. melodus melodus</i>) was officially listed under the Species at Risk Act (SARA) in June 2003, two years after the Committee on the</p>
                 <p className="text-xl relative left-10 mx-10">
                   Status of Endangered Wildlife (COSEWIC)  </p>
                 <p className="text-xl relative left-10 mx-10">
-                  listed the species (<i>C. melodus</i>) as </p>
-                  <p className="text-xl relative left-10 mx-10">
-                  <b> ENDANGERED. </b> 
+                  listed the species (<i>C. melodus</i>)</p>
+                  <p className="text-xl text-left relative left-10 mx-10">
+                   as Endangered. 
                 </p>
               </div>
             </div>
 
           
           <img
-              className="absolute w-[300px] h-auto left-[300px] top-[55px]" 
+              className="absolute w-[300px] h-auto left-[300px] top-[0px]" 
               src="/images/PIPL/HarryCollins2.svg"
               alt="by Harry Collins from Getty Images"
               />
@@ -171,13 +180,13 @@ const Timeline: React.FC = () => {
 
 
         {/* Timeline Item 5 */}
-        <li ref={item5} className={`transition-transform duration-700 ${item5View ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}>
+        <li ref={item5} className={`transition-transform duration-700 ${item5View ? "opacity-100 translate-y-20" : "opacity-0 translate-y-[180px]"}`}>
           <div className="timeline-middle relative">
           <time className="relative bottom-[170px] font-mono text-white font-bold text-2xl bg-black rounded-[10px] px-[10px]">2006</time>
           </div>
           <div className="relative timeline-start mb-10 text-end bottom-[170px]">
-            <div className="text-2xl font-black mx-10" > INITIAL POPULATION SURVIVAL ESTIMATES </div>
-            <p className="text-lg absolute text-right right-[0px] w-[400px] mx-10">
+            <div className="text-3xl font-black mx-10" > INITIAL POPULATION SURVIVAL ESTIMATES </div>
+            <p className="text-xl absolute text-right right-[0px] w-[450px] mx-10">
             <a href="https://www.ace-eco.org/vol1/iss3/art4/" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">Calvert et al. (2006)</a> built a matrix projection model for two Piping plover population segments in <b>(1) the Gulf of the St. Lawrence</b> and <b>(2) southern Nova Scotia </b> based on monitoring and mark-recapture data collected from 1998 to 2005.
             </p>
 
@@ -193,13 +202,17 @@ const Timeline: React.FC = () => {
             {Results && (
               <div className="relative bg-gray-100 rounded-[10px] shadow-lg py-10 mt-4">
                 <img
-                  className="relative w-[600px] right-[10px] py-5" 
+                  className="relative w-[600px] py-5 mx-auto" 
                   src="/images/timeline/Calvert_et-al_2006.svg"
                   alt="Calvert, A. M., et al. 2006. Population assessment of an endangered shorebird: the Piping Plover (Charadrius melodus melodus) in eastern Canada. Avian Conservation and Ecology - Écologie et conservation des oiseaux 1(3): 4."
                 />
 
-                <p className="text-lg relative w-[440px] left-10 mx-10 text-center">
-                  Annual population censuses suggested moderate growth in abundance between 1998–2003, but vital rate estimates indicated that this temporary growth may be replaced by declines in the long term, both in <b>southern Nova Scotia </b> (λd = 1.0043, λs = 0.9263) and in the <b> Gulf of St. Lawrence </b> (λd = 0.9651, λs = 0.8214) <a href="https://www.ace-eco.org/vol1/iss3/art4/" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">(Calvert et al. 2006)</a>.
+                <p className="text-sm relative w-[550px] text-center mx-auto">
+                Fig. 1. Location of beaches used by eastern Canada Piping Plovers breeding in the Gulf of St. Lawrence (squares) and South Nova Scotia (circles) from 1998 to 2003, with associated population abundance trends between 1991 and 2005 as indicated by the standardized annual population survey (black) and international census (gray) data (see Amirault 2005). Recovery goals for each population segment are also noted (dashed lines; Amirault 2006). Regions within the Gulf population segment are: AC (Acadian peninsula, northern New Brunswick), NBNS (southern New Brunswick and northern Nova Scotia), NF (Newfoundland), PEI (Prince Edward Island), and QC (Magdalen Islands, Quebec).
+                </p>
+                
+                <p className="text-lg relative w-[520px] mx-auto mt-10 text-center">
+                Annual population censuses suggested moderate growth in abundance between 1998–2003, but vital rate estimates indicated that this temporary growth may be replaced by declines in the long term, both in <b>southern Nova Scotia </b> (λd = 1.0043, λs = 0.9263) and in the <b> Gulf of St. Lawrence </b> (λd = 0.9651, λs = 0.8214) <a href="https://www.ace-eco.org/vol1/iss3/art4/" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">(Calvert et al. 2006)</a>.
                 </p>
               </div>
             )}
@@ -213,7 +226,7 @@ const Timeline: React.FC = () => {
 
 
         {/* Timeline Item 6 */}
-        <li ref={item6} className={`transition-transform duration-700 ${item6View ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}>
+        <li ref={item6} className={`transition-transform duration-700 ${item6View ? "opacity-100 translate-y-20" : "opacity-0 translate-y-[280px]"}`}>
           <hr/>
           <div className="relative timeline-middle flex flex-col -top-[40px]">
           <time className="font-mono text-white font-bold text-2xl bg-black rounded-[10px] px-[10px]">2014</time>
@@ -227,7 +240,7 @@ const Timeline: React.FC = () => {
           <div className="timeline-end mb-10 text-start absolute top-[50px]">
             <div className="text-4xl relative font-black mx-10 w-[500px]" > MONITORING EFFORTS CONTINUED</div>
               <p className="text-xl relative w-[460px] mx-10 py-10">
-              There was considerable banding effort in 2014, 2017 and 2018 and complemented with intensive band-resighting-efforts until 2023. Unlike the first study, this second banding program included not only resights in Canada during the summer breeding season, but also during fall, winter and spring on migration and over-wintering sites throughout coastal US and several sites in the Caribbean <a href="https://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=1692&context=usgsstaffpub" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">(Calvert et al. 2006, Figure 10)</a>. Over this period there were 651 individual plovers banded, of which 570 (88%) were reobserved in at least once.
+              Going forward, considerable banding efforts were made in 2014, 2017 and 2018, complemented with intensive band-resighting-efforts until 2023. Unlike the first study, this second banding program included resights during the fall, winter and spring throughout coastal US and several sites in the Caribbean <a href="" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">(Calvert et al. [DATE], Figure 10)</a>. Over this period, 651 individual plovers were banded, of which 88% (570) were reobserved at least once.
               </p>
 
 
@@ -261,25 +274,38 @@ const Timeline: React.FC = () => {
         </li>
 
         {/* Timeline Item 7 */}
-        <li ref={item7} className={`transition-transform duration-700 ${item7View ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}>
+        <li ref={item7} className={`transition-transform duration-700 ${item7View ? "opacity-100 translate-y-20" : "opacity-0 translate-y-[200px]"}`}>
           <div className="timeline-middle">
           <time className="font-mono text-white font-bold text-2xl bg-black rounded-[10px] px-[10px] relative bottom-[20px]">2024</time>
           </div>
-          <div className="timeline-end text-start mt-[100px]">
+          <div className="timeline-end text-start">
             <div className="text-5xl font-black mx-10 w-[600px] text-blue-400" > THE CURRENT PLOVER MODEL </div>
 
             <a href="" className="relative left-[460px] text-blue-900 text-lg transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">Calvert et al. (20__)</a>
 
           <div className="relative w-[550px] mt-[10px]">
             <p className="text-lg relative left-[30px] mb-[12px]">
-            <b>(i)</b> update models of annual productivity and its links to population change, </p>
+            [Placeholder text] </p>
 
-            <p className="text-lg relative left-[30px] mb-[12px]">
-            <b>(ii)</b> estimate seasonal and annual survival probabilities for young and adult birds based on a recent banding program (2014-2022) and compare these to previous (1998-2002) estimates published in Calvert et al. 2006, </p>
+            <p className="text-lg relative left-[170px] mb-[12px]">
+            __________________________________________
+             </p>
 
-            <p className="text-lg relative left-[30px] mb-[12px]">
-            <b>(iii)</b> build and develop an Integrated Population Model that incorporates all sources of information (abundance, productivity and survival) into a comprehensive picture of population dynamics. </p>
           </div>
+
+            <div className="flex-1">
+              <Link href="/about_page" className="btn btn-ghost text-xl mx-[100px] my-[20px] border border-gray-200">
+                <p>
+                Model Overview
+                </p>
+              </Link>
+
+              <Link href="/plover_page" className="btn btn-ghost text-xl  border border-gray-200">
+                <p>
+                Model Results
+                </p>
+              </Link>
+            </div>
 
           </div>
           <hr />
@@ -287,7 +313,7 @@ const Timeline: React.FC = () => {
 
       </ul>
 
-      <div className="flex absolute center h-[2300px] w-[4px] bg-gray-200 mt-20"> </div>
+      <div className={`flex absolute center w-[4px] bg-gray-200 mt-20 ${Results ? "h-[2300px]" : "h-[2000px]"}`}> </div>
 
     </div>
   );

@@ -68,16 +68,16 @@ img, video {
   transform: rotate(360deg);
 }
 
-/* Disable focus outline for all focusable elements 
+/* Disable focus outline for all focusable elements */
 *:focus {
   outline: none;
 }
 
-/* Prevent text selection for all elements
+/* Prevent text selection for all elements */
 * {
   user-select: none;
 }
-*/
+
 
  .resizer {
   position: absolute;

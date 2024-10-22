@@ -48,9 +48,9 @@ const IPM_lifecycle: React.FC = () => {
       ))}
 
       {/* Info box positioned at the bottom right of the container */}
-      <div className="relative bg-[#9CC9F0] border-[#66A8E2] border-[2px] border font-semibold text-black text-lg text-center p-[10px] w-[400px] h-auto shadow-lg top-[380px] left-[35px]"
+      <div className="relative bg-[#9CC9F0] border-[#66A8E2] border-[2px] border font-semibold text-black text-md text-center p-[3px] w-[350px] h-auto shadow-lg top-[380px] left-[70px]"
         style={{ bottom: '10px', right: '10px', zIndex: 1000 }}>
-        {hoveredImage !== null ? lifecycleImages[hoveredImage].info : "Hover over a part of the diagram for more info"}
+        {hoveredImage !== null ? lifecycleImages[hoveredImage].info : "Hover over a part of the diagram to learn more"}
       </div>
 
       {/* Button to toggle the probabilities legend */}

@@ -2,9 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 
-// Importing individual components for each model
+// components for each model
 import SurvivalModel from '@/app/components/schematic/ModelSurvival';
-import MortalityModel from '@/app/components/schematic/ModelMortality';
 import PopulationModel from '@/app/components//schematic/ModelPopulation';
 import ProductivityModel from '@/app/components//schematic/ModelReproductive';
 import ProcessModel from '@/app/components/schematic/ModelProcess';
@@ -20,9 +19,9 @@ const IPMGraphic: React.FC = () => {
     {src: "/images/PIPL/process.svg", left: "23%", top: "34%", info: "POPULATION PROCESS MODEL", component: <ProcessModel />,},
   ];
 
-  // Handle clicking on an image to show/hide the corresponding card
+  // handel clicking on an image to show/hide the corresponding card
   const handleImageClick = (index: number) => {
-    // Toggle the card visibility by clicking the image again
+    // toggle the card visibility by clicking the image again
     setClickedImage((prevIndex) => (prevIndex === index ? null : index));
   };
 
@@ -42,37 +41,37 @@ const IPMGraphic: React.FC = () => {
             src={image.src}
             alt={`Overlay image ${index}`}
             className="absolute w-auto h-auto"
-            onMouseEnter={() => setHoveredImage(index)} // Track hovered image
-            onMouseLeave={() => setHoveredImage(null)}  // Reset hover state
-            onClick={() => handleImageClick(index)}     // Toggle card on image click
+            onMouseEnter={() => setHoveredImage(index)} // track hovered image
+            onMouseLeave={() => setHoveredImage(null)}  // reset hover state
+            onClick={() => handleImageClick(index)}     // toggle card on imge click
             style={{
               left: image.left,
               top: image.top,
               transform: clickedImage === index
-                ? 'scale(0.65)' // Shrinks on click
+                ? 'scale(0.65)' // shrinks on click
                 : hoveredImage === index
-                ? 'scale(0.62)' // Slight zoom on hover
-                : 'scale(0.6)', // Default scale
+                ? 'scale(0.62)' // slight zoom on hovre
+                : 'scale(0.6)', // default scale
               transformOrigin: 'top left',
               transition: 'transform 0.3s ease, filter 0.3s ease, 0.3s ease',
               cursor: 'pointer',
 
-              // Apply different levels of blur depending on hover and click
+              // apply different levels of blur depending on hover and click
               filter:
                 clickedImage !== null && clickedImage !== index
-                  ? 'blur(4px)' // Strong blur when an image is clicked
+                  ? 'blur(4px)' // strong blur when an image is clicked
                   : hoveredImage !== null && hoveredImage !== index
-                  ? 'blur(2px)' // Slight blur when hovering over another image
-                  : 'none',     // No blur otherwise
+                  ? 'blur(2px)' // slight blur when hovering over another image
+                  : 'none',     // no blur otherwise
 
-              zIndex: clickedImage === index ? 2 : 1, // Bring clicked image to front
+              zIndex: clickedImage === index ? 2 : 1, // bring clicked image front
             }}
           />
         ))}
       </div>
 
-      {/* Display the detailed component below based on clicked image */}
-      <div className="mt-8">
+      {/* display the detailed component below based on clicked image */}
+      <div className="relative bottom-[40px]">
         {clickedImage !== null && (
           <div>
             {imageGroups[clickedImage].component}

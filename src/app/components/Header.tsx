@@ -36,7 +36,7 @@ const Header = () => {
                     href="/about_page"
                     className={`hover:bg-gray-300 font-semibold btn-ghost`}
                   >
-                    Model overview
+                    Model Overview
                   </Link>
                 </li>
 
@@ -46,7 +46,7 @@ const Header = () => {
                     href="/plover_page"
                     className={`hover:bg-gray-300 font-semibold btn-ghost`}
                   >
-                    Data visualization
+                    Model Results
                   </Link>
                 </li>
 

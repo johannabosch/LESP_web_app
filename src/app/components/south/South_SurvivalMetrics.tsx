@@ -146,12 +146,22 @@ const South_SurvivalMetrics: React.FC<{ selectedSite: string }> = ({ selectedSit
         </div>
       </div>
 
-      {/* Render the table underneath the graphs */}
-      <div className="flex-grow">
-        <h3 className="text-lg font-bold text-left mt-[30px] underline">
-          Estimates of mean survival and its temporal variance for chicks in their first year (<span style={{ textDecoration: 'overline', fontWeight: 'bold' }}>S<sub>0</sub></span>, σ<sub>0</sub>) and adults (<span style={{ textDecoration: 'overline', fontWeight: 'bold' }}>S<sub>1</sub></span>, σ<sub>1</sub>)
-        </h3>
-        <SurvivalTable data={southData} />
+      {/* Accordion for the table */}
+      <div className="collapse bg-base-200 mt-10">
+        <input type="checkbox" className="peer" />
+        <div className="collapse-title bg-[#B4D6F7] font-bold">
+          Estimates of mean survival and its temporal variance for chicks in their first year 
+          (<span style={{ textDecoration: "overline", fontWeight: "bold" }}>S</span><sub>0</sub>, σ<sub>0</sub>) 
+          and adults (<span style={{ textDecoration: "overline", fontWeight: "bold" }}>S</span><sub>1</sub>, σ<sub>1</sub>)
+          
+          {/* Rotating arrow */}
+          <span className="transition-transform transform duration-300 peer-checked:rotate-180 relative left-[100px]">▼</span>
+        
+        </div>
+        <div className="collapse-content bg-white text-black">
+
+          <SurvivalTable data={southData} />
+        </div>
       </div>
 
       <div className="my-10" style={{ height: '20px' }}></div>

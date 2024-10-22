@@ -43,9 +43,9 @@ export default function About() {
         {/* Flex container for lifecycle and text */}
         <div className="flex flex-wrap justify-between items-start mx-10">
           {/* Text paragraph */}
-          <div className="flex-initial w-1/2 text-xl mt-20 mb-10 pr-[50px]">
+          <div className="flex-initial w-1/2 text-xl mt-20 pr-[50px]">
             <p style={{textIndent: '30px'}}> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit. </p>
-            <p style={{textIndent: '30px'}}> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue.  </p>
+            <p style={{textIndent: '30px'}} className="mt-10"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue.  </p>
             
           </div>
 
@@ -55,21 +55,30 @@ export default function About() {
           </div>
           </div>
 
-            {/* Text paragraph */}
-            <div className="flex-initial w-full text-xl mt-20 mb-10 pr-[50px]">
-            <p style={{textIndent: '30px'}}> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. </p>
-            
-          </div>
+          <div className="mt-10">
 
-
-          <div className="mb-[40px]">
+          {/* Image (IPM_matrix component) */}
+          <div className="float-left w-[300px] mb-4 relative top-[50px] z-10">
             <IPM_matrix />
           </div>
-          
+
+          {/* Text paragraph */}
+          <div className="flex-wrap absolute mx-5 w-3/4 text-xl p-4">
+            <p style={{ textIndent: '30px' }}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est  </p>
+
+              <p className="left-[700px] relative w-1/3">
+             eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue.
+            </p>
+
+          </div>
+
+        </div>
+
       </main>
 
       {/* IPM Schematic */}
-      <main className="flex-grow mt-0 relative">
+      <main className="flex-grow mt-[100px] relative">
         <div className="w-full text-center py-8">
           <h1 className="text-4xl font-bold mb-4 mt-0">Schematic of the IPM</h1>
 
