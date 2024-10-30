@@ -73,8 +73,8 @@ const Timeline: React.FC = () => {
           </div>
           <div className="timeline-start mb-10 text-end">
             <div className="text-3xl font-black mx-10" > EARLY RESEARCH IN EASTERN CANADA </div>
-            <p className="text-lg relative left-0 w-[430px] mx-10">
-            <a href="https://dalspace.library.dal.ca/handle/10222/82265" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">Cairns & Wake (1977)</a> studied the breeding biology and behaviour of <i>C. melodus</i> between 1975-1976 in Southern Nova Scotia.They estimated that the population in Nova Scotia was between 60 - 75 pairs. 
+            <p className="text-lg relative left-0 w-[430px] mx-10 mb-10">
+           Piping Plovers were known to nest on beaches scattered throughout Canada, including the provinces of Nova Scotia, New Brunswick, Prince Edward Island, Newfoundland, and the Magdalen Islands of Quebec. <a href="https://dalspace.library.dal.ca/handle/10222/82265" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">Cairns & Wake (1977)</a> studied the breeding biology and behaviour of <i>C. melodus</i> between 1975-1976 in Southern Nova Scotia, and they estimated that the population in Nova Scotia was between 60 - 75 pairs.
             </p>
 
             <div className="relative bg-gray-100 py-[5px] rounded-[10px] w-[300px] mt-[30px] left-[100px] -mb-[250px]"
@@ -123,7 +123,7 @@ const Timeline: React.FC = () => {
           <div className="timeline-start mb-10 text-end absolute top-[0px]">
             <div className="text-4xl relative font-black  mx-10 mb-[10px]" > EARLY MONITORING PROGRAMS </div>
               <p className="text-lg relative w-[460px] mx-10">
-                Monitoring efforts ramped up in the 1960's, with an annual Canadian census beginning in 1994 and a systematic international census which occurred in 1991, 1996 and 2001 <a href="https://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=1692&context=usgsstaffpub" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">(Haig 2005)</a>. For each program, beaches with Piping plover nests were located at the beginning of each breeding season. Adults and juveniles were marked individually with coded metal bands, and sites were revisited during the season to follow the success of nesting birds. 
+                Monitoring efforts ramped up in the 1960's, with an annual Canadian census beginning in 1994 and a systematic international census which occurred in 1991, 1996 and 2001 (<a href="https://publications.gc.ca/collections/collection_2018/eccc/cw69-5/CW69-5-436-eng.pdf" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">Amirault 2005</a>, <a href="https://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=1692&context=usgsstaffpub" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">Haig 2005</a>). For each program, beaches with Piping plover nests were located at the beginning of each breeding season. Adults and juveniles were marked individually with coded metal bands, and sites were revisited during the season to monitor nesting success. 
               </p>
 
               <img
@@ -185,7 +185,7 @@ const Timeline: React.FC = () => {
           <time className="relative bottom-[170px] font-mono text-white font-bold text-2xl bg-black rounded-[10px] px-[10px]">2006</time>
           </div>
           <div className="relative timeline-start mb-10 text-end bottom-[170px]">
-            <div className="text-3xl font-black mx-10" > INITIAL POPULATION SURVIVAL ESTIMATES </div>
+            <div className="text-4xl font-black mx-10" > INITIAL SURVIVAL ESTIMATES </div>
             <p className="text-xl absolute text-right right-[0px] w-[450px] mx-10">
             <a href="https://www.ace-eco.org/vol1/iss3/art4/" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">Calvert et al. (2006)</a> built a matrix projection model for two Piping plover population segments in <b>(1) the Gulf of the St. Lawrence</b> and <b>(2) southern Nova Scotia </b> based on monitoring and mark-recapture data collected from 1998 to 2005.
             </p>
@@ -202,13 +202,13 @@ const Timeline: React.FC = () => {
             {Results && (
               <div className="relative bg-gray-100 rounded-[10px] shadow-lg py-10 mt-4">
                 <img
-                  className="relative w-[600px] py-5 mx-auto" 
-                  src="/images/timeline/Calvert_et-al_2006.svg"
+                  className="relative w-[530px] py-5 mx-auto" 
+                  src="/images/timeline/Calvert_et-al_2006.png"
                   alt="Calvert, A. M., et al. 2006. Population assessment of an endangered shorebird: the Piping Plover (Charadrius melodus melodus) in eastern Canada. Avian Conservation and Ecology - Écologie et conservation des oiseaux 1(3): 4."
                 />
 
                 <p className="text-sm relative w-[550px] text-center mx-auto">
-                Fig. 1. Location of beaches used by eastern Canada Piping Plovers breeding in the Gulf of St. Lawrence (squares) and South Nova Scotia (circles) from 1998 to 2003, with associated population abundance trends between 1991 and 2005 as indicated by the standardized annual population survey (black) and international census (gray) data (see Amirault 2005). Recovery goals for each population segment are also noted (dashed lines; Amirault 2006). Regions within the Gulf population segment are: AC (Acadian peninsula, northern New Brunswick), NBNS (southern New Brunswick and northern Nova Scotia), NF (Newfoundland), PEI (Prince Edward Island), and QC (Magdalen Islands, Quebec).
+                <b> Figure 1. </b>Location of beaches used by eastern Canada Piping Plovers breeding in the Gulf of St. Lawrence (squares) and South Nova Scotia (circles) from 1998 to 2003, with associated population abundance trends between 1991 and 2005 as indicated by the standardized annual population survey (black) and international census (gray) data (see Amirault 2005). Recovery goals for each population segment are also noted (dashed lines; Amirault 2006). Regions within the Gulf population segment are: AC (Acadian peninsula, northern New Brunswick), NBNS (southern New Brunswick and northern Nova Scotia), NF (Newfoundland), PEI (Prince Edward Island), and QC (Magdalen Islands, Quebec) [<a href="https://www.ace-eco.org/vol1/iss3/art4/" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">Calvert et al. (2006)</a>].
                 </p>
                 
                 <p className="text-lg relative w-[520px] mx-auto mt-10 text-center">
