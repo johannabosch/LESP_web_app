@@ -51,14 +51,14 @@ const Timeline: React.FC = () => {
 
   return (
     <div className="flex px-4 mt-[10px] justify-center">
-      <div className=" absolute border bg-white p-[20px] w-[450px] h-[90px] bg-blue shadow-lg mt-[40px] rounded-[10px] z-10">
+      <div className=" absolute z-10 border bg-white p-[20px] w-[450px] h-[90px] bg-blue shadow-lg mt-[40px] rounded-[10px]">
         
       <img
               className="absolute w-[70px] left-[10px] top-[10px] mt-[3px]" 
               src="/images/timeline/plover_sketch.svg"
               alt="annual census from 1994-2003"
               />
-        <p className="absolute text-xl w-[315px] left-[95px] font-semibold"> Learn more about the history of Atlantic Piping plover research in eastern Canada.</p>
+        <p className="absolute text-xl w-[315px] left-[95px] font-semibold "> Learn more about the history of Atlantic Piping plover research in eastern Canada.</p>
         <p className="absolute left-[390px] animate-bounce text-5xl mt-4 top-5">🡣</p>
       </div>
     
@@ -313,7 +313,7 @@ const Timeline: React.FC = () => {
 
       </ul>
 
-      <div className={`flex absolute center w-[4px] bg-gray-200 mt-20 ${Results ? "h-[2300px]" : "h-[2000px]"}`}> </div>
+      <div className={`flex absolute center w-[4px] mb-[10px] bg-gray-200 mt-20 ${Results ? "h-[2300px]" : "h-[2150px]"}`}> </div>
 
     </div>
   );

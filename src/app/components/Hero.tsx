@@ -5,7 +5,7 @@ import React from 'react';
 const Hero: React.FC = () => {
   return (
     <div
-    className="relative h-[600px] bg-no-repeat bg-cover bg-right w-full mb-0"
+    className="relative h-[550px] bg-no-repeat bg-cover bg-right w-full mb-0"
     style={{
         backgroundImage: `url('/images/PIPL/Wildpix645.svg')`,
       }}
