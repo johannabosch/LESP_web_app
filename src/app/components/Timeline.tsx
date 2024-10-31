@@ -11,7 +11,7 @@ const Timeline: React.FC = () => {
     setShowResults(!Results);
   };
 
-  // Intersection Observer Hooks for each timeline item
+  // Intersection observer hooks for each timeline item
   const { ref: item1, inView: item1View } = useInView({
     triggerOnce: true,               // trigger the observer once
     threshold: [0.1],      // trigger at 10% visibility

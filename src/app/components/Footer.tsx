@@ -10,13 +10,13 @@ const Footer = () => {
   // Our wonderful supporters!
   const sponsorLogos = [
     { src: '/logos/CAPP.png', url: 'https://www.capp.ca/en/', width: '120px', height: 'auto'  },
-    { src: '/logos/MUN.png', url: 'https://www.canada.ca/en/environment-climate-change.html', width: '150px', height: 'auto'  },
-    { src: '/logos/Alder.png', url: 'https://www.canada.ca/en/environment-climate-change.html' , width: '140px', height: 'auto' }, 
-    { src: '/logos/Bowdoin.png', url: 'https://www.canada.ca/en/environment-climate-change.html' , width: '110px', height: 'auto' }, 
-    { src: '/logos/Kenyon.png', url: 'https://www.canada.ca/en/environment-climate-change.html', width: '130px', height: 'auto'  },
-    { src: '/logos/York.png', url: 'https://www.canada.ca/en/environment-climate-change.html' , width: '150px', height: 'auto' }, 
-    { src: '/logos/Acadia.png', url: 'https://www.canada.ca/en/environment-climate-change.html', width: '170px', height: 'auto'  },
-    { src: '/logos/BirdsCA.png', url: 'https://www.canada.ca/en/environment-climate-change.html', width: '170px', height: 'auto'  },
+    { src: '/logos/MUN.png', url: 'https://www.mun.ca/', width: '150px', height: 'auto'  },
+    { src: '/logos/Alder.png', url: 'https://alderinstitute.ca/projects.html' , width: '140px', height: 'auto' }, 
+    { src: '/logos/Bowdoin.png', url: 'https://www.bowdoin.edu/' , width: '110px', height: 'auto' }, 
+    { src: '/logos/Kenyon.png', url: 'https://www.kenyon.edu/', width: '130px', height: 'auto'  },
+    { src: '/logos/York.png', url: 'https://www.yorku.ca/' , width: '150px', height: 'auto' }, 
+    { src: '/logos/Acadia.png', url: 'https://www2.acadiau.ca/home.html', width: '170px', height: 'auto'  },
+    { src: '/logos/BirdsCA.png', url: 'https://www.birdscanada.org/', width: '170px', height: 'auto'  },
       ];
 
       const ECLogo = [
