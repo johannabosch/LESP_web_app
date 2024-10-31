@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
         <p className="text-lg"> The Piping Plover is an Endangered species of shorebird whose population has been well-studied in eastern Canada as a result of conservation monitoring efforts. We combined all of the available demographic data for the Atlantic Piping Plover collected between 1991-2022 to build an Integrated Population Model (IPM) that provides new insights into changes in their population structure over time (<a href="/" className="text-blue-200 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">Calvert et al. 2024</a>). Scroll down to learn more about the history of plover research in Canada. </p>
         <p className="mt-[10px] text-xl"> Want to learn more about our model?  <a href="/about-page" className="text-blue-200 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline"> Review the model's structure</a>. </p>
         
-        <p className="mt-[10px] text-xl"> <a href="/plover_page" className="text-blue-200 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">Visualise the plover population model</a>. </p>
+        <p className="mt-[10px] text-xl"><a href="/plover_page" className="text-blue-200 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">Visualise the plover population model</a>. </p>
         </div>
       </div>
     </div>
