@@ -58,7 +58,7 @@ const Header = () => {
           {/* Documentation link */}
           <li>
             <Link
-              href="/documentation"
+              href="https://github.com/AnnaCalvert/PIPLanalysis"
               className={`btn ${pathname === '/documentation' ? 'btn-active' : 'btn-ghost'} text-xl`}
             >
               Documentation
