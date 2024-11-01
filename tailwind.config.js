@@ -9,6 +9,7 @@ module.exports = {
           DEFAULT: '#75b3f0',
           hover: '#a7d1fa',
         },
+        background: '#E0DEDA',
       },
     },
   },

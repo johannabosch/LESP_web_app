@@ -2,7 +2,20 @@
 
 import React, { useState } from "react";
 import { useInView } from "react-intersection-observer";
+import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'; 
+
+// Enhanced fade in animation
+const fadeIn = {
+  hidden: { opacity: 0 },
+  visible: { 
+    opacity: 1, 
+    transition: { 
+      duration: 1.5, 
+      ease: "easeOut" 
+    } 
+  }
+}
 
 const Timeline: React.FC = () => {
   const [Results, setShowResults] = useState(false);
@@ -50,20 +63,38 @@ const Timeline: React.FC = () => {
   });
 
   return (
-    <div className="flex px-4 mt-[10px] justify-center">
-      <div className=" absolute z-10 border bg-white p-[20px] w-[450px] h-[90px] bg-blue shadow-lg mt-[40px] rounded-[10px]">
-        
-      <img
-              className="absolute w-[70px] left-[10px] top-[10px] mt-[3px]" 
-              src="/images/timeline/plover_sketch.svg"
-              alt="annual census from 1994-2003"
-              />
-        <p className="absolute text-xl w-[315px] left-[95px] font-semibold "> Learn more about the history of Atlantic Piping plover research in eastern Canada.</p>
-        <p className="absolute left-[390px] animate-bounce text-5xl mt-4 top-5">🡣</p>
-      </div>
+    <div className="flex flex-col px-4 justify-center">
+    
+  <motion.div 
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 3, duration: 0.5 }}
+  className="flex items-center justify-center mt-[50px]"
+>
+  <div className="relative flex items-center justify-center z-10 bg-white p-5 h-[100px] w-[80vw] max-w-[600px] rounded-lg shadow-lg">
+    <img
+      className="absolute  left-[20px] top-[10px]
+      w-[90px] sm:w-[90px] md:w-[100px] lg:w-[100px]"
+      src="/images/timeline/plover_sketch.svg"
+      alt="annual census from 1994-2003"
+    />
+
+    <p className="font-semibold text-center text-[#1D282B] 
+    text-md lg:text-lg md:text-lg sm:text-lg
+    w-[180px] lg:w-[300px] md:w-[300px] sm:w-[300px]"> 
+      History of Atlantic Piping plover research in eastern Canada
+    </p>
+
+    <p className="absolute right-[50px] text-5xl text-[#1D282B] animate-bounce">
+      🡣
+    </p>
+  </div>
+</motion.div>
+
+
     
       {/* Overall timeline structure. */}
-      <ul className="timeline timeline-snap-icon timeline-vertical mt-[200px] mb-[150px] z-10">
+      <ul className="timeline timeline-snap-icon timeline-vertical mt-[100px] mb-[150px] z-10">
 
 
         {/* Timeline Item 1 */}
