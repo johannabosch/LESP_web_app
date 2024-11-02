@@ -56,7 +56,7 @@ const South_PopulationMetrics: React.FC<South_PopulationMetricsProps> = ({ selec
                 className="border border-gray-300 p-2 rounded w-full"
               >
                 <iframe
-                  src="/figures/South/N1.html"
+                  src="/figures/SouthNS/N1.html"
                   title="First stage population size (N1)"
                   width="100%"
                   height="100%"
@@ -77,7 +77,7 @@ const South_PopulationMetrics: React.FC<South_PopulationMetricsProps> = ({ selec
                 className="border border-gray-300 p-2 rounded w-full"
               >
                 <iframe
-                  src="/figures/South/N2.html"
+                  src="/figures/SouthNS/N2.html"
                   title="Breeding population size (N2)"
                   width="100%"
                   height="100%"

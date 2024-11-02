@@ -116,7 +116,7 @@ const South_SurvivalMetrics: React.FC<{ selectedSite: string }> = ({ selectedSit
             className="border border-gray-300 p-2 rounded w-full"
           >
             <iframe
-              src="/figures/South/S0.html"
+              src="/figures/SouthNS/S0.html"
               title="First year survival (S0)"
               width="100%"
               height="100%"
@@ -136,7 +136,7 @@ const South_SurvivalMetrics: React.FC<{ selectedSite: string }> = ({ selectedSit
             className="border border-gray-300 p-2 rounded w-full"
           >
             <iframe
-              src="/figures/South/S1.html"
+              src="/figures/SouthNS/S1.html"
               title="Adult survival (S1)"
               width="100%"
               height="100%"

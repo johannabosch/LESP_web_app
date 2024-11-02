@@ -55,7 +55,7 @@ const South_ProductivityMetrics: React.FC<South_ProductivityMetricsProps> = ({ s
                 className="border border-gray-300 p-2 rounded w-full"
               >
                 <iframe
-                  src="/figures/South/C.html"
+                  src="/figures/SouthNS/C.html"
                   title="Total chicks produced (C)"
                   width="100%"
                   height="100%"
@@ -75,7 +75,7 @@ const South_ProductivityMetrics: React.FC<South_ProductivityMetricsProps> = ({ s
                 className="border border-gray-300 p-2 rounded w-full"
               >
                 <iframe
-                  src="/figures/South/CP.html"
+                  src="/figures/SouthNS/CP.html"
                   title="Chicks produced per pair (CP)"
                   width="100%"
                   height="100%"

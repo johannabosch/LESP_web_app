@@ -55,7 +55,7 @@ const South_TransitionMetrics: React.FC<South_TransitionMetricsProps> = ({ selec
                 className="border border-gray-300 p-2 rounded w-full"
               >
                 <iframe
-                  src="/figures/South/Psi0.html"
+                  src="/figures/SouthNS/Psi0.html"
                   title="Chick to breeder transition (Psi0)"
                   width="100%"
                   height="100%"
@@ -75,7 +75,7 @@ const South_TransitionMetrics: React.FC<South_TransitionMetricsProps> = ({ selec
                 className="border border-gray-300 p-2 rounded w-full"
               >
                 <iframe
-                  src="/figures/South/Psi1.html"
+                  src="/figures/SouthNS/Psi1.html"
                   title="Non-breeder to breeder transition (Psi1)"
                   width="100%"
                   height="100%"
