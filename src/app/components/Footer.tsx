@@ -49,33 +49,34 @@ const Footer = () => {
         </Link>
       </nav>
 
-      {/* Our logo */}
-      <div className="flex justify-center items-center flex-wrap gap-2 mt-5">
-        {ECLogo.map((logo, index) => (
+{/* Our logo */}
+<div className="flex justify-center items-center flex-wrap gap-2 mt-5">
+  {ECLogo.map((logo, index) => (
+    <Link key={`ec-logo-${index}`} href={logo.url}>
+      <img 
+        src={logo.src} 
+        alt="Environment and Climate Change logo" 
+        className="object-contain" 
+        style={{ width: logo.width, height: logo.height }} 
+      />
+    </Link>
+  ))}
+</div>
 
-          // make it clickable
-          <Link href={ECLogo[0].url}>
-            <img src={ECLogo[0].src} 
-                 alt={"Environment and Climate Change logo"} 
-                 className="object-contain"
-                 style={{width:logo.width, height: logo.height }} />
-          </Link>
-        ))}
-      </div>
+{/* Logo band with links to all the supporters */}
+<div className="flex justify-center items-center flex-wrap gap-[10px] mt-5">
+  {sponsorLogos.map((logo, index) => (
+    <Link key={`sponsor-logo-${index}`} href={logo.url}>
+      <img 
+        src={logo.src} 
+        alt={`Sponsor ${index + 1}`} 
+        className="object-contain" 
+        style={{ width: logo.width, height: logo.height }} 
+      />
+    </Link>
+  ))}
+</div>
 
-      {/* Logo band with links to all the supporters */}
-      <div className="flex justify-center items-center flex-wrap gap-[10px] mt-5">
-        {sponsorLogos.map((logo, index) => (
-
-          // each sponsor logo is clickable
-          <Link key={index} href={logo.url}>
-            <img src={logo.src}
-                 alt={`Sponsor ${index + 1}`}
-                 className="object-contain"
-                 style={{width:logo.width, height: logo.height }}  />
-          </Link>
-        ))}
-      </div>
       
       </div>
     </footer>

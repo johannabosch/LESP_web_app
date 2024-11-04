@@ -49,7 +49,7 @@ const Hero: React.FC<HeroProps> = ({ onScrollDown }) => {
 
   return (
     <section className="relative overflow-hidden
-     h-[600px] lg:h-[600px] md:h-[580px] sm:h-[600px]">
+     h-[600px] lg:h-[600px] md:h-[580px] sm:h-[580px]">
 
         <Image
           src="/images/PIPL/Wildpix645.svg"
@@ -82,7 +82,7 @@ const Hero: React.FC<HeroProps> = ({ onScrollDown }) => {
           <motion.h1 
             className="mt-[0px] lg:mt-[100px] md:mt-[100px] sm:mt-[0px] drop-shadow-2xl
             text-[#E0DEDA] text-shadow-xl font-bold py-8 leading-tight
-            text-2xl md:text-3xl lg:text-4xl sm:text-2xl"
+            text-2xl md:text-3xl lg:text-4xl xl:text-5xl sm:text-2xl"
           >
             <motion.span>Demographic modeling for</motion.span>{' '} <br />
             <motion.span className="text-[#D18D53] drop-shadow-xl">Piping Plover</motion.span>{' '}
@@ -95,14 +95,14 @@ const Hero: React.FC<HeroProps> = ({ onScrollDown }) => {
               <motion.div
                 className="bg-gradient-to-r from-[#1D282B] via-[#1D282B] to-transparent bg-opacity-10 p-6 rounded-lg backdrop-blur-sm 
                 mt-[120px] lg:mt-[0px] md:mt-[0px] sm:mt-[120px] 
-                w-[80vw] lg:w-[60vw] md:w-[80vw] sm:w-[80vw]"
+                w-[80vw] lg:w-[80vw] md:w-[80vw] sm:w-[80vw] max-w-[1000px]"
                 variants={fadeIn}
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
               >
                 <motion.p 
-                  className="mb-4 text-sm md:text-base lg:text-lg md:text-md sm:text-sm"
+                  className="mb-4 pr-10 text-sm md:text-base lg:text-lg md:text-md sm:text-sm"
                 >
                   The Piping Plover is an Endangered species of shorebird whose population has been well-studied in eastern Canada. We combined all of the available demographic data for the Atlantic Piping Plover collected between 1991-2022 to build an Integrated Population Model (IPM) that provides new insights into changes in their population structure over time (<Link href="/" className="text-blue-300 hover:underline">Calvert et al. 2024</Link>). Scroll down to learn more about the history of plover research in Canada.
                 </motion.p>
@@ -110,7 +110,7 @@ const Hero: React.FC<HeroProps> = ({ onScrollDown }) => {
                   className="flex flex-wrap gap-4"
                 >
                   <Link 
-                    href="/about-page" 
+                    href="/about_page" 
                     className="px-4 py-2 bg-[#E0DEDA] text-black rounded-md hover:bg-[#D18D53] hover:text-white transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 text-sm"
                     
                   >

@@ -65,32 +65,36 @@ const Timeline: React.FC = () => {
   return (
     <div className="flex flex-col px-4 justify-center">
     
-  <motion.div 
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ delay: 3, duration: 0.5 }}
-  className="flex items-center justify-center mt-[50px]"
->
-  <div className="relative flex items-center justify-center z-10 bg-white p-5 h-[100px] w-[80vw] max-w-[600px] rounded-lg shadow-lg">
+      <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 3, duration: 0.5 }}
+      className="flex items-center justify-center mt-[50px]"
+    >
+      <p className="relative text-6xl font-bold mr-[20px] text-[#1D282B] animate-bounce">
+        🡣
+      </p>
+      <div className="flex flex-col">
+
+      <h1 className="relative text-start font-black text-[#1D282B] 
+              text-3xl lg:text-4xl md:text-lg sm:text-lg 
+              w-full lg:w-[800px]">
+        THE HISTORY OF ATLANTIC PIPING PLOVER
+      </h1>
+      <h1 className="relative text-start font-black text-[#1D282B] 
+              text-3xl lg:text-5xl md:text-lg sm:text-lg 
+              w-full lg:w-[800px]">
+        RESEARCH IN EASTERN CANADA
+      </h1>
+</div>
+    </motion.div>
+
     <img
-      className="absolute  left-[20px] top-[10px]
-      w-[90px] sm:w-[90px] md:w-[100px] lg:w-[100px]"
-      src="/images/timeline/plover_sketch.svg"
-      alt="annual census from 1994-2003"
-    />
-
-    <p className="font-semibold text-center text-[#1D282B] 
-    text-md lg:text-lg md:text-lg sm:text-lg
-    w-[180px] lg:w-[300px] md:w-[300px] sm:w-[300px]"> 
-      History of Atlantic Piping plover research in eastern Canada
-    </p>
-
-    <p className="absolute right-[50px] text-5xl text-[#1D282B] animate-bounce">
-      🡣
-    </p>
-  </div>
-</motion.div>
-
+          className="absolute left-[10px] top-[10px]
+          w-[90px] sm:w-[90px] md:w-[100px] lg:w-[100px]"
+          src="/images/timeline/plover_sketch.svg"
+          alt="annual census from 1994-2003"
+        />
 
     
       {/* Overall timeline structure. */}
