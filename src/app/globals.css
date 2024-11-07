@@ -78,7 +78,6 @@ img, video {
   user-select: none;
 }
 
-
  .resizer {
   position: absolute;
   top: 20%;
@@ -89,5 +88,4 @@ img, video {
   cursor: col-resize;
   z-index: 20;
 }
-
 
