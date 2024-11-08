@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion, AnimatePresence } from 'framer-motion'
@@ -18,17 +17,29 @@ const fadeIn = {
 }
 
 const Timeline: React.FC = () => {
-  const [Results, setShowResults] = useState(false);
+const [showResults, setShowResults] = useState(false);
 
   const toggleResults = () => {
-    setShowResults(!Results);
+    setShowResults(prev => !prev);
   };
 
   // Intersection observer hooks for each timeline item
-  const { ref: item1, inView: item1View } = useInView({
+  const { ref: item0, inView: item0View } = useInView({
     triggerOnce: true,               // trigger the observer once
-    threshold: [0.5],      // trigger at 10% visibility
-    rootMargin: '0px 0px -100px 0px',          // observe when the element is 50px from the viewport
+    threshold: [1.0],      // trigger at 100% visibility
+    rootMargin: '0px 0px -300px 0px',          // observe when the element is 50px from the viewport
+  });
+  
+  const { ref: item0a, inView: item0aView } = useInView({
+    triggerOnce: true,
+    threshold: [0.1],
+    rootMargin: '0px 0px -100px 0px',
+  });
+
+  const { ref: item1, inView: item1View } = useInView({
+    triggerOnce: true,
+    threshold: [0.5],
+    rootMargin: '0px 0px -200px 0px',
   });
   
   const { ref: item2, inView: item2View } = useInView({
@@ -61,54 +72,57 @@ const Timeline: React.FC = () => {
     triggerOnce: true,
     threshold: 0.2,
   });
-
+  
   return (
-    <div className="flex flex-col px-4 text-[#1D282B]">
+    <div className="flex flex-col px-4 text-[#1D282B]  mt-[50px]">
     
-      <motion.div 
+      <motion.span 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 3, duration: 0.5 }}
       className="flex items-center justify-center mt-[50px]"
     >
       <p className="relative font-bold text-[#1D282B] animate-bounce top-[10px]
-      left-[20px] sm:left-[20px] md:left-0 lg:left-0
+      left-[40px] sm:left-[40px] md:-left-[10px] lg:-left-[10px]
       text-5xl sm:text-5xl md:text-6xl lg:text-7xl ">
         🡣
       </p>
       <div className="flex flex-col">
 
-      <h1 className="relative text-center font-black 
-              text-xl lg:text-4xl md:text-2xl sm:text-xl 
+      <motion.h1 className="relative text-center font-black 
+              text-2xl sm:text-2xl md:text-3xl  lg:text-4xl xl:text-5xl
               w-full max-w-[800px] min-w-[500px]">
-        THE HISTORY OF ATLANTIC PIPING PLOVER
-      </h1>
+        <motion.span> THE </motion.span>{' '}
+        <motion.span>HISTORY </motion.span>{' '}
+        <motion.span>OF </motion.span>{' '}
+        <motion.span className="text-[#D18D53] drop-shadow-xl">PIPING PLOVER</motion.span>
+      </motion.h1>
       <h1 className="relative text-center font-black text-[#1D282B] 
-              text-2xl lg:text-5xl md:text-3xl sm:text-2xl 
+              text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl
               w-full max-w-[800px]">
         RESEARCH IN EASTERN CANADA
       </h1>
 </div>
-    </motion.div>
-    <motion.div 
+    </motion.span>
+    <motion.span 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 3, duration: 0.5 }}
-      className="flex items-center justify-center mt-[50px]"
-    >
-    <img
-          className="absolute flex scale-x-[-1] z-20
-          left-[50vw] sm:left-[50vw] md:left-[50vw] lg:left-[50vw]
-          top-[880px] sm:top-[880px] md:top-[900px] lg:top-[900px] 
-          w-[280px] sm:w-[280px] md:w-[400px] lg:w-[500px]"
-          src="/images/PIPL/ploversketch.svg"
-          alt="by Vintage Graphics"
-        />
-    </motion.div>
-    
+      className=""
+    >    </motion.span>
+
+
       {/* Overall timeline structure. */}
       <ul className="timeline timeline-snap-icon timeline-vertical mb-[150px] z-10">
-
+        
+        <li ref={item0} className={`transition-transform duration-700 ${item0View ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[80px]"}`}>
+        <img
+                src="/images/PIPL/ploversketch.svg"
+                alt="by Vintage Graphics"
+                className="absolute z-20 flex mt-[50px] top-[0px] scale-x-[-1] left-[50vw]
+                w-[280px] sm:w-[280px] md:w-[400px] lg:w-[500px]"
+              />
+          </li>
 
         {/* Timeline Item 1 */}
         <li ref={item1} className={`transition-transform duration-700 ${item1View ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[80px]"}`}>
@@ -126,9 +140,9 @@ const Timeline: React.FC = () => {
             </div>
 
             <p className="relative text-sm sm:text-sm  md:text-lg  lg:text-xl  
-            w-[250px] sm:w-[250px] md:w-[325px] lg:w-[380px]  
-            left-[50px] sm:left-[50px] md:left-[100px] lg:-left-0">
-           In the late 70's, Piping Plovers were known to nest on beaches scattered throughout Canada, including the provinces of Nova Scotia, New Brunswick, Prince Edward Island, Newfoundland, and the Magdalen Islands of Quebec. <a href="https://dalspace.library.dal.ca/handle/10222/82265" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">Cairns & Wake (1977)</a> studied the breeding biology and behaviour of <i>C. melodus</i> between 1975-1976 in Southern Nova Scotia, and they estimated that the population in Nova Scotia was between 60-75 pairs.
+              w-[250px] sm:w-[250px] md:w-[325px] lg:w-[380px]  
+              left-[50px] sm:left-[50px] md:left-[100px] lg:-left-0">
+              In the late 70's, Piping Plovers were known to nest on beaches scattered throughout Canada, including the provinces of Nova Scotia, New Brunswick, Prince Edward Island, Newfoundland, and the Magdalen Islands of Quebec. <a href="https://dalspace.library.dal.ca/handle/10222/82265" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">Cairns & Wake (1977)</a> studied the breeding biology and behaviour of <i>C. melodus</i> between 1975-1976 in Southern Nova Scotia, and they estimated that the population in Nova Scotia was between 60-75 pairs.
             </p>
 
             <div className="relative bg-gray-100 py-[5px] rounded-[10px] mt-[30px] -mb-[250px] 
@@ -170,71 +184,81 @@ const Timeline: React.FC = () => {
         </li>
 
 
-        {/* Timeline Item 3 */}
-        <li ref={item3} className={`transition-transform duration-700 
+        {/* Item 3 */}
+
+        <li
+          ref={item0a}
+          className={`transition-transform duration-700 flex justify-center items-center z-10 ${
+            item0aView ? "opacity-100 translate-y-20" : "opacity-0 translate-y-[150px]"
+          }`}
+          style={{ minHeight: '100vh' }}>
+          <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+            <img
+              className="relative -top-[280px] left-[27px]
+              w-[550px] sm:w-[550px] md:w-[600px] lg:w-[600px]"
+              src="/images/timeline/census.svg"
+              alt="annual census from 1994-2003"
+            />
+          </motion.span>
+        </li>
+
+        <li ref={item3} className={`transition-transform duration-700 relative z-0 
+          bottom-[1100px] sm:bottom-[1100px] md:bottom-[1150px] lg:bottom-[1150px]
           ${item3View ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[240px]"}`}>
+          <hr />
+            <div className="timeline-start flex flex-col items-center 
+            mr-[60px] sm:mr-[60px] md:mr-[70px] lg:mr-[90px]
+            w-[240px] sm:w-[240px] md:w-[340px] lg:w-[400px] xl:w-[500px]">
+              
+              <div className="font-black text-2xl text-end text-center
+                sm:text-2xl md:text-3xl lg:text-4xl w-full ">
+                FIRST POPULATION
+              </div>
+              
+              <div className="font-black text-lg w-full text-end text-center
+                sm:text-lg md:text-2xl lg:text-3xl ">
+                MONITORING PROGRAMS
+              </div>
 
-          <hr/>
-          <div className="timeline-start text-end absolute top-[30px]">
-            
-            <div className="font-black relative mt-[40px] text-end
-            text-2xl sm:text-2xl  md:text-3xl  lg:text-4xl  
-            w-[350px] sm:w-[290px] md:w-[430px] lg:w-[430px] lg:-left-[40px]">FIRST POPULATION</div>
-               
-            <div className="font-black relative text-end
-            text-lg sm:text-lg  md:text-2xl  lg:text-3xl  
-            w-[350px] sm:w-[290px] md:w-[430px] lg:w-[430px] lg:-left-[40px]">MONITORING PROGRAMS </div>
-
-              <p className="relative text-sm sm:text-sm  md:text-lg  lg:text-xl
-            w-[220px] sm:w-[220px] md:w-[350px] lg:w-[430px]  
-            left-[90px] sm:left-[30px] md:left-[70px] lg:-left-[40px]">
-                Monitoring efforts ramped up in the 1960's, with an annual Canadian census beginning in 1994 and a systematic international census which occurred in 1991, 1996 and 2001 (<a href="https://publications.gc.ca/collections/collection_2018/eccc/cw69-5/CW69-5-436-eng.pdf" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">Amirault 2005</a>, <a href="https://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=1692&context=usgsstaffpub" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">Haig 2005</a>). For each program, beaches with Piping plover nests were located at the beginning of each breeding season. Adults and juveniles were marked individually with coded metal bands, and sites were revisited during the season to monitor nesting success. 
+              <p className="text-end w-full
+                text-sm sm:text-sm md:text-lg lg:text-xl ">
+                Monitoring efforts ramped up in the 1960's, with an annual Canadian census beginning in 1994 and a systematic international census which occurred in 1991, 1996, and 2001 
+                (<a href="https://publications.gc.ca/collections/collection_2018/eccc/cw69-5/CW69-5-436-eng.pdf" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">Amirault 2005</a>,<a href="https://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=1692&context=usgsstaffpub" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">Haig 2005</a>). For each program, beaches with Piping plover nests were located at the beginning of each breeding season. Adults and juveniles were marked individually with coded metal bands, and sites were revisited during the season to monitor nesting success.
               </p>
             </div>
           <hr />
-
         </li>
-        <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 3, duration: 0.5 }}>
-                <img
 
-                className="relative h-auto z-20 mx-auto left-[25px]
-                w-[600px] sm:w-[600px] md:w-[600px] lg:w-[600px]" 
-                src="/images/timeline/census.svg"
-                alt="annual census from 1994-2003"
-                />
-                
-            </ motion.div>
-        
+
         {/* Timeline Item 4 */}
-        <li ref={item4} className={`transition-transform duration-700 ${item4View ? "opacity-100 translate-y-20" : "opacity-0 translate-y-[150px]"}`}>
+        <li ref={item4} className={`transition-transform duration-700 -top-[950px] ${item4View ? "opacity-100 translate-y-20" : "opacity-0 translate-y-[150px]"}`}>
           <hr/>
            <div className="timeline-end text-start relative">
 
             <div className="relative" >
-              <div className="relative text-4xl font-black mx-10 w-[400px] left-10" > PLOVERS A SPECIES AT RISK </div>
+              <div className="relative font-black mx-10 left-5
+              w-[220px] sm:w-[220px] md:w-[350px] lg:w-[350px]
+              text-2xl sm:text-2xl md:text-4xl lg:text-4xl" > 
+                PIPING PLOVERS A SPECIES AT RISK </div>
 
               <div className="relative w-[500px]">
-                <p className="text-xl relative left-10 mx-10 mt-[10px]">
-                  The Atlantic subspecies of Piping plovers (<i>C. melodus melodus</i>) was officially listed under the Species at Risk Act (SARA) in June 2003, two years after the Committee on the</p>
-                <p className="text-xl relative left-10 mx-10">
-                  Status of Endangered Wildlife (COSEWIC)  </p>
-                <p className="text-xl relative left-10 mx-10">
-                  listed the species (<i>C. melodus</i>)</p>
-                  <p className="text-xl text-left relative left-10 mx-10">
-                   as Endangered. 
+                <p className="text-xl relative left-5 mx-10 mt-[10px]">
+                  The Atlantic subspecies of Piping plovers (<i>C. melodus melodus</i>) was officially listed under the Species at Risk Act (SARA) in June 2003, two years after the Committee on the Status of Endangered Wildlife (COSEWIC) listed the species (<i>C. melodus</i>) as Endangered. 
                 </p>
               </div>
             </div>
 
-          
-          <img
-              className="absolute w-[300px] h-auto left-[300px] top-[0px]" 
-              src="/images/PIPL/HarryCollins2.svg"
-              alt="by Harry Collins from Getty Images"
-              />
+            <motion.span 
+                initial={{ opacity: 0 }} 
+                animate={{ opacity: 1 }} 
+                transition={{ duration: 1, delay: 4 }}>
+                <img
+                  className="absolute w-[300px] h-auto left-[300px] bottom-[290px]" 
+                  src="/images/PIPL/HarryCollins2.svg"
+                  alt="by Harry Collins from Getty Images"
+                />
+            </motion.span>
+
           </div>
 
           <hr />
@@ -242,15 +266,15 @@ const Timeline: React.FC = () => {
 
 
         {/* Timeline Item 5 */}
-        <li ref={item5} className={`transition-transform duration-700 ${item5View ? "opacity-100 translate-y-20" : "opacity-0 translate-y-[180px]"}`}>
+        <li ref={item5} className={`transition-transform duration-700 -top-[950px] ${item5View ? "opacity-100 translate-y-20" : "opacity-0 translate-y-[180px]"}`}>
           <div className="timeline-middle relative">
 
-          <time className="relative top-[100px] font-mono 
+          <time className="relative font-mono 
           text-white font-bold text-2xl bg-black rounded-[10px] px-[10px]">2006</time>
 
           </div>
 
-          <div className="relative timeline-start mb-10 text-end top-[400px]">
+          <div className="relative timeline-start mb-10 text-end">
             <div className="text-4xl font-black mx-10" > INITIAL SURVIVAL ESTIMATES </div>
             <p className="text-xl absolute text-right right-[0px] w-[450px] mx-10">
             <a href="https://www.ace-eco.org/vol1/iss3/art4/" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">Calvert et al. (2006)</a> built a matrix projection model for two Piping plover population segments in <b>(1) the Gulf of the St. Lawrence</b> and <b>(2) southern Nova Scotia </b> based on monitoring and mark-recapture data collected from 1998 to 2005.
@@ -258,14 +282,14 @@ const Timeline: React.FC = () => {
 
             {/* Dropdown button */}
             <button
-              onClick={toggleResults}
-              className="btn btn-ghost bg-gray-100 w-[400px] mt-10 ml-4 text-lg font-semibold mt-[100px] mx-10"
-            >
-              {Results ? 'Hide Results' : 'Show Results'} ▼
-            </button>
+      onClick={toggleResults}
+      className="btn btn-ghost bg-gray-100 w-[400px] mt-10 ml-4 text-lg font-semibold mt-[150px] mx-10"
+    >
+      {showResults ? 'Hide Results' : 'Show Results'} ▼
+    </button>
 
             {/* Conditional rendering for the dropdown content */}
-            {Results && (
+            {showResults && (
               <div className="relative bg-gray-100 rounded-[10px] shadow-lg py-10 mt-4">
                 <img
                   className="relative w-[530px] py-5 mx-auto" 
@@ -289,10 +313,8 @@ const Timeline: React.FC = () => {
         </li>
 
 
-
-
         {/* Timeline Item 6 */}
-        <li ref={item6} className={`transition-transform duration-700 ${item6View ? "opacity-100 translate-y-20" : "opacity-0 translate-y-[280px]"}`}>
+        <li ref={item6} className={`transition-transform duration-700 -top-[950px] ${item6View ? "opacity-100 translate-y-20" : "opacity-0 translate-y-[280px]"}`}>
           <hr/>
           <div className="relative timeline-middle flex flex-col -top-[40px]">
           <time className="font-mono text-white font-bold text-2xl bg-black rounded-[10px] px-[10px]">2014</time>
@@ -340,7 +362,7 @@ const Timeline: React.FC = () => {
         </li>
 
         {/* Timeline Item 7 */}
-        <li ref={item7} className={`transition-transform duration-700 ${item7View ? "opacity-100 translate-y-20" : "opacity-0 translate-y-[200px]"}`}>
+        <li ref={item7} className={`transition-transform duration-700 -top-[950px] ${item7View ? "opacity-100 translate-y-20" : "opacity-0 translate-y-[200px]"}`}>
           <div className="timeline-middle">
           <time className="font-mono text-white font-bold text-2xl bg-black rounded-[10px] px-[10px] relative bottom-[20px]">2024</time>
           </div>

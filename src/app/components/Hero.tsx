@@ -80,22 +80,24 @@ const Hero: React.FC<HeroProps> = ({ onScrollDown }) => {
         >
 
           <motion.h1 
-            className="mt-[0px] lg:mt-[100px] md:mt-[100px] sm:mt-[0px] drop-shadow-2xl
+            className="to-transparent py-[8px]
+            drop-shadow-2xl px-5 rounded-[10px] mb-2 bg-gradient-to-r from-[#1D282B] via-[#1D282B] 
+            mt-[280px] sm:mt-[280px] md:mt-[220px] lg:mt-[220px] 
+            w-[450px] sm:w-[450px] md:w-[600px] lg:w-[800px] xl:w-[1000px]
             text-[#E0DEDA] text-shadow-xl font-bold py-8 leading-tight
-            text-2xl md:text-3xl lg:text-4xl xl:text-5xl sm:text-2xl"
+            text-2xl md:text-3xl lg:text-5xl xl:text-5xl sm:text-2xl xl:text-6xl "
           >
-            <motion.span>Demographic modeling for</motion.span>{' '} <br />
-            <motion.span className="text-[#D18D53] drop-shadow-xl">Piping Plover</motion.span>{' '}
-            <motion.span>in Eastern Canada</motion.span>
+            <motion.span>Modeling </motion.span>{' '}
+            <motion.span className="text-[#D18D53] drop-shadow-xl">Atlantic Piping Plover</motion.span>{' '} <br />
+            <motion.span>Populations in Eastern Canada</motion.span>
           </motion.h1>
-
 
           <AnimatePresence>
             {showContent && (
               <motion.div
-                className="bg-gradient-to-r from-[#1D282B] via-[#1D282B] to-transparent bg-opacity-10 p-6 rounded-lg backdrop-blur-sm 
-                mt-[120px] lg:mt-[0px] md:mt-[0px] sm:mt-[120px] 
-                w-[80vw] lg:w-[80vw] md:w-[80vw] sm:w-[80vw] max-w-[1000px]"
+                className="p-6 rounded-lg backdrop-blur-sm 
+                bg-gradient-to-r from-[#1D282B] via-[#1D282B] to-transparent 
+                w-[95vw] sm:w-[95vw] md:w-[81vw] lg:w-[81vw] max-w-[1000px]"
                 variants={fadeIn}
                 initial="hidden"
                 animate="visible"
