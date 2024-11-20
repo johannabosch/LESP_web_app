@@ -4,55 +4,41 @@ import React from 'react';
 const PopulationModel: React.FC = () => {
   return (
     <div className="flex justify-center items-center">
-      
       <div className="card w-[800px] text-left bg-base-100 shadow-xl border border-gray-300">
-        
         <div className="card-body">
-          <h2 className="card-title text-3xl text-[#991e3f]">Population Size Model</h2>
+          <h2 className="card-title text-3xl text-[#991E3F]">Population Size Model</h2>
           
           <p className="text-xl text-gray-700 mb-4">
-            This paragraph will introduce the model for petrels, including some information about current popualtion sizes for petrels and their vulnerability. This paragraph will introduce the model for petrels, including some information about current popualtion sizes for petrels and their vulnerability.
+          The population size model is made up of breeding census data collected from ... The data is based on region (r) and time (t).
           </p>
 
-
           <h3 className="text-2xl font-bold text-gray-700 mb-0">
-            The Model:
+            Parameters:
           </h3>
           <p className="text-xl text-gray-700 mb-0">
-          This paragraph will contain some more information about the model and it's parameters. It will outline the parameters like Nstr and Str, maybe include some formulas.This paragraph will contain some more information about the model and it's parameters. It will outline the parameters like Nstr and Str, maybe include some formulas.
-          </p>
-
-          <div className="text-2xl text-center font-semibold text-[#004aad]">
-            y<sub>i</sub> = α + β x<sub>i</sub>
-          </div>
-
-          <h3 className="text-2xl font-bold text-gray-700 mb-0">
-            The Data:
-          </h3>
-          <p className="text-xl text-gray-700 mb-6">
-            This is a sentence about the data available for this model. Learn more about the data below:
-          </p>
+            The population size model considers the ...</p>
 
           {/* Collapse section for Breeding Census Data */}
-          <div className="collapse collapse-arrow bg-base-">
+          <div className="collapse collapse-arrow mt-10">
             <input type="checkbox" className="peer" />
-            <div className="collapse-title text-2xl text-left font-medium bg-[#991e3f] text-white peer-checked:bg-[#991e3f] peer-checked:text-secondary-content">
-              Breeding Census Data
+            <div className="collapse-title text-2xl text-left font-medium bg-[#991E3F] text-white peer-checked:bg-[#991E3F] peer-checked:text-secondary-content">
+              Breeding census data
             </div>
-                <div className="collapse-content flex bg-[#991e3f] text-black peer-checked:text-secondary-content">
-                <div className="bg-white w-[350px] rounded text-black h-[250px] mr-5 mt-5">
-                  <p className= "w-[300px] text-xl font-semibold mt-10 mb-5 mx-10" >
-                    Here is a little intro for the data
-                  </p>
+            <div className="collapse-content flex border border-[#991E3F] border-[5px] text-black peer-checked:text-secondary-content">
+            <div className="bg-white w-[350px] rounded text-black h-[250px] mr-5 mt-5">
+                  <p className= "w-[300px] text-xl mt-10 mb-5 mx-10" >
+                  Breeding census data consists of  <b>placeholder text</b>.</p>
 
-                  <p className= "w-[300px] text-lg mx-10" >
-                  Placeholder text goes here for the data info that we want to display, including images and more. Placeholder text goes here for the model that we want to display. Placeholder text goes here for the model that we want to display, including images and photos and more. .
-                  </p>
+                  <p className= "w-[300px] text-xl mx-10 text-left" >
+                  <b>Placeholder:</b> </p>
+
+                  <p className= "w-[300px] text-lg mx-10 text-left" >
+                  Placeholder text for a sentence on the data <a href="" className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline">(reference)</a></p>
                 </div>
-                <div className="flex flex-col items-center border-[5px] rounded mt-5">
+                <div className="flex flex-col items-center border-[2px] border-[#991E3F] rounded mt-5">
                       <img
                         src="/images/PIPL/SidMaddock.jpg"
-                        alt="Piping petrel wearing identification band labelled 3N (Photo by Sid Maddock)"
+                        alt="Piping plover wearing identification band labelled 3N (Photo by Sid Maddock)"
                         className="w-[340px] h-auto"
                       />
                       

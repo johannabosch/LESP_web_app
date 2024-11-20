@@ -8,7 +8,7 @@ const ProcessModel: React.FC = () => {
           <h2 className="card-title text-3xl text-[#60941a]">Population Process Model</h2>
           
           <p className="text-xl text-gray-700 mb-4">
-            This paragraph will introduce the population process model for petrels, focusing on how the population dynamics are modeled over time. It will provide insights into breeding, survival, and migration processes.
+            This paragraph will introduce the population process model for plovers, focusing on how the population dynamics are modeled over time. It will provide insights into breeding, survival, and migration processes.
           </p>
 
           <h3 className="text-2xl font-bold text-gray-700 mb-0">
