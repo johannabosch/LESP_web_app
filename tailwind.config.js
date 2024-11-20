@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        plover: {
+        petrel: {
           DEFAULT: '#75b3f0',
           hover: '#a7d1fa',
         },

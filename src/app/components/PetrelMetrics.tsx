@@ -1,9 +1,3 @@
-// PloverMetrics.tsx
-
-// This component handles the display of the metrics for Plover sites.
-// It uses `activeTab` to track which metric (tab) is currently selected,
-// and `selectedSites` to know which study sites the user is looking at.
-
 "use client";
 
 import React, { useState } from 'react';
@@ -21,7 +15,7 @@ import Gulf_ProductivityMetrics from '@/app/components/gulf/Gulf_ProductivityMet
 import Gulf_SurvivalMetrics from '@/app/components/gulf/Gulf_SurvivalMetrics';
 import Gulf_TransitionMetrics from '@/app/components/gulf/Gulf_TransitionMetrics';
 
-const PloverMetrics: React.FC = () => {
+const PetrelMetrics: React.FC = () => {
   // State for which metric (tab) is currently selected
   const [activeTab, setActiveTab] = useState<string | null>(null); // Initially no metric selected
 
@@ -35,7 +29,7 @@ const PloverMetrics: React.FC = () => {
   };
 
   return (
-    <div id="plover-metrics-container" className="plover-metrics-container p-4">
+    <div>
       {/* Metrics Navigation Component */}
       <MetricsNav
         selectedSites={selectedSites}
@@ -46,7 +40,8 @@ const PloverMetrics: React.FC = () => {
       />
 
       {/* Content based on activeTab and selectedSites */}
-      <div className="plover-metrics-content mt-[50px] p-4 bg-white rounded-box text-lg text-center" style={{ height: '100%', overflow: 'auto' }}>
+      <div className="mt-[50px] p-4 bg-white rounded-box text-lg text-center" 
+      style={{ height: '100%', overflow: 'auto' }}>
         {!selectedSites.length && !activeTab && (
           <p>Begin by selecting study sites, and then choose a metric you want to visualize.</p>
         )}
@@ -86,6 +81,6 @@ const PloverMetrics: React.FC = () => {
   );
 };
 
-export default PloverMetrics;
+export default PetrelMetrics;
 
 

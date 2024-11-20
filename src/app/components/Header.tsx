@@ -41,18 +41,19 @@ const Header = () => {
 
         {/* Buttons on the right */}
         <div className="flex items-center space-x-3 rtl:space-x-reverse">
-          <button
+          <a
             type="button"
+            href="petrel_page/"
             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800
             text-sm sm:text-sm md:text-lg lg:text-xl "
           >
             VISUALIZE RESULTS
-          </button>
+          </a>
 
           <button
             onClick={toggleMenu}
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-lg text-white rounded-lg hover:text-blue-800"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-lg text-black rounded-lg hover:text-blue-800"
             aria-controls="navbar-cta"
             aria-expanded={isMenuOpen}
           >

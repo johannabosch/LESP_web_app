@@ -19,25 +19,20 @@ const MetricsNav: React.FC<MetricsNavProps> = ({ selectedSites, setSelectedSites
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      // Check if the click was outside the dropdown
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsDropdownOpen(false); // Close the dropdown
+        setIsDropdownOpen(false); // Close the dropdown if click is outside
       }
     };
 
-    // Add event listener for clicks on the document
     document.addEventListener('mousedown', handleClickOutside);
 
-    // Cleanup the event listener on component unmount
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
 
-  // List of study sites
+  // List of study sites and metrics
   const studySites = ["Southern Nova Scotia", "Gulf"];
-
-  // List of metrics
   const metrics = ["Population Size", "Productivity", "Survival", "Transition"];
 
   // Define color for each metric tab
@@ -48,7 +43,6 @@ const MetricsNav: React.FC<MetricsNavProps> = ({ selectedSites, setSelectedSites
     "Survival": "#7257b0",
   };
 
-  // Information about the population metrics
   const metricInfo = {
     "Population Size": "The total number of individuals within a population.",
     "Productivity": "The rate at which new individuals are produced by the population.",
@@ -56,103 +50,92 @@ const MetricsNav: React.FC<MetricsNavProps> = ({ selectedSites, setSelectedSites
     "Transition": "The rate at which individuals move between life stages or states."
   };
 
-  // Function to handle checkbox changes
   const handleSiteSelection = (site: string) => {
     if (selectedSites.includes(site)) {
-      // Remove the site if it's already selected
       setSelectedSites(selectedSites.filter((selected) => selected !== site));
     } else {
-      // Add the site if it's not selected
       setSelectedSites([...selectedSites, site]);
     }
   };
 
-  // Function to handle reset button click and rotation
   const handleResetClick = () => {
     setIsRotating(true); // Start the rotation animation
-    resetSelection(); // Perform the reset action
+    resetSelection(); // Perform reset action
 
-    // Stop the rotation after the animation ends
     setTimeout(() => {
-      setIsRotating(false); // Reset the state after the animation duration
-    }, 500); // The same duration as the CSS transition
+      setIsRotating(false); // Reset rotation after animation duration
+    }, 500);
   };
 
   return (
-    <div className="flex justify-between items-center mb-4">
-      {/* Tab buttons for the different metrics */}
-      <div className="items-center space-x-4 flex">
-        <span className="text-xl font-semibold">Choose a metric:</span>
+    <section className="flex p-10 mt-[100px] h-screen bg-white dark:bg-gray-900">
+      <div className="w-full max-w-screen-xl px-4 mx-auto">
+        {/* Start coding here */}
+        <div className="relative overflow-hidden bg-white shadow-md shadow-gray-300 border border-gray-100 border-[1px]
+        dark:bg-gray-800 md:rounded-lg p-5">
 
-        <div role="tablist" className="tabs flex space-x-6 relative">
-          {metrics.map((metric) => {
-            const tabColor = tabColors[metric]; // Get the color for each metric
+          <div className="flex flex-col items-center justify-between p-4 space-y-3 md:flex-row md:space-y-0 md:space-x-4">
+            {/* Metric Tabs */}
+            <div className="inline-flex flex-col w-full rounded-md shadow-sm md:w-auto md:flex-row" role="group">
+              <span className="text-xl font-semibold">Choose a metric:</span>
+              {metrics.map((metric) => {
+                const tabColor = tabColors[metric]; // Get the color for each metric
 
-            return (
+                return (
+                  <button
+                    key={metric}
+                    className={`px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-t-lg md:rounded-tr-none md:rounded-l-lg 
+                      ${activeTab === metric ? `bg-${tabColor} text-white` : 'hover:bg-gray-100 hover:text-primary-700'} 
+                      focus:ring-2 focus:ring-primary-700 focus:text-primary-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-primary-500 dark:focus:text-white`}
+                    onClick={() => setActiveTab(metric)} // set the active tab
+                  >
+                    {metric}
+                    {/* Underline for active tab */}
+                    {activeTab === metric && (
+                      <span
+                        className="absolute bottom-[-6px] left-0 right-0 mx-auto h-[3px] rounded-full"
+                        style={{ backgroundColor: tabColor, width: '60%' }}
+                      ></span>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Info Button */}
+            <div
+              className="relative flex items-center justify-center mb-5 right-1 cursor-pointer text-black"
+              onMouseEnter={() => setShowInfoPopup(true)}
+              onMouseLeave={() => setShowInfoPopup(false)}
+            >
+              <span className="text-sm font-bold rounded-full bg-white w-5 h-5 flex items-center justify-center border border-black">i</span>
+              {showInfoPopup && (
+                <div className="absolute top-full left-0 mt-2 w-[550px] bg-white border border-gray-300 rounded-lg shadow-lg p-4 z-10">
+                  <ul>
+                    {metrics.map((metric) => (
+                      <li key={metric} className="mb-2 text-lg">
+                        <strong>{metric}:</strong> {metricInfo[metric as keyof typeof metricInfo]}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+
+            {/* Reset Button with Rotation Effect */}
+            <div className="bg-gray-400 px-3 py-[2px] rounded-lg hover:bg-gray-600">
               <button
-                key={metric}
-                className={`relative text-lg px-6 py-1 rounded-md font-semibold transition-all duration-300 transform 
-                  ${activeTab === metric ? 'scale-105 text-white shadow-xl' : 'bg-white'} hover:scale-105 hover:shadow-lg`}
-                style={{ backgroundColor: activeTab === metric ? tabColor : 'white',
-                  color: activeTab === metric ? 'white' : tabColor,
-                  border: activeTab === metric ? `2px solid ${tabColor}` : `2px solid ${tabColor}`,
-                }}
-                onClick={() => setActiveTab(metric)} // set the active tab
+                className={`text-lg text-white transition-transform duration-500 ${isRotating ? 'rotate' : ''}`}
+                onClick={handleResetClick}
               >
-                {metric}
-
-                {/* Small underline for the active tab */}
-                {activeTab === metric && (
-                  <span
-                    className="absolute bottom-[-6px] left-0 right-0 mx-auto h-[3px] rounded-full"
-                    style={{
-                      backgroundColor: tabColor,
-                      width: '60%',
-                    }}
-                  ></span>
-                )}
+                ↺
               </button>
-            );
-          })}
-
-          {/* Info button */}
-          <div
-            className="relative flex items-center justify-center mb-5 right-1 cursor-pointer text-black"
-            onMouseEnter={() => setShowInfoPopup(true)}
-            onMouseLeave={() => setShowInfoPopup(false)}
-          >
-            <span className="text-sm font-bold rounded-full bg-white w-5 h-5 flex items-center justify-center border border-black">i</span>
-
-            {/* Popup with metric info */}
-            {showInfoPopup && (
-              <div className="absolute top-full left-0 mt-2 w-[550px] bg-white border border-gray-300 rounded-lg shadow-lg p-4 z-10">
-                <ul>
-                  {metrics.map((metric) => (
-                    <li key={metric} className="mb-2 text-lg">
-                      <strong>{metric}:</strong> {metricInfo[metric as keyof typeof metricInfo]}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-
-
-          {/* Reset Button positioned to the left with rotation effect */}
-          <div className= "bg-gray-400 px-3 py-[2px] rounded-lg hover:bg-gray-600">
-            <button
-            className={`text-lg text-white transition-transform duration-500 ${isRotating ? 'rotate' : ''}`}
-            onClick={handleResetClick}
-          >
-            ↺
-          </button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="flex justify-between items-center mb-4">
-        {/* Dropdown menu for selecting study sites with checkboxes */}
-        <div className="dropdown-container relative flex items-center">
+        {/* Dropdown for Study Sites */}
+        <div className="dropdown-container relative flex items-center mt-5">
           <details
             className="dropdown"
             ref={dropdownRef}
@@ -161,8 +144,6 @@ const MetricsNav: React.FC<MetricsNavProps> = ({ selectedSites, setSelectedSites
           >
             <summary className="btn flex justify-between w-[400px] cursor-pointer select-none text-lg">
               <span>{selectedSites.length === 0 ? 'Select a study site' : 'Selected study sites'}</span>
-
-              {/* Rotate the arrow icon */}
               <svg
                 className={`w-4 h-4 ml-2 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
                 xmlns="http://www.w3.org/2000/svg"
@@ -177,7 +158,7 @@ const MetricsNav: React.FC<MetricsNavProps> = ({ selectedSites, setSelectedSites
               </svg>
             </summary>
 
-            {/* Dropdown list with checkboxes */}
+            {/* Dropdown List */}
             <ul className="absolute text-lg bg-white border border-gray-300 rounded-lg shadow-lg w-full mt-2 p-2 z-10">
               {studySites.map((site, index) => (
                 <li key={index} className="flex items-center space-x-2">
@@ -186,7 +167,7 @@ const MetricsNav: React.FC<MetricsNavProps> = ({ selectedSites, setSelectedSites
                     id={site}
                     checked={selectedSites.includes(site)}
                     onChange={() => handleSiteSelection(site)} // handle checkbox selection
-                    className={'w-5 h-5 m-2 '}
+                    className="w-5 h-5 m-2"
                   />
                   <label htmlFor={site} className="text-lg">{site}</label>
                 </li>
@@ -195,7 +176,7 @@ const MetricsNav: React.FC<MetricsNavProps> = ({ selectedSites, setSelectedSites
           </details>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
