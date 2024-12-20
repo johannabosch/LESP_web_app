@@ -24,7 +24,7 @@ const Header = () => {
 
 
   return (
-    <nav className="fixed z-50 w-full bg-transparent">
+    <nav className="z-50 w-full bg-transparent">
       <div className="w-full flex items-center justify-between mx-auto 
       p-4 sm:p-4 md:p-10 lg:p-10 xl:p-10">
         {/* Logo on the left */}
@@ -119,7 +119,7 @@ const Header = () => {
                   <ul className="text-md text-gray-700 dark:text-gray-200 px-2">
                     <li>
                       <a
-                        href="#"
+                        href="about_page"
                         className="block py-2 text-gray-900 hover:font-bold hover:font-bold dark:text-white
                         text-md sm:text-md md:text-lg lg:text-lg"
                       >
@@ -142,63 +142,6 @@ const Header = () => {
               )}
             </li>
 
-
-            <li>
-              <button
-                onClick={toggleDropdownItem2}
-                type="button"
-                className="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600
-                text-md sm:text-md md:text-lg lg:text-lg"
-                aria-expanded={isDropdownOpenItem2}
-              >
-                Distribution
-                <svg
-                  className="w-2.5 h-2.5 ms-2.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 10 6"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="m1 1 4 4 4-4"
-                  />
-                </svg>
-              </button>
-              {isDropdownOpenItem2 && (
-                <div
-                  id="dropdownNavbar"
-                  className="z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg w-44 dark:bg-gray-700 mx-5"
-                  aria-hidden={!isDropdownOpenItem2}
-                >
-                  <ul className="text-md text-gray-700 dark:text-gray-200 px-2">
-                    <li>
-                      <a
-                        href="#"
-                        className="block py-2 text-gray-900 hover:font-bold hover:font-bold dark:text-white
-                        text-md sm:text-md md:text-lg lg:text-lg"
-                      >
-                        GPS/GLS Tracking
-                      </a>
-                    </li>
-                  </ul>
-                  <ul className="text-md text-gray-700 dark:text-gray-200 px-2">
-                    <li>
-                      <a
-                        href="#"
-                        className="block py-2 text-gray-900 hover:font-bold hover:font-bold dark:text-white
-                        text-md sm:text-md md:text-lg lg:text-lg"
-                      >
-                        Map
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              )}
-            </li>
 
 
             <li>
