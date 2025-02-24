@@ -1,173 +1,50 @@
-import React, { useState } from "react";
-import { Collapse } from "flowbite";
+"use client";
 
+import { useState } from "react";
+import Sidebar from "./Sidebar";
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDropdownOpenItem1, setIsDropdownOpenItem1] = useState(false);
-  const [isDropdownOpenItem2, setIsDropdownOpenItem2] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsOpen(!isOpen);
   };
-
-
-  const toggleDropdownItem1 = () => {
-    setIsDropdownOpenItem1(!isDropdownOpenItem1);
-    setIsDropdownOpenItem2(false); // Close other dropdown
-  };
-
-  const toggleDropdownItem2 = () => {
-    setIsDropdownOpenItem2(!isDropdownOpenItem2);
-    setIsDropdownOpenItem1(false);
-  };
-
 
   return (
-    <nav className="z-50 w-full bg-transparent">
-      <div className="w-full flex items-center justify-between mx-auto 
-      p-4 sm:p-4 md:p-10 lg:p-10 xl:p-10">
-        {/* Logo on the left */}
-        <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img
-            src="https://flowbite.com/docs/images/logo.svg"
-            className="h-8"
-            alt="Flowbite Logo"
-          />
-          <span className="self-center font-semibold whitespace-nowrap dark:text-white
-          text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl">
-            Leach's Storm Petrel</span>
-        </a>
-
-        {/* Buttons on the right */}
-        <div className="flex items-center space-x-3 rtl:space-x-reverse">
-          <a
-            type="button"
-            href="petrel_page/"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800
-            text-sm sm:text-sm md:text-lg lg:text-xl "
-          >
-            VISUALIZE RESULTS
+    <header>
+      <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+          {/* Logo */}
+          <a className="flex items-center">
+            <img src="/logos/petrel_logo.png" className="mr-3 h-[80px]" alt="Logo" />
+            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+              DRAFT Website Name
+            </span>
           </a>
 
+          {/* Hamburger Toggle (Stays the Same) */}
           <button
-            onClick={toggleMenu}
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-lg text-black rounded-lg hover:text-blue-800"
-            aria-controls="navbar-cta"
-            aria-expanded={isMenuOpen}
+            className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg hover:bg-gray-100 
+            focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 
+            dark:focus:ring-gray-600"
+            onClick={toggleMenu}
           >
             <span className="sr-only">Open main menu</span>
-            <svg
-              className="w-5 h-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 17 14"
-            >
+            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
               <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M1 1h15M1 7h15M1 13h15"
-              />
+                fillRule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clipRule="evenodd"
+              ></path>
             </svg>
           </button>
         </div>
-      </div>
+      </nav>
 
-      {/* Collapsible Menu */}
-      {isMenuOpen && (
-        <div
-          className="fixed w-30 px-[0px] bg-white rounded-lg z-50 right-0 mx-10
-          dark:bg-gray-800 dark:border-gray-700"
-        >
-          <ul className="flex flex-col font-medium p-4 mt-4 bg-transparent rounded-lg">
-            <li>
-              <button
-                onClick={toggleDropdownItem1}
-                type="button"
-                className="flex items-center justify-between w-full px-4 py-2 
-                hover:font-bold dark:hover:bg-gray-600 dark:hover:text-white
-                text-md sm:text-md md:text-lg lg:text-lg"
-                aria-expanded={isDropdownOpenItem1}
-              >
-                Population Modeling
-                <svg
-                  className="w-2.5 h-2.5 ms-2.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 10 6"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="m1 1 4 4 4-4"
-                  />
-                </svg>
-              </button>
-              {isDropdownOpenItem1 && (
-                <div
-                  id="dropdownNavbar"
-                  className="z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg w-44 dark:bg-gray-700 dark:divide-gray-600 mx-5"
-                  aria-hidden={!isDropdownOpenItem1}
-                >
-                  <ul className="text-md text-gray-700 dark:text-gray-200 px-2">
-                    <li>
-                      <a
-                        href="about_page"
-                        className="block py-2 text-gray-900 hover:font-bold hover:font-bold dark:text-white
-                        text-md sm:text-md md:text-lg lg:text-lg"
-                      >
-                        About the model
-                      </a>
-                    </li>
-                  </ul>
-                  <ul className="text-md text-gray-700 dark:text-gray-200 px-2">
-                    <li>
-                      <a
-                        href="#"
-                        className="block py-2 text-gray-900 hover:font-bold hover:font-bold dark:text-white
-                        text-md sm:text-md md:text-lg lg:text-lg"
-                      >
-                        Visualise the results
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              )}
-            </li>
-
-
-
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-gray-900 
-                hover:font-bold hover:font-bold dark:text-white dark:hover:bg-gray-700
-                text-md sm:text-md md:text-lg lg:text-lg"
-              >
-                Documentation
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-gray-900 
-                hover:font-bold hover:font-bold dark:text-white dark:hover:bg-gray-700
-                text-md sm:text-md md:text-lg lg:text-lg"
-              >
-                Acknowledgments
-              </a>
-            </li>
-          </ul>
-        </div>
-      )}
-    </nav>
+      {/* Sidebar with close button */}
+      <Sidebar isOpen={isOpen} toggleMenu={toggleMenu} />
+    </header>
   );
 };
 
