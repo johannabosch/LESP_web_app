@@ -11,23 +11,24 @@ const Header = () => {
   };
 
   return (
-    <header>
-      <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
-        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+    <header className="flex flex-col bg-white border-gray-200 py-2.5">
+      <nav>
+        <div className="flex w-full items-center justify-between mx-auto px-4">
+         
           {/* Logo */}
           <a className="flex items-center">
             <img src="/logos/petrel_logo.png" className="mr-3 h-[80px]" alt="Logo" />
+
             <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
               DRAFT Website Name
             </span>
           </a>
 
-          {/* Hamburger Toggle (Stays the Same) */}
+          {/* Hamburger Toggle */}
           <button
             type="button"
-            className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg hover:bg-gray-100 
-            focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 
-            dark:focus:ring-gray-600"
+            className="ml-auto inline-flex text-sm text-gray-500 rounded-lg 
+        hover:bg-gray-100 focus:bg-gray-100"
             onClick={toggleMenu}
           >
             <span className="sr-only">Open main menu</span>

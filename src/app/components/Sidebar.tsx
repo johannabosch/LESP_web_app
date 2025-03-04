@@ -16,7 +16,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleMenu }) => {
 
   return (
     <div
-      className={`fixed top-[120px] right-0 z-50 bg-white w-64 h-full shadow-lg transition-transform transform ${
+      className={`fixed top-[80px] right-0 z-50 bg-white w-64 h-full shadow-lg transition-transform transform ${
         isOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >
@@ -25,7 +25,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleMenu }) => {
         onClick={toggleMenu}
         className="absolute top-4 right-4 text-gray-700 hover:text-gray-900"
       >
-        <X size={24} />
+        <X size={15} />
       </button>
 
       <ul className="flex flex-col mt-12 font-medium">
@@ -78,7 +78,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleMenu }) => {
               </li>
               <li>
                 <a
-                  href="/petrel_page"
+                  href="/IPM_page"
                   className="block py-2 pr-4 text-gray-700 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-700"
                 >
                   <TrendingUpDown className="inline-block mr-2 mb-2" />

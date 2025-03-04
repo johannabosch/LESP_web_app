@@ -2,90 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom Global Styles */
-:root {
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #E0DEDA;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-scroll-snap-strictness: proximity;
-}
+/* Base styles */
+@layer base {
+  html {
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    color-scheme: light dark;
+  }
 
-*,
-::before,
-::after {
-  box-sizing: border-box;
-  border-width: 0;
-  border-style: solid;
-  border-color: #E0DEDA;
-}
+  body {
+    margin: 0;
+    background-color: #ffffff;
+  }
 
-html {
-  line-height: 1.5;
-  font-family: 'system-ui';
-  -webkit-text-size-adjust: 100%;
-  color-scheme: light dark;
-}
+  h1 {
+    @apply text-4xl font-extrabold text-gray-900 mb-6;
+    text-align: center;
+    text-shadow: 2px 3px 4px rgba(0,0,0,0.2);
+    letter-spacing: 1px;
+    line-height: 1.2;
+  }
 
-body {
-  margin: 0;
-  line-height: inherit;
-}
+  h2 {
+    @apply text-xl font-semibold text-gray-800 mb-3;
+  }
 
-button, input, optgroup, select, textarea {
-  font-family: system-ui; 
-  font-size: 100%;
-  line-height: inherit;
-}
+  h3 {
+    @apply text-xl font-medium text-gray-700 mb-2;
+  }
 
-img, svg, video, canvas, audio, iframe, embed, object {
-  display: block;
-}
+  p {
+    @apply text-gray-700 indent-8 mb-4;
+  }
 
-img, video {
-  max-width: 100%;
-  height: auto;
-}
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
 
-[hidden] {
-  display: none;
+  iframe {
+    display: block;
+    width: 100%;
+  }
 }
-
-/* rotation for reset button - metrics page */
-.rotate {
-  transition: transform 1s;
-  transform: rotate(360deg);
-}
-
-/* Disable focus outline for all focusable elements */
-*:focus {
-  outline: none;
-}
-
-/* Prevent text selection for all elements */
-* {
-  user-select: none;
-}
-
- .resizer {
-  position: absolute;
-  top: 20%;
-  left: 90%;
-  width: 2px;
-  height: 40%;
-  background-color: black;
-  cursor: col-resize;
-  z-index: 20;
-}
-
