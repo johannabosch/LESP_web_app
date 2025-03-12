@@ -7,6 +7,7 @@ import SurvivalModel from '@/app/components/schematic/ModelSurvival';
 import PopulationModel from '@/app/components//schematic/ModelPopulation';
 import ProductivityModel from '@/app/components//schematic/ModelReproductive';
 import ProcessModel from '@/app/components/schematic/ModelProcess';
+import MortalityModel from '@/app/components/schematic/ModelMortality';
 
 const IPMGraphic: React.FC = () => {
   const [hoveredImage, setHoveredImage] = useState<number | null>(null);
@@ -17,6 +18,8 @@ const IPMGraphic: React.FC = () => {
     {src: "/images/PIPL/population.svg", left: "8%", top: "66%", info: "POPULATION ABUNDANCE", component: <PopulationModel />, },
     {src: "/images/PIPL/reproductive.svg", left: "28%", top: "5%", info: "PRODUCTIVITY", component: <ProductivityModel />,},
     {src: "/images/PIPL/process.svg", left: "23%", top: "34%", info: "POPULATION PROCESS MODEL", component: <ProcessModel />,},
+    {src: "/images/PIPL/mortality.svg", left: "50%", top: "34%", info: "MORTALITY MODEL", component: <MortalityModel />,},
+
   ];
 
   // handel clicking on an image to show/hide the corresponding card

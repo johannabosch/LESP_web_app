@@ -1,12 +1,14 @@
-// plover_page/page.tsx
-
 "use client";
 
 import React from 'react';
 import Header from '@/app/components/Header';
-import Footer from '@/app/components/Footer';
 import ModelBackground from '@/app/components/ModelBackground';
-import NodeMetrics from '@/app/components/NodeMetrics';
+
+import ModelNav from '@/app/components/ModelNav';
+
+import ModelResources from '@/app/components/ModelResources';
+import Footer from '@/app/components/Footer';
+
 
 export default function IPMPage() {
   return (
@@ -22,9 +24,12 @@ export default function IPMPage() {
         </div>
 
         <div className = 'flex-grow mx-10 my-10 mb-10'>
-          <NodeMetrics />
+          <ModelNav />
         </div>
        
+        <div className = 'flex-grow mx-10 my-10 mb-10'>
+          <ModelResources />
+        </div>
       </main>
 
       <Footer />

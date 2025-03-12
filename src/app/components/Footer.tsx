@@ -16,9 +16,7 @@ const Footer = () => {
             height={70}
             className="mr-3"
           />
-          <span className="text-2xl font-semibold whitespace-nowrap dark:text-white">
-            Website Name
-          </span>
+
         </div>
 
         {/* Button Links */}

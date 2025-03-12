@@ -1,64 +1,71 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 const PopulationModel: React.FC = () => {
+  const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({
+    S1: false,
+  });
+
+  const toggleSection = (section: string) => {
+    setOpenSections((prev) => ({
+      ...prev,
+      [section]: !prev[section],
+    }));
+  };
+
   return (
-    <div className="flex justify-center items-center">
-      {/* Main Container */}
-      <div className="w-[800px] bg-white shadow-xl border border-gray-300 rounded-lg p-6">
-        <h2 className="text-3xl font-extrabold text-[#991E3F] text-center mb-4">
-          Population Size Model
-        </h2>
-
-        <p className="text-xl text-gray-700 mb-4">
-          The population size model is made up of breeding census data collected
-          from ... The data is based on region (r) and time (t).
-        </p>
-
-        <h3 className="text-2xl font-bold text-gray-700 mb-0">Parameters:</h3>
-        <p className="text-xl text-gray-700 mb-10">
-          The population size model considers the ...
-        </p>
-
-        {/* Collapsible section */}
-        <div className="mt-10">
-          <details className="group">
-            <summary className="text-2xl text-left font-medium cursor-pointer bg-[#991E3F] text-white group-open:bg-[#991E3F]">
-              Breeding census data
-            </summary>
-            <div className="flex border border-[#991E3F] border-[5px] text-black group-open:text-secondary-content">
-              <div className="bg-white w-[350px] rounded text-black h-[250px] mr-5 mt-5">
-                <p className="w-[300px] text-xl mt-10 mb-5 mx-10">
-                  Breeding census data consists of <b>placeholder text</b>.
-                </p>
-
-                <p className="w-[300px] text-xl mx-10 text-left">
-                  <b>Placeholder:</b>
-                </p>
-
-                <p className="w-[300px] text-lg mx-10 text-left">
-                  Placeholder text for a sentence on the data{" "}
-                  <a
-                    href=""
-                    className="text-blue-900 transition-all duration-200 hover:underline-offset-4 drop-shadow-xl font-semibold underline hover:underline"
-                  >
-                    (reference)
-                  </a>
-                </p>
-              </div>
-              <div className="flex flex-col items-center border-[2px] border-[#991E3F] rounded mt-5">
-                <img
-                  src="/images/PIPL/SidMaddock.jpg"
-                  alt="Piping plover wearing identification band labelled 3N (Photo by Sid Maddock)"
-                  className="w-[340px] h-auto"
-                />
-
-                <p className="absolute bottom-6 right-10 text-xs text-white px-2 py-1">
-                  Photo by Sid Maddock
-                </p>
-              </div>
-            </div>
-          </details>
+    <div className="px-10">
+      <div className="bg-white shadow-lg rounded-lg border border-gray-300 p-[1vw] mx-[1vw]">
+        <h1 className="text-[#940336]">Population Size Model</h1>
+        <hr className="w-full border-t-2 border-gray-300 my-6" />
+        <div className="flex flex-col justify-center items-center">
+          <p className="text-base text-gray-700 max-w-[50vw] text-center mb-4">
+            This paragraph will introduce the model for plovers, including some
+            information about current population sizes for plovers and their
+            vulnerability.
+          </p>
         </div>
+
+        {/* Dropdown Sections */}
+        {[ 
+          {
+            id: "S1",
+            title: "Colony Census Data",
+            content:
+              "This dataset includes stranding data collected from offshore lighted structures, which has been identified as a significant mortality factor for plovers.",
+            imageHref: "/images/model/offshore_lighting.jpg", // Link to your image page or external URL
+          },
+        ].map(({ id, title, content, imageHref }) => (
+          <div
+            key={id}
+            className="bg-[#C893B5] border-l-4 border-[#940336] mt-6 mx-5 transition-all duration-300 rounded-lg shadow-md relative"
+          >
+            <div
+              className="flex justify-between items-center bg-[#940336] rounded-lg cursor-pointer p-[1vw]"
+              onClick={() => toggleSection(id)}
+            >
+              <h3 className="text-lg text-white font-semibold">{title}</h3>
+              {openSections[id] ? <ChevronUp size={20} className="text-white" /> : <ChevronDown size={20} className="text-white" />}
+            </div>
+
+            {openSections[id] && (
+              <div className="mt-4 flex justify-between items-center">
+                <div className="text-gray-700 px-[3vw] py-[1vw] w-full">
+                  <p className="text-base">{content}</p>
+                </div>
+                <a href={imageHref} target="_blank" rel="noopener noreferrer" className="m-[1vw]">
+                  <img
+                    src={imageHref}
+                    alt={title}
+                    className="w-[18vw] rounded-lg border-4 border-white"
+                  />
+                </a>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );

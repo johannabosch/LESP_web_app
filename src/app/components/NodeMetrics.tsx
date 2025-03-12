@@ -9,7 +9,7 @@ const figures = [
   "Donshore.html",
 ];
 
-// the metrics displayed
+//  displayin these metrics
 
 const NodeMetrics: React.FC = () => {
   return (

@@ -6,8 +6,6 @@ import React, { useState } from 'react';
 
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
-import IPM_lifecycle from '@/app/components/schematic/IPM_lifecycle';
-import IPM_matrix from '@/app/components/schematic/IPM_matrix';
 import IPMGraphic from '@/app/components/schematic/IPMGraphic';
 
 export default function IPM_About() {
@@ -55,10 +53,7 @@ export default function IPM_About() {
           <div className="flex-initial w-full  mt-10 pr-5 pl-5
           text-md sm:text-md md:text-lg lg:text-lg">
             <p style={{textIndent: '30px'}}> 
-              Placeholder text for the info on the integrated population model lifecycle, matrix, schematic. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit. </p>
-
-            <p style={{textIndent: '30px'}} className="mt-5"> 
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue.  </p>
+            Here we illustrate the overall structure of the Leach’s Storm-petrel integrated population model (IPM) and the relationships between the different model components and the population parameters. It outlines each of the model parameters (<span className = "font-bold text-[#01215D]">reproductive</span>, <span className = "font-bold text-[#D57636]">observed deaths</span>, <span className = "font-bold text-[#9D0035]">population size</span>, and <span className = "font-bold text-[#7030A1]">survival</span>) and their dimensions. The figure below is a directed acyclic graph (DAG), the filled rectangles represent data sets, open rectangles are model components, ovals represent parameters to estimate, and arrows represent dependence between nodes. Age classes 0-3 represent post-fledge juveniles, immatures, pre-breeders, and breeders, respectively. Parameters are subscripted by variation across life stages <span className="font-bold">(s)</span>, time <span className="font-bold">(t)</span> and colony <span className="font-bold">(c)</span>, and also by mortality source for deaths <span className="font-bold">(D)</span> and mortality from observable sources <span className="font-bold">(H)</span>. The model structure and individual parameters are further outlined in the <a href="/"> full manuscript</a>.</p>
             
           </div>
 
