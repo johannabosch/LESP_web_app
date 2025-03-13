@@ -15,53 +15,85 @@ const SurvivalModel: React.FC = () => {
     }));
   };
 
+  const sections = [
+    {
+      id: "S1",
+      title: "Mark-recapture Data",
+      content: (
+        <div className="text-base">
+          <p>
+            To estimate survival, we utilized capture-mark-recapture (CMR) data collected over two decades from six breeding colonies. This approach involves banding individuals and tracking their presence or absence across multiple years, creating a binary detection history (1 = seen, 0 = not seen) that enables robust statistical inference on survival probabilities (<a href="https://www.jstor.org/stable/2990245">Lebreton et al., 1992</a>). Each year, researchers capture adult storm-petrels, apply unique identifiers (bands, aka. rings), and release them back into their natural habitat. These birds are then re-captured in subsequent years during the breeding season, providing valuable data on survival rates, movement patterns, and site fidelity.
+          </p>
+  
+          <div className="flex flex-wrap justify-between mt-6">
+            <figure className="w-[20vw]">
+              <img
+                src="/images/model/mark_recapture.jpg"
+                className="w-full border border-white border-2 rounded-lg"
+              />
+              <figcaption className="text-sm text-gray-600 mt-2">Banding Storm-petrels in the field</figcaption>
+            </figure>
+            <figure className="w-[20vw]">
+              <img
+                src="/images/model/banding_pliers.jpg"
+                className="w-full border border-white border-2 rounded-lg"
+              />
+              <figcaption className="text-sm text-gray-600 mt-2">Banding pliers used to band Storm-petrels</figcaption>
+            </figure>
+            <figure className="w-[20vw]">
+              <img
+                src="/images/model/banding_petrel.jpg"
+                className="w-full border border-white border-2 rounded-lg"
+              />
+              <figcaption className="text-sm text-gray-600 mt-2">Storm-petrel bander's grip </figcaption>
+            </figure>
+          </div>
+  
+          <br />
+          <p>
+            CMR-based survival estimates were integrated into our model by constraining modeled survival (S3,t) to the empirical estimates and incorporating associated uncertainty using logit-transformed survival values. Given the geographic spread of the colonies and variation in local pressures such as predation and contamination, these data offered critical insights into spatial differences in survival. By comparing survival trends across colonies, we could identify site-specific threats like increased predation, as well as broader regional stressors such as offshore industrial activity or environmental contaminants. The integration of CMR data into the model deepened our understanding of the factors driving survival declines and their potential impact on population dynamics.
+          </p>
+        </div>
+      ),
+    },
+  ];
+
   return (
     <div className="px-10">
       <div className="bg-white shadow-lg rounded-lg border border-gray-300 p-[1vw] mx-[1vw]">
-        <h1 className="text-[#012259]">Survival Model</h1>
+        <h1 className="text-[#7257B0]">Survival Model</h1>
         <hr className="w-full border-t-2 border-gray-300 my-6" />
-        <div className="flex flex-col justify-center items-center">
-          <p className="text-base text-gray-700 max-w-[50vw] text-center mb-4">
-            This paragraph will introduce the model for plovers, including some
-            information about current population sizes for plovers and their
-            vulnerability.
-          </p>
+        <div className="bg-gray-100 rounded-lg p-4 m-[1vw]">
+          <div className="flex flex-col justify-center items-center">
+            <p className="text-base w-[55vw]">
+            Given adult survival rates of Leahc's Storm-petrels are well below expected levels (<a>Fife et al., 2015</a>; <a>Pollet, Bond, et al., 2019</a>), understanding the demographic drivers of these declines is crucial. Survival is a key demographic parameter influencing population trajectories, particularly for long-lived seabirds like Leach’s Storm-petrel, where even small reductions in adult survival can have significant impacts on colony viability. Because these birds spend most of their lives at sea and return to breeding colonies only during the nesting season, direct observations of mortality are rare, making survival estimation a complex but essential process. By modeling survival rates over time using capture-mark-recapture data, we can assess trends, identify potential threats, and quantify the impact of environmental and anthropogenic pressures on population persistence. </p>
+          </div>
         </div>
 
+
         {/* Dropdown Sections */}
-        {[ 
-          {
-            id: "S1",
-            title: "Mark-Recapture Data",
-            content:
-              "This dataset includes stranding data collected from offshore lighted structures, which has been identified as a significant mortality factor for plovers.",
-            imageHref: "/images/model/mark_recapture.jpg",
-          },
-        ].map(({ id, title, content, imageHref }) => (
+        {sections.map(({ id, title, content }) => (
           <div
             key={id}
-            className="bg-[#B9D2FE] border-l-4 border-[#012259] mt-6 mx-5 transition-all duration-300 rounded-lg shadow-md relative"
+            className="bg-[#A593CC] border-l-4 border-[#7257B0] mt-6 mx-5 transition-all duration-300 rounded-lg shadow-md relative"
           >
             <div
-              className="flex justify-between items-center bg-[#012259] rounded-lg cursor-pointer p-[1vw]"
+              className="flex justify-between items-center bg-[#7257B0] rounded-lg cursor-pointer p-[1vw]"
               onClick={() => toggleSection(id)}
             >
               <h3 className="text-lg text-white font-semibold">{title}</h3>
-              {openSections[id] ? <ChevronUp size={20}  className="text-white"/> : <ChevronDown size={20} className="text-white" />}
+              {openSections[id] ? (
+                <ChevronUp size={20} className="text-white" />
+              ) : (
+                <ChevronDown size={20} className="text-white" />
+              )}
             </div>
 
             {openSections[id] && (
-              <div className="mt-4 flex justify-between items-center">
+              <div className="mt-4 flex flex-col justify-between items-center">
                 <div className="text-gray-700 px-[3vw] py-[1vw] w-full">
-                  <p className="text-base">{content}</p>
+                  {content}
                 </div>
-                <a href={imageHref} target="_blank" rel="noopener noreferrer" className="m-[1vw]">
-                  <img
-                    src={imageHref}
-                    alt={title}
-                    className="w-[18vw] rounded-lg border-4 border-white"
-                  />
-                </a>
               </div>
             )}
           </div>

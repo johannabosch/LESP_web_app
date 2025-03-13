@@ -67,7 +67,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleMenu }) => {
             <ul className="pl-8 mt-2 space-y-2">
               <li>
                 <a
-                  href="#"
+                  href="/IPM_schematic"
                   className="block py-2 pr-4 text-gray-700 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-700"
                 >
                   <Blocks className="inline-block mr-2 mb-2" />

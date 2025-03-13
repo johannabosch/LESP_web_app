@@ -15,29 +15,35 @@ const PopulationModel: React.FC = () => {
     }));
   };
 
+  const sections = [
+    {
+      id: "S1",
+      title: "Colony Census Data",
+      content: (
+        <div className="flex items-center">
+          <div className="text-base min-w-[40vw] text-left">
+            In the population model, breeding population size is estimated from plot-based colony surveys which extrapolate occupied burrow densities across study sites. These methods vary slightly by colony; some surveys stratify the breeding habitats for large colonies (<a>Wilhelm et al., 2020</a>). To incorporate as much survey data as possible, the model uses population estimates from surveys conducted up to two years before and after the modeling period. Although this introduces a potential bias, it ensures that the model benefits from the widest range of available data. In years where population size is not directly estimated, the model uses a normal distribution based on survey data to constrain estimates, while the population size of younger, non-breeding individuals is modeled using a stable stage vector. This integrated approach helps produce a more robust and accurate population estimate, while still considering uncertainties and variations in the data.
+          </div>
+
+        </div>
+      ),
+    },
+  ];
+
   return (
     <div className="px-10">
       <div className="bg-white shadow-lg rounded-lg border border-gray-300 p-[1vw] mx-[1vw]">
         <h1 className="text-[#940336]">Population Size Model</h1>
         <hr className="w-full border-t-2 border-gray-300 my-6" />
-        <div className="flex flex-col justify-center items-center">
-          <p className="text-base text-gray-700 max-w-[50vw] text-center mb-4">
-            This paragraph will introduce the model for plovers, including some
-            information about current population sizes for plovers and their
-            vulnerability.
-          </p>
-        </div>
+          <div className="flex flex-col justify-center items-start sm:flex-row">
+            <p className="text-base max-w-[63vw]">
+              <span className="text-lg font-bold"></span>
+                Newfoundland and Labrador hosts the largest breeding colonies of Leach’s Storm-petrel in the world (<a>Wilhelm et al., 2020</a>), and surveys have documented substantial reductions in numbers, both in Newfoundland (<a>Wilhelm et al., 2015,</a> <a>2020</a>) and other regions (<a>d’Entremont et al., 2020</a>; <a>I.L. Pollet & Shutler, 2019</a>). Due to these declines, Leach’s Storm-petrel was classified as Vulnerable by the IUCN in 2016 and as Threatened by COSEWIC in 2020 for the Atlantic population, which has experienced over a 30% decrease in numbers over the last three generations. Population size data is critical in understanding the status and dynamics of Leach's Storm-petrel populations, particularly in light of the significant declines observed across colonies in Atlantic Canada. Accurate population size estimates are essential for developing conservation strategies and assessing the health of the species. These data help inform demographic models that integrate key factors like breeding success, survival rates, and environmental impacts.
+            </p>
+          </div>
 
         {/* Dropdown Sections */}
-        {[ 
-          {
-            id: "S1",
-            title: "Colony Census Data",
-            content:
-              "This dataset includes stranding data collected from offshore lighted structures, which has been identified as a significant mortality factor for plovers.",
-            imageHref: "/images/model/offshore_lighting.jpg", // Link to your image page or external URL
-          },
-        ].map(({ id, title, content, imageHref }) => (
+        {sections.map(({ id, title, content }) => (
           <div
             key={id}
             className="bg-[#C893B5] border-l-4 border-[#940336] mt-6 mx-5 transition-all duration-300 rounded-lg shadow-md relative"
@@ -47,21 +53,18 @@ const PopulationModel: React.FC = () => {
               onClick={() => toggleSection(id)}
             >
               <h3 className="text-lg text-white font-semibold">{title}</h3>
-              {openSections[id] ? <ChevronUp size={20} className="text-white" /> : <ChevronDown size={20} className="text-white" />}
+              {openSections[id] ? (
+                <ChevronUp size={20} className="text-white" />
+              ) : (
+                <ChevronDown size={20} className="text-white" />
+              )}
             </div>
 
             {openSections[id] && (
-              <div className="mt-4 flex justify-between items-center">
+              <div className="mt-4 flex flex-col justify-between items-center">
                 <div className="text-gray-700 px-[3vw] py-[1vw] w-full">
-                  <p className="text-base">{content}</p>
+                  {content}
                 </div>
-                <a href={imageHref} target="_blank" rel="noopener noreferrer" className="m-[1vw]">
-                  <img
-                    src={imageHref}
-                    alt={title}
-                    className="w-[18vw] rounded-lg border-4 border-white"
-                  />
-                </a>
               </div>
             )}
           </div>

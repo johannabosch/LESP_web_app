@@ -17,15 +17,15 @@ const Header = () => {
       <nav>
         <div className="flex w-full items-center justify-between mx-auto px-4">
          
+         <div className="flex flex-row">
           {/* Logo */}
           <a className="flex items-center">
-            <img src="/logos/petrel_logo.png" className="mr-3 h-[80px]" alt="Logo" />
+            <img src="/logos/petrel_logo.png" className="mr-3 h-[80px]" alt="Logo" /></a>
 
             <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-              DRAFT Website Name
+              Storm Petrel Population Model
             </span>
-          </a>
-
+          </div>
           <div className = "flex items-center gap-4">
             <a href= "/">
                 <Home className = "w-6 text-gray-700 hover:bg-gray-100 rounded-lg" />
