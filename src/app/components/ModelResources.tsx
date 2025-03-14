@@ -21,7 +21,7 @@ const ModelResources: React.FC = () => {
                 <div className="flex flex-col sm:flex-col md:flex-row lg:flex-row justify-center gap-6">
 
                     {/* model screenshot */}
-                    <a href="/IPM_about_page"
+                    <a href="/IPM_schematic"
                     className="resource-button"
                     >
 
@@ -37,7 +37,7 @@ const ModelResources: React.FC = () => {
                     </a>
 
                     {/* manuscript screenshot */}
-                    <a href="/IPM_about_page"
+                    <a href="#"
                     className="resource-button"
                     >
                     <div className="resource-text">
@@ -51,7 +51,7 @@ const ModelResources: React.FC = () => {
                     </a>
 
                     {/* research screenshot */}
-                    <a href="https://www.birdscanada.org/leachs-storm-petrel"
+                    <a href="#"
                     className="resource-button"
                     >
                     <div className="resource-text">

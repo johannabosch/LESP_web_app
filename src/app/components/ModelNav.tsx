@@ -2,16 +2,14 @@
 
 import React, { useState } from "react";
 import PopulationSize from "./PopulationSize";
-import Productivity from "./Productivity";
-import Survival from "./Survival";
-import Mortality from "./Mortality";
+import VitalRates from "./VitalRates";
+import Deaths from "./Deaths";
 
 // Define tabs and their corresponding components
 const tabs = [
   { name: "Population Size", component: <PopulationSize /> },
-  { name: "Productivity", component: <Productivity /> },
-  { name: "Survival", component: <Survival /> },
-  { name: "Mortality", component: <Mortality /> },
+  { name: "Vital Rates", component: <VitalRates /> },
+  { name: "Deaths", component: <Deaths /> },
 ];
 
 const ModelNav: React.FC = () => {
