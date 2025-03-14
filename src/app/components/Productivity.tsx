@@ -8,12 +8,12 @@ const Productivity: React.FC = () => {
         </div>
         
         <iframe
-          src="/figures/Dflox.html"
+          src="/figures/F all scenarios as frames plotly widget.html"
           className="w-full h-[600px] border rounded-lg shadow-md"
           title="Population Size Figure"
         />
         <iframe
-          src="/figures/Dflox.html"
+          src="/figures/F all scenarios as frames plotly widget.html"
           className="w-full h-[600px] border rounded-lg shadow-md"
           title="Population Size Figure 2"
         />
