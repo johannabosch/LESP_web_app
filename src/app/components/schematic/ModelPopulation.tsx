@@ -21,7 +21,7 @@ const PopulationModel: React.FC = () => {
       title: "Colony Census Data",
       content: (
         <div className="flex items-center">
-          <div className="text-base min-w-[40vw] text-left">
+          <div className="text-[13px] sm:text-[13px] md:text-[13px] lg:text-[15px] min-w-[40vw] text-left">
             In the population model, breeding population size is estimated from plot-based colony surveys which extrapolate occupied burrow densities across study sites. These methods vary slightly by colony; some surveys stratify the breeding habitats for large colonies (<a>Wilhelm et al., 2020</a>). To incorporate as much survey data as possible, the model uses population estimates from surveys conducted up to two years before and after the modeling period. Although this introduces a potential bias, it ensures that the model benefits from the widest range of available data. In years where population size is not directly estimated, the model uses a normal distribution based on survey data to constrain estimates, while the population size of younger, non-breeding individuals is modeled using a stable stage vector. This integrated approach helps produce a more robust and accurate population estimate, while still considering uncertainties and variations in the data.
           </div>
 
@@ -31,15 +31,20 @@ const PopulationModel: React.FC = () => {
   ];
 
   return (
-    <div className="px-10">
+
       <div className="bg-white shadow-lg rounded-lg border border-gray-300 p-[1vw] mx-[1vw]">
+
         <h1 className="text-[#940336]">Population Size Model</h1>
+
         <hr className="w-full border-t-2 border-gray-300 my-6" />
+
+        <div className="bg-gray-100 rounded-lg p-4 m-[1vw]">
           <div className="flex flex-col justify-center items-start sm:flex-row">
-            <p className="text-base max-w-[63vw]">
-              <span className="text-lg font-bold"></span>
-                Newfoundland and Labrador hosts the largest breeding colonies of Leach’s Storm-petrel in the world (<a>Wilhelm et al., 2020</a>), and surveys have documented substantial reductions in numbers, both in Newfoundland (<a>Wilhelm et al., 2015,</a> <a>2020</a>) and other regions (<a>d’Entremont et al., 2020</a>; <a>I.L. Pollet & Shutler, 2019</a>). Due to these declines, Leach’s Storm-petrel was classified as Vulnerable by the IUCN in 2016 and as Threatened by COSEWIC in 2020 for the Atlantic population, which has experienced over a 30% decrease in numbers over the last three generations. Population size data is critical in understanding the status and dynamics of Leach's Storm-petrel populations, particularly in light of the significant declines observed across colonies in Atlantic Canada. Accurate population size estimates are essential for developing conservation strategies and assessing the health of the species. These data help inform demographic models that integrate key factors like breeding success, survival rates, and environmental impacts.
+            <p className="text-base w-[55vw]">
+              <span className="text-[13px] sm:text-[13px] md:text-[13px] lg:text-[15px] font-bold"></span>
+                Newfoundland and Labrador hosts the largest breeding colonies of Leach’s Storm-petrel in the world (<a>Wilhelm et al., 2020</a>), and surveys have documented substantial reductions in numbers, both in Newfoundland (<a>Wilhelm et al., 2015,</a> <a>2020</a>) and other regions (<a>d’Entremont et al., 2020</a>; <a>I.L. Pollet & Shutler, 2019</a>). Due to these declines, Leach’s Storm-petrel was classified as Vulnerable by the IUCN in 2016 and as Threatened by COSEWIC in 2020 for the Atlantic population, which has experienced over a 30% decrease in numbers over the last three generations. <br></br><br></br>Population size data is critical in understanding the status and dynamics of Leach's Storm-petrel populations, particularly in light of the significant declines observed across colonies in Atlantic Canada. Accurate population size estimates are essential for developing conservation strategies and assessing the health of the species. These data help inform demographic models that integrate key factors like breeding success, survival rates, and environmental impacts.
             </p>
+          </div>
           </div>
 
         {/* Dropdown Sections */}
@@ -70,7 +75,6 @@ const PopulationModel: React.FC = () => {
           </div>
         ))}
       </div>
-    </div>
   );
 };
 

@@ -20,23 +20,22 @@ const ReproductiveModel: React.FC = () => {
       id: "S1",
       title: "Fledging Success Data",
       content: (
-        <div className="flex items-center">
-          <div className="text-base max-w-[50vw] text-left">
+        <div className="flex flex-col items-center">
+          <span className="text-[13px] sm:text-[13px] md:text-[13px] lg:text-[15px] max-w-[50vw] text-left mb-10">
             Fledging success data in the model were based on the probability of females reaching stage 3 (fledging) in a given year and colony. This probability was derived from the proportion of monitored nests that produced a fledging-aged chick. Productivity was modeled as a binomial, with additional years of no data constrained using mean and standard deviation from monitored years. Read the <a>full manuscript</a> to learn more about the model parameters.
             <br></br><br></br>
-            This data is typically collected through long-term nest monitoring at breeding sites, where researchers track active burrows each nesting season and record the number of chicks that successfully fledge. Researchers visit these sites multiple times throughout the season to monitor burrow productivity and document any failed burrows.
-          </div>
-          <div className="ml-6">
+            This data is typically collected through long-term nest monitoring at breeding sites, where researchers track active burrows each nesting season and record the number of chicks that successfully fledge. Researchers visit these sites multiple times throughout the season to monitor burrow productivity and document any failed burrows. </span>
+
           <figure className="text-center text-sm text-bold ">
             <img
               src="/images/model/baccalieu.jpg"
-              className="w-[20vw] sm:w-[25vw] lg:w-[50vw] border border-white border-2 rounded-lg"
+              className="w-[40vw]] border border-white border-2 rounded-lg"
             />
-            <figcaption className="text-sm text-gray-600 mt-2">Storm-petrel nesting habitat on Baccalieu Island, Newfoundland</figcaption>
+            <figcaption className="text-[13px] sm:text-[13px] md:text-[13px] lg:text-[15px] text-gray-600 mt-2">Storm-petrel nesting habitat on Baccalieu Island, Newfoundland</figcaption>
           </figure>
 
-          </div>
         </div>
+
       ),
     },
   ];
@@ -49,17 +48,20 @@ const ReproductiveModel: React.FC = () => {
   ];
 
   return (
-    <div className="px-10">
+
       <div className="bg-white shadow-lg rounded-lg border border-gray-300 p-[1vw] mx-[1vw]">
+
         <h1 className="text-[#012259]">Reproductive Model</h1>
+
         <hr className="w-full border-t-2 border-gray-300 my-6" />
+
         <div className="bg-gray-100 rounded-lg p-4 m-[1vw]">
-          <div className="flex flex-col justify-center items-center">
-            <p className="text-sm max-w-[63vw]">
-              <span className="text-base font-bold max-w-[10vw]">
+          <div className="flex flex-col justify-center items-start sm:flex-row">
+            <p className="text-[13px] sm:text-[13px] md:text-[15px] lg:text-[15px] w-[55vw]">
+              <span className="text-[#012259] text-[16px] sm:text-[16px] md:text-[18px] lg:text-[18px] font-bold max-w-[10vw]">
                 Storm-petrels only lay one egg per year, and their population growth is highly sensitive to changes in adult survival.
               </span>
-              <br></br> Very little is known about the life history and demographics of Storm-petrels before they begin to breed. Therefore, age-specific data are not available for any parameter in our model. Among the younger cohorts that are not breeding, there are likely two types of individuals, <span className="font-bold">immatures</span> not physiologically or behaviourally capable of breeding, and <span className="font-bold">pre-breeders</span>, which are sexually mature birds that have not yet recruited into the breeding population. Based on studies that suggest the mean breeding age is around 6 and that birds start breeding at about 4 years of age (<a>I. L. Pollet</a>, <a>Bond, et al., 2019</a>), we categorize immatures as birds up to three years of age, while pre-breeders are individuals that are four years and older and have not yet bred; birds are categorized as breeding once they start breeding and remain there.
+              <br></br><br></br> Very little is known about the life history and demographics of Storm-petrels before they begin to breed. Therefore, age-specific data are not available for any parameter in our model. Among the younger cohorts that are not breeding, there are likely two types of individuals, <span className="font-bold">immatures</span> not physiologically or behaviourally capable of breeding, and <span className="font-bold">pre-breeders</span>, which are sexually mature birds that have not yet recruited into the breeding population. Based on studies that suggest the mean breeding age is around 6 and that birds start breeding at about 4 years of age (<a>I. L. Pollet</a>, <a>Bond, et al., 2019</a>), we categorize immatures as birds up to three years of age, while pre-breeders are individuals that are four years and older and have not yet bred; birds are categorized as breeding once they start breeding and remain there.
             </p>
           </div>
 
@@ -109,7 +111,6 @@ const ReproductiveModel: React.FC = () => {
           </div>
         ))}
       </div>
-    </div>
   );
 };
 

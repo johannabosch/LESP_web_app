@@ -6,40 +6,32 @@ import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import IPMGraphic from '@/app/components/schematic/IPMGraphic';
 
-export default function IPM_About() {
-  // State for legend dropdown visibility
-  const [showLegend, setShowLegend] = useState(false);
-
-  // Toggle the legend dropdown
-  const toggleLegend = () => {
-    setShowLegend(!showLegend);
-  };
+export default function IPM_Schematic() {
 
   return (
-    <div className="container mx-auto px-4 py-8 flex flex-col h-full">
-      {/* Single main wrapper */}
+    <div className= "flex flex-col min-h-screen bg-white">
+
+         <Header />
+
       <main className="flex-grow">
-        {/* Header */}
-        <div className="w-full">
-          <Header />
-        </div>
+
 
         {/* Project Info section */}
-        <h1 className="text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text- text-center font-bold mb-4 mt-[100px]">
+        <h1 className="text-center font-bold mb-4 mt-[100px]">
           About the Integrated Population Model
         </h1>
 
         <div className="relative w-full flex justify-center items-center mb-6">
           <hr className="border-t-2 border-black w-[80vw] mx-auto" />
-          <span className="absolute bg-white px-4 py-0 font-semibold text-md sm:text-md md:text-xl lg:text-xl xl:text-xl">
+          <span className="absolute bg-white px-4 py-0 font-semibold text-[13px] sm:text-[13px] md:text-[18px] lg:text-[18px] ">
             for Leach's Storm Petrels (<i>Hydrobates leucorhous</i>)
           </span>
         </div>
 
         {/* Model Explanation Section */}
-        <section className="flex flex-wrap justify-between items-start mx-10">
-          <div className="flex-initial w-full mt-5 pr-5 pl-5 text-md sm:text-md md:text-md lg:text-md">
-            <p >
+        <section className="flex flex-wrap justify-center items-center mx-10">
+          <div className="flex-initial mt-5 pr-5 pl-5 max-w-[880px] w-[80vw]">
+            <p>
               Here we illustrate the overall structure of the Leach’s Storm-petrel integrated population model (IPM) 
               and the relationships between the different model components and the population parameters. It outlines 
               each of the model parameters (<span className="font-bold text-[#01215D]">reproductive</span>,  
@@ -54,38 +46,18 @@ export default function IPM_About() {
 
         {/* IPM Schematic Section */}
         <section className="mt-5 relative w-full text-center py-8">
-          <div className="relative w-full flex justify-center items-center mb-6">
-            <hr className="border-t-2 border-black w-[80vw] mx-auto" />
-            <span className="absolute bg-white px-4 font-semibold text-sm sm:text-sm md:text-base lg:text-base">
-              Click on the model parameters below and scroll down to view the data information boxes
+          
+          <div className=" w-full flex flex-col justify-center items-center relative mb-10">
+            <span className="text-center px-10 text-black py-5 bg-[#F6F6F6] rounded-lg shadow-xl w-[80vw] max-w-[600px] text-[13px] sm:text-[13px] md:text-[18px] lg:text-[18px]">
+              Click on the model parameters below, scroll down to read more about the parameters in the info-boxes
             </span>
           </div>
 
-          {/* Legend Button - Positioned Below and to the Right */}
-          <div className="w-full flex justify-end mt-2 pr-[10vw]">
-            <button
-              onClick={toggleLegend}
-              className="btn btn-ghost font-bold border-black"
-            >
-              {showLegend ? "Hide Legend" : "Show Legend"} ▼
-            </button>
-          </div>
-
-          {/* Legend Overlay */}
-          {showLegend && (
-            <div className="absolute top-[150px] right-[10vw] bg-white p-2 shadow-md z-50">
-              <img
-                src="/images/model/legend.png"
-                alt="PIPL Legend"
-                className="w-[450px] h-auto"
-              />
-            </div>
-          )}
-
-          {/* Render IPMGraphic */}
-          <div className="mb-[100px]">
+          <div className="flex flex-col mx-auto w-[80vw] max-w-[650px] mt-4 relative">
             <IPMGraphic />
           </div>
+
+
         </section>
 
         {/* Footer */}
