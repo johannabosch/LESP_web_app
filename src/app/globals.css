@@ -51,10 +51,19 @@
     text-align: center;
   }
 
+  h4 {
+    @apply text-gray-700 text-[13px] sm:text-[13px] md:text-[18px] lg:text-[18px];
+    text-align: center;
+    animation: fadeSlide 1s ease-out forwards;
+  }
+  
+  
+
   p {
     @apply text-gray-700 text-[13px] sm:text-[13px] md:text-[18px] lg:text-[18px];
   }
 
+  
   
   a {
     @apply text-blue-700 hover:text-blue-900 underline;
@@ -69,10 +78,20 @@
   .resource-text {
     @apply font-semibold py-2 text-center text-white text-base sm:text-sm md:text-sm lg:text-base;
   }
-  
-  
-  
 
+  @keyframes wobble {
+    0%, 100% { transform: rotate(0); }
+    15% { transform: rotate(-5deg); }
+    30% { transform: rotate(5deg); }
+    45% { transform: rotate(-3deg); }
+    60% { transform: rotate(3deg); }
+  }
+  
+  .animate-wobble {
+    animation: wobble 1.5s ease-in-out infinite;
+  }
+  
+  
   img, video {
     max-width: 100%;
     height: auto;
