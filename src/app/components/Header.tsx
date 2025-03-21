@@ -21,10 +21,7 @@ const Header = () => {
           {/* Logo */}
           <a className="flex items-center">
             <img src="/logos/petrel_logo.png" className="mr-3 h-[80px]" alt="Logo" /></a>
-
-            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-              Storm Petrel Population Model
-            </span>
+            
           </div>
           <div className = "flex items-center gap-4">
             <a href= "/">

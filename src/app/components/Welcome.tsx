@@ -21,10 +21,10 @@ const Welcome: React.FC<WelcomeProps> = ({ onGetStartedClick }) => {
 
   return (
     <div className="flex flex-col items-center justify-center pt-[80px]">
-      <h1 className="text-4xl font-bold text-blue-500">Welcome to the Petrel Website</h1>
+      <h1 className="text-5xl font-bold text-blue-500">Welcome!</h1>
 
       <h4 className="max-w-[700px] w-[80vw]">
-        This web-app lets you visualize data for an integrated population model developed to estimate the population size, vital rates, and deaths of Leach's storm petrels (<span className="italic">Oceanodroma leucorhoa</span>) across Atlantic Canada.
+        This web-tool lets you visualize data for an integrated population model developed to estimate the population size, vital rates, and deaths of Leach's storm petrels (<span className="italic">Oceanodroma leucorhoa</span>) across Atlantic Canada.
       </h4>
 
       <button
