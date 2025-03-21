@@ -13,34 +13,34 @@ const Welcome2: React.FC<Welcome2Props> = ({ onArrowClick, onGetStartedClick }) 
   return (
     <div className="flex flex-col items-center justify-center relative mt-[-90px]">
 
-     <img
-     src="images/welcome/petrel_cartoon.png"
-     alt="Petrel cartoon"
-     className="w-[180px] sm:w-[180px] md:w-[250px] lg:w-[250px] h-auto"
-     />
 
-      <p className="mt-5 text-center text-[13px] sm:text-[13px] md:text-[16px] lg:text-[16px] max-w-[1200px] w-[80vw]">
+      <p className="mt-5 text-center text-[13px] sm:text-[13px] md:text-[16px] lg:text-[16px] max-w-[1000px] w-[80vw]">
         The conservation of Leach’s Storm-petrel, a threatened seabird species in Atlantic Canada, is critical, particularly in the context of emerging threats like offshore oil and gas operations. Due to a <span className="relative text-[15px] sm:text-[15px] md:text-[17px] lg:text-[17px] inline-block mx-1 font-bold">
         <motion.span 
             className="absolute inset-0 bg-yellow-300 opacity-50 rounded-md z-[-1]"
             initial={{ width: "0%" }}
             animate={{ width: "100%" }}
             transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, repeatDelay: 1 }}
-        /> decline of more than 30% over the past three generations</span>, <a href="https://cosewic.ca/index.php/en/">COSEWIC</a> designated the Atlantic population in eastern Canada as          
+        /> population decline of more than 30% over the past three generations</span>, <a href="https://cosewic.ca/index.php/en/">COSEWIC</a> designated the Atlantic population in eastern Canada as          
         <span className="relative text-[15px] sm:text-[15px] md:text-[18px] lg:text-[18px] font-bold text-[#6E0F2D]"> THREATENED </span> in November 2020
         (<a href="https://www.iucnredlist.org/" className="text-blue-600 underline">IUCN 2016</a>). Given the deteriorating status of Leach’s Storm-petrel in Atlantic Canada, concerns were raised about the possible effects of offshore oil and gas operations on this species and how the industry could contribute to the recovery of the species.
 
       </p>
 
-      <div className="flex flex-row mt-[30px] justify-center items-center">
-        <button onClick={onArrowClick} className="hover:scale-110 transition-transform duration-300">
-          <PanelRightOpen className="text-blue-500 mr-[30px]" />
+      <div className="flex flex-row mt-[30px] justify-center items-center space-x-6">
+        {/* Previous Button */}
+        <button onClick={onArrowClick} className="hover:scale-110 transition-transform duration-300 flex items-center">
+          <PanelRightOpen className="text-[#1d5792] hover:text-blue-600 mr-2" />
+          <span className="text-[#1d5792] font-semibold">Previous</span>
         </button>
 
-        <button onClick={onGetStartedClick} className="hover:scale-110 transition-transform duration-300">
-          <PanelLeftOpen className="text-blue-500 ml-[30px]" />
+        {/* Next Button */}
+        <button onClick={onGetStartedClick} className="hover:scale-110 transition-transform duration-300 flex items-center">
+          <span className="text-[#1d5792] font-semibold">Next</span>
+          <PanelLeftOpen className="text-[#1d5792] hover:text-blue-700 ml-2" />
         </button>
       </div>
+
     </div>
   );
 };

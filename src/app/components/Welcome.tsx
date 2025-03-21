@@ -20,16 +20,21 @@ const Welcome: React.FC<WelcomeProps> = ({ onGetStartedClick }) => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center pt-[80px]">
-      <h1 className="text-5xl font-bold text-blue-500">Welcome!</h1>
+    <div className="flex flex-col items-center justify-center mt-[-110px]">
+
+      <img
+      src="logos/petrel_logo.png"
+      alt="Petrel population model logo"
+      className="w-[180px] sm:w-[180px] md:w-[250px] lg:w-[700px] mb-1"
+      />
 
       <h4 className="max-w-[700px] w-[80vw]">
-        This web-tool lets you visualize data for an integrated population model developed to estimate the population size, vital rates, and deaths of Leach's storm petrels (<span className="italic">Oceanodroma leucorhoa</span>) across Atlantic Canada.
+        Welcome! This web-tool lets you visualize data for an integrated population model developed to estimate the population size, vital rates, and deaths of Leach's storm petrels (<span className="italic">Oceanodroma leucorhoa</span>) across Atlantic Canada.
       </h4>
 
       <button
         onClick={onGetStartedClick}
-        className={`mt-10 px-7 py-3 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition-all duration-500 ease-out
+        className={`mt-4 px-7 py-3 bg-[#1d5792] text-white font-bold rounded-lg hover:bg-blue-600 transition-all duration-500 ease-out
           ${animateWobble ? "animate-wobble" : ""}`}
       >
         GET STARTED

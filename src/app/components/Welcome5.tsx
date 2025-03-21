@@ -27,15 +27,21 @@ const Welcome5: React.FC<Welcome3Props> = ({ onArrowClick, onGetStartedClick }) 
             </p>
 
         </div>
-      <div className="flex flex-row mt-[30px] justify-center items-center">
-        <button onClick={onArrowClick}>
-          <PanelRightOpen className="text-blue-500 mr-[30px]" />
-        </button>
 
-        <button onClick={onGetStartedClick}>
-          <PanelLeftOpen className="text-blue-500 ml-[30px]" />
-        </button>
-      </div>
+        <div className="flex flex-row mt-[30px] justify-center items-center space-x-6">
+          {/* Previous Button */}
+          <button onClick={onArrowClick} className="hover:scale-110 transition-transform duration-300 flex items-center">
+            <PanelRightOpen className="text-[#1d5792] hover:text-blue-600 mr-2" />
+            <span className="text-[#1d5792] font-semibold">Previous</span>
+          </button>
+
+          {/* Next Button */}
+          <button onClick={onGetStartedClick} className="hover:scale-110 transition-transform duration-300 flex items-center">
+            <span className="text-[#1d5792] font-semibold">Next</span>
+            <PanelLeftOpen className="text-[#1d5792] hover:text-blue-700 ml-2" />
+          </button>
+        </div>
+
 
     </div>
   );

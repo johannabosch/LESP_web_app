@@ -14,7 +14,7 @@ export default function IPMPage() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
      
-     <Header/>
+      <Header currentScreen={1} /> 
       
       {/* Main content area */}
       <main className="">

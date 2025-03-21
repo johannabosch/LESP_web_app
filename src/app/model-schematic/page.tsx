@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
@@ -11,7 +11,7 @@ export default function IPM_Schematic() {
   return (
     <div className= "flex flex-col min-h-screen bg-white">
 
-         <Header />
+      <Header currentScreen={1} /> 
 
       <main className="flex-grow">
 
@@ -45,10 +45,11 @@ export default function IPM_Schematic() {
         </section>
 
         {/* IPM Schematic Section */}
-        <section className="mt-5 relative w-full text-center py-8">
+        <section className="mt-5 relative w-full text-center">
           
           <div className=" w-full flex flex-col justify-center items-center relative mb-10">
-            <span className="text-center px-10 text-black py-5 bg-[#F6F6F6] rounded-lg shadow-xl w-[80vw] max-w-[600px] text-[13px] sm:text-[13px] md:text-[18px] lg:text-[18px]">
+            <span className="text-center px-10 text-black py-5 bg-[#F6F6F6] rounded-lg shadow-xl w-[80vw] max-w-[480px] 
+            text-[13px] sm:text-[13px] md:text-[16px] lg:text-[16px]">
               Click on the model parameters below, scroll down to read more about the parameters in the info-boxes
             </span>
           </div>

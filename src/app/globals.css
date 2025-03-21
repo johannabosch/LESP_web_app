@@ -28,7 +28,7 @@
   }
   
   h1 {
-    @apply text-[20px] sm:text-[20px] md:text-[25px] lg:text-[25px] font-bold text-[#0fa0e8] mb-6;
+    @apply text-[20px] sm:text-[20px] md:text-[25px] lg:text-[25px] font-bold text-[#1d5792] mb-6;
     text-align: center;
     text-shadow: 2px 2px 2px rgba(0,0,0,0.2);
     letter-spacing: 1px;
@@ -39,7 +39,7 @@
   
 
   h2 {
-    @apply text-[20px] sm:text-[20px] md:text-[25px] lg:text-[25px] font-bold text-[#0fa0e8] mb-6;
+    @apply text-[20px] sm:text-[20px] md:text-[25px] lg:text-[25px] font-bold text-[#1d5792] mb-6;
     text-align: center;
     text-shadow: 2px 2px 2px rgba(0,0,0,0.2);
     letter-spacing: 1px;

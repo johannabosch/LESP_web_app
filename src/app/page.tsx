@@ -24,7 +24,8 @@ export default function Homepage() {
 
   return (
     <div className="flex flex-col bg-white min-h-screen">
-      <Header />
+
+      <Header currentScreen={currentScreen} />
 
       <main className="relative flex justify-center items-center overflow-hidden min-h-[80vh] w-full">
         {/* Sliding Container */}
