@@ -8,11 +8,11 @@ const PopulationSize: React.FC = () => {
         </div>
         
         <h3>Population size (N)</h3>
-        <iframe
-          src="/figures/N all scenarios as frames plotly widget.html"
-          className="w-[96vw] h-[80vw] sm:w-[96vw] sm:h-[80vw] md:w-[96vw] md:h-[80vw] lg:w-[70vw] lg:h-[55vw] border rounded-lg shadow-md"
-          title="Population Size Figure"
-        />
+        <object 
+            data="/figures/N all scenarios as frames plotly widget.html" 
+            className="border rounded-lg shadow-md w-[96vw] h-[83vw] max-w-[1210px] max-h-[1050px] justify-center items-center " 
+            type="text/html"
+          />
       </div>
     );
   };

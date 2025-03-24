@@ -50,7 +50,7 @@ const ModelBackground: React.FC = () => {
                 <div className="text-gray-700 mx-[4vw] mt-3 overflow-hidden">
                     
                     <p className="text-[10px] sm:text-[10px] md:text-[15px] lg:text-[15px] text-gray-600 mb-5">
-                        The interactive Plotly figures on this page allow you to visualize and explore data from different models. Here's a guide to help you get the most out of the figures:
+                        The interactive Plotly figures on this page allow you to visualize and explore data from different models. Here's a guide to help you get the most out of the figures:                    </p>
                         <ul className="list-disc pl-6 mt-4">
                             <li><strong>Hover:</strong> Hover over any data point to view detailed information like coordinates and other values.</li>
                             <li><strong>Zoom:</strong> Click and drag to zoom into specific regions of the plot. Use the scroll wheel to zoom in or out.</li>
@@ -60,8 +60,6 @@ const ModelBackground: React.FC = () => {
                             <li><strong>Buttons:</strong> Use the buttons on the top-right corner to download the plot as an image, reset zoom, or toggle full-screen mode for better visualization.</li>
                             <li><strong>Slider:</strong> Use the slider below the figure to slide between different models. This will update the scatterplot data to reflect results from different models, letting you compare how the data changes across different settings.</li>
                         </ul> <br></br>
-                        Feel free to interact with the plot to explore the relationships and patterns in the data!
-                    </p>
 
                 </div>
           </div>

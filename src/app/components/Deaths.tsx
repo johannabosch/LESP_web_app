@@ -38,48 +38,77 @@ const Deaths: React.FC = () => {
       {activeSection === "Gull predation" && (
         <>
           <h3>(Dpred)</h3>
-          <iframe src="/figures/Dpred all scenarios as frames plotly widget.html" 
-          className="w-[70vw] h-[55vw] border rounded-lg shadow-md" title="Dpred" />
+          <object 
+            data="/figures/Dpred all scenarios as frames plotly widget.html" 
+            className="border rounded-lg shadow-md w-[96vw] h-[83vw] max-w-[1210px] max-h-[1050px] justify-center items-center " 
+            type="text/html"
+          />
           
           <h3>(Hpred)</h3>
-          <iframe src="/figures/Hpred all scenarios as frames plotly widget.html" 
-          className="w-[70vw] h-[55vw] border rounded-lg shadow-md" title="Hpred" />
+          <object 
+            data="/figures/Hpred all scenarios as frames plotly widget.html" 
+            className="border rounded-lg shadow-md w-[96vw] h-[83vw] max-w-[1210px] max-h-[1050px] justify-center items-center " 
+            type="text/html"
+          />
+
         </>
       )}
       
       {activeSection === "Fox predation" && (
         <>
-          <h3>(Dflox)</h3>
-          <iframe src="/figures/Dflox all scenarios as frames plotly widget.html" 
-          className="w-[70vw] h-[55vw] border rounded-lg shadow-md" title="Dflox" />
-        
-          <h3>(Hflox)</h3>
-          <iframe src="/figures/Hflox all scenarios as frames plotly widget.html" 
-          className="w-[70vw] h-[55vw] border rounded-lg shadow-md" title="Hflox" />
+
+
+        <h3>(Dflox)</h3>
+          <object 
+            data="/figures/Dflox all scenarios as frames plotly widget.html" 
+            className="border rounded-lg shadow-md w-[96vw] h-[83vw] max-w-[1210px] max-h-[1050px] justify-center items-center " 
+            type="text/html"
+          />
+
+        <h3>(Hflox)</h3>
+        <object 
+            data="/figures/Hflox all scenarios as frames plotly widget.html" 
+            className="border rounded-lg shadow-md w-[96vw] h-[83vw] max-w-[1210px] max-h-[1050px] justify-center items-center " 
+            type="text/html"
+          />
+
+
         </>
       )}
       
       {activeSection === "Offshore mortalities" && (
         <>
           <h3>(Doffshore)</h3>
-          <iframe src="/figures/Doffshore all scenarios as frames plotly widget.html" 
-          className="w-[70vw] h-[55vw] border rounded-lg shadow-md" title="Doffshore" />
+          <object 
+            data="/figures/Doffshore all scenarios as frames plotly widget.html" 
+            className="border rounded-lg shadow-md w-[96vw] h-[83vw] max-w-[1210px] max-h-[1050px] justify-center items-center " 
+            type="text/html"
+          />
           
           <h3>(Hoffshore)</h3>
-          <iframe src="/figures/Hoff all scenarios as frames plotly widget.html" 
-          className="w-[70vw] h-[55vw] border rounded-lg shadow-md" title="Hoffshore" />
+          <object 
+            data="/figures/Hoff all scenarios as frames plotly widget.html" 
+            className="border rounded-lg shadow-md w-[96vw] h-[83vw] max-w-[1210px] max-h-[1050px] justify-center items-center " 
+            type="text/html"
+          />
         </>
       )}
       
       {activeSection === "Onshore mortalities" && (
         <>
           <h3>(Donshore)</h3>
-          <iframe src="/figures/Donshore all scenarios as frames plotly widget.html" 
-          className="w-[70vw] h-[55vw] border rounded-lg shadow-md" title="Donshore" />
+          <object 
+            data="/figures/Donshore all scenarios as frames plotly widget.html" 
+            className="border rounded-lg shadow-md w-[96vw] h-[83vw] max-w-[1210px] max-h-[1050px] justify-center items-center " 
+            type="text/html"
+          />
           
           <h3>(Honshore)</h3>
-          <iframe src="/figures/Hon all scenarios as frames plotly widget.html" 
-          className="w-[70vw] h-[55vw] border rounded-lg shadow-md" title="Honshore" />
+          <object 
+            data="/figures/Hon all scenarios as frames plotly widget.html" 
+            className="border rounded-lg shadow-md w-[96vw] h-[83vw] max-w-[1210px] max-h-[1050px] justify-center items-center " 
+            type="text/html"
+          />
         </>
       )}
     </div>
