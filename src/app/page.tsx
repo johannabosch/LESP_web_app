@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Head from "next/head";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import Welcome from "@/app/components/Welcome";

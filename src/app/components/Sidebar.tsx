@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { View, Blocks, BookOpenText, TrendingUpDown, X, BrainCog } from "lucide-react";
+import { View, Blocks, BookOpenText, TrendingUpDown, X, BrainCog, HeartHandshake} from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Boolean is called isOpen (expecting true/false for isOpen)
 interface SidebarProps {
@@ -41,7 +42,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleMenu }) => {
         {/* Dropdown for about the proj tab */}
         <li>
           <button
-            onClick= {() => toggleDropdown("aboutProject")}
+            onClick={() => toggleDropdown("aboutProject")}
             className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-700 w-full text-left"
           >
             <BrainCog className="inline-block mr-2 mb-2" />
@@ -83,16 +84,14 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleMenu }) => {
                   Full Manuscript
                 </a>
               </li>
-              
             </ul>
           )}
         </li>
 
-
         {/* Dropdown for model tab */}
-        <li>`
+        <li>
           <button
-            onClick= {() => toggleDropdown("visData")}
+            onClick={() => toggleDropdown("visData")}
             className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-700 w-full text-left"
           >
             <View className="inline-block mr-2 mb-2" />
@@ -116,7 +115,6 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleMenu }) => {
 
           {dropdowns.visData && (
             <ul className="pl-8 mt-2 space-y-2">
-
               <li>
                 <a
                   href="/visualize-data"
@@ -127,11 +125,19 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleMenu }) => {
                 </a>
               </li>
             </ul>
-            
           )}
         </li>
 
-
+        {/* Acknowledgments tab */}
+        <li>
+          <a
+            href="/acknowledgments"
+            className="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-700 no-underline"
+          >
+            <HeartHandshake className="inline-block mr-2 mb-2" />
+            Acknowledgments
+          </a>
+        </li>
       </ul>
     </div>
   );
