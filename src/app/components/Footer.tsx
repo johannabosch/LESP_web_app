@@ -13,13 +13,15 @@ const Footer = () => {
         © {new Date().getFullYear()} STORM-PETREL POPULATION MODEL
       </div>
 
+      <div className="text-center text-xs text-gray-500 dark:text-gray-400 mb-2">
+        This web tool was developed by <a href= "https://github.com/johannabosch"> Johanna Bosch </a>
+      </div>
+
       <div className="text-center text-xs text-gray-500 dark:text-gray-400 my-1">
         Created for the Science & Technology Branch, <br/> Wildlife Research Division, Environment and Climate Change Canada
       </div>
 
-      <div className="text-center text-xs text-gray-500 dark:text-gray-400">
-        Designed by <a href= "https://github.com/johannabosch"> Johanna Bosch </a>
-      </div>
+
 
     </footer>
   );

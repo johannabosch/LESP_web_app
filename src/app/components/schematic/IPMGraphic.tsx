@@ -73,7 +73,7 @@ const IPMGraphic: React.FC = () => {
         <div className="absolute bottom-3 right-3">
           <button
             onClick={toggleLegend}
-            className="font-bold text-black text-[8px] sm:text-[8px] md:text-[11px] lg:text-[11px] w-[180px] bg-white rounded-lg border border-grey-700 p-3 hover:shadow-lg"
+            className="font-bold text-black bg-[#F6F6F6] text-[8px] sm:text-[8px] md:text-[11px] lg:text-[11px] w-[180px] rounded-lg border border-grey-700 p-2 hover:shadow-lg"
           >
             {showLegend ? "HIDE LEGEND" : "SHOW LEGEND"}
           </button>

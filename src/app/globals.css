@@ -60,7 +60,7 @@
   
 
   p {
-    @apply text-gray-700 text-[13px] sm:text-[13px] md:text-[18px] lg:text-[18px];
+    @apply text-gray-700 text-[13px] sm:text-[13px] md:text-[16px] lg:text-[16px];
   }
 
   

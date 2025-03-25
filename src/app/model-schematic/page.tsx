@@ -38,8 +38,7 @@ export default function IPM_Schematic() {
               <span className="font-bold text-[#D57636]"> observed deaths</span>, 
               <span className="font-bold text-[#9D0035]"> population size</span>, and 
               <span className="font-bold text-[#7030A1]"> survival</span>) and their dimensions.
-              The model structure and individual parameters are further outlined in the 
-              <a href="/"> full manuscript</a>.
+              The model structure and individual parameters are further outlined in the <a href="/manuscript">full manuscript</a>.
             </p>
           </div>
         </section>

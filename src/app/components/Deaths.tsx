@@ -16,9 +16,8 @@ const Deaths: React.FC = () => {
 
   return (
     <div className="space-y-4 flex flex-col justify-center items-center">
-      <div className="w-[70vw] bg-[#addaf0] rounded-lg">
-        <p className="text-md p-4 text-md"> Info here on vital rates results </p>
-      </div>
+      <div className = "w-[80vw] max-w-[1000px] bg-[#addaf0] rounded-lg"  >
+        <p className="text-[13px] sm:text-[13px] md:text-[16px] lg:text-[16px] p-4 text-md"> Mortality estimates for petrels were categorized into two main sources: predation-related deaths (including gull predation on colonies and fox kills at off-colony headlands) and lighted-structure-related deaths (strandings at offshore and onshore locations). The model allocated total mortality to stage-specific estimates for each colony. Various scenarios were explored to account for uncertainty in reported mortality data, with scaling factors applied to adjust the reported mortality numbers for different sources. To read more about the model parameters, visit the <a href="/model-schematic">model schematic</a> page. <br /><br /> <strong>RESULTS:</strong> Predation mortality was highest at Bon Portage and Kent Islands, with significant mortality from gulls. Fox predation off colonies was relatively low but contributed to mortality in Newfoundland colonies, particularly during the breeding season. Mortality from lighted structures was higher in Newfoundland colonies, with Baccalieu Island and Gull Island showing significant strandings. Mortality rates from strandings were generally low, with substantial variation across colonies. For more detailed results, refer to the <a href="/manuscript">full manuscript</a>.</p> </div>
       
       <div className="flex space-x-4 border-b pb-2">
         {sections.map((section) => (
