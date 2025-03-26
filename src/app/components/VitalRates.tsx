@@ -10,14 +10,6 @@ const VitalRates: React.FC = () => {
         </p>
       </div>
       
-      <h3>Mortality from Unknown Sources (M) ???</h3>
-      <object 
-            data="/figures/M all scenarios as frames plotly widget.html" 
-            className="border rounded-lg shadow-md w-[96vw] h-[83vw] max-w-[1210px] max-h-[1050px] justify-center items-center " 
-            type="text/html"
-          />
-
-
       <h3>Modeled Survival (S)</h3>
       <object 
             data="/figures/S all scenarios as frames plotly widget.html" 
@@ -26,6 +18,13 @@ const VitalRates: React.FC = () => {
 
       />
       
+      <h3>Mortality from Unknown Sources (M) </h3>
+      <object 
+            data="/figures/M all scenarios as frames plotly widget.html" 
+            className="border rounded-lg shadow-md w-[96vw] h-[83vw] max-w-[1210px] max-h-[1050px] justify-center items-center " 
+            type="text/html"
+          />
+      
       <h3>Modeled Productivity (F)</h3>
       <object 
             data="/figures/F all scenarios as frames plotly widget.html" 
@@ -33,14 +32,14 @@ const VitalRates: React.FC = () => {
             type="text/html"
           />
 
-    <h3>Annual deviations in survival aka. Transitions (ψ)</h3>
+    <h3> Transitions (ψ)</h3>
     <object 
       data="/figures/psi all scenarios as frames plotly widget.html" 
       className="border rounded-lg shadow-md w-[96vw] h-[83vw] max-w-[1210px] max-h-[1050px] justify-center items-center " 
       type="text/html"
     />
 
-      <h3>(eps.y)</h3>
+      <h3>Annual deviations in survival (eps.y)</h3>
       <object 
         data="/figures/eps.y all scenarios as frames plotly widget.html" 
         className="border rounded-lg shadow-md w-[96vw] h-[83vw] max-w-[1210px] max-h-[1050px] justify-center items-center " 
