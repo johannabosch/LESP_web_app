@@ -23,7 +23,7 @@ const Welcome2: React.FC<Welcome2Props> = ({ onArrowClick, onGetStartedClick }) 
             transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, repeatDelay: 1 }}
         /> population decline of more than 30% over the past three generations</span>, <a href="https://cosewic.ca/index.php/en/">COSEWIC</a> designated the Atlantic population in eastern Canada as          
         <span className="relative text-[15px] sm:text-[15px] md:text-[18px] lg:text-[18px] font-bold text-[#6E0F2D]"> THREATENED </span> in November 2020
-        (<a href="https://www.iucnredlist.org/" className="text-blue-600 underline">IUCN 2016</a>). Given the deteriorating status of Leach’s Storm-petrel in Atlantic Canada, concerns were raised about the possible effects of offshore oil and gas operations on this species and how the industry could contribute to the recovery of the species.
+        (<a href="https://www.canada.ca/en/environment-climate-change/services/species-risk-public-registry/cosewic-assessments-status-reports/leachs-storm-petrel-2020.html" className="text-blue-600 underline">COSEWIC 2020</a>). Given the deteriorating status of Leach’s Storm-petrel in Atlantic Canada, concerns were raised about the possible effects of offshore oil and gas operations on this species and how the industry could contribute to its recovery.
 
       </p>
 

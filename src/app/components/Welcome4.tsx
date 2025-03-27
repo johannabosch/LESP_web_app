@@ -20,7 +20,7 @@ const Welcome4: React.FC<Welcome2Props> = ({ onArrowClick, onGetStartedClick }) 
             initial={{ width: "0%" }}
             animate={{ width: "100%" }}
             transition={{ duration: 3, ease: "easeInOut", repeat: Infinity, repeatDelay: 1 }}
-        /> six colonies </span>faces different pressures and has different levels of overlap with offshore oil and gas production in eastern Canada.  </p>
+        /> six focal colonies </span>faces different pressures and has different levels of overlap with offshore oil and gas production in eastern Canada.  </p>
 
       <img
         src="images/welcome/colonies-map.png"

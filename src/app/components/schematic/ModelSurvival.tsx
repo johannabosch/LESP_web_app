@@ -1,19 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import React from "react";
 
 const SurvivalModel: React.FC = () => {
-  const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({
-    S1: false,
-  });
-
-  const toggleSection = (section: string) => {
-    setOpenSections((prev) => ({
-      ...prev,
-      [section]: !prev[section],
-    }));
-  };
 
   const sections = [
     {
@@ -51,7 +40,7 @@ const SurvivalModel: React.FC = () => {
   
           <br />
           <span className = "text-[13px] sm:text-[13px] md:text-[13px] lg:text-[15px]">
-            CMR-based survival estimates were integrated into our model by constraining modeled survival (<strong>S<sub>3,t</sub></strong>) to the empirical estimates and incorporating associated uncertainty using logit-transformed survival values. Given the geographic spread of the colonies and variation in local pressures such as predation and contamination, these data offered critical insights into spatial differences in survival. By comparing survival trends across colonies, we could identify site-specific threats like increased predation, as well as broader regional stressors such as offshore industrial activity or environmental contaminants. The integration of CMR data into the model deepened our understanding of the factors driving survival declines and their potential impact on population dynamics.
+            CMR-based survival estimates were integrated into our model by constraining modeled survival of breeders at stage class 3 in year t (<strong>S<sub>3,t</sub></strong>) to the empirical estimates (<a href="https://www.sciencedirect.com/science/article/pii/S0048969723071772">Calvert et al. 2024</a>) and incorporating associated uncertainty using logit-transformed survival values. Given the geographic spread of the colonies and variation in local pressures such as predation and contamination, these data offered critical insights into spatial differences in survival. By comparing survival trends across colonies, we could identify site-specific threats like increased predation, as well as broader regional stressors such as offshore industrial activity or environmental contaminants. The integration of CMR data into the model deepened our understanding of the factors driving survival declines and their potential impact on population dynamics.
           </span>
         </div>
       ),
@@ -71,31 +60,17 @@ const SurvivalModel: React.FC = () => {
         </div>
 
 
-        {/* Dropdown Sections */}
         {sections.map(({ id, title, content }) => (
-          <div
-            key={id}
-            className="bg-[#D7CEE8] border-l-4 border-[#7257B0] mt-6 mx-5 transition-all duration-300 rounded-lg shadow-md relative"
-          >
-            <div
-              className="flex justify-between items-center bg-[#7257B0] rounded-lg cursor-pointer px-[1vw]"
-              onClick={() => toggleSection(id)}
-            >
+          <div key={id}
+            className="bg-[#D7CEE8] border-l-4 border-[#7257B0] mt-6 mx-5 transition-all duration-300 rounded-lg shadow-md relative">
+
+            <div className="flex justify-between items-center bg-[#7257B0] rounded-lg cursor-pointer px-[1vw]">
               <h3 className="text-lg text-white font-semibold">{title}</h3>
-              {openSections[id] ? (
-                <ChevronUp size={20} className="text-white" />
-              ) : (
-                <ChevronDown size={20} className="text-white" />
-              )}
             </div>
 
-            {openSections[id] && (
               <div className="mt-4 flex flex-col justify-between items-center">
-                <div className="text-gray-700 px-[3vw] py-[1vw] w-full">
-                  {content}
-                </div>
+                <div className="text-gray-700 px-[3vw] py-[1vw] w-full">{content}</div>
               </div>
-            )}
           </div>
         ))}
       </div>
